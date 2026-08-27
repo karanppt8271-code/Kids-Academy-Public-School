@@ -558,27 +558,7 @@ function submitAdmission(event){
 }
 
 
-function checkResult(){
 
-    let roll = document.getElementById("rollNumber").value;
-
-    let message = document.getElementById("resultMessage");
-
-    if(roll === ""){
-
-        message.innerHTML =
-        "⚠️ कृपया Roll Number डालें।";
-
-        return;
-    }
-
-    message.innerHTML =
-    "✅ Result Portal में Roll Number " +
-    roll +
-    " खोजा गया।<br><br>" +
-    "📚 Result: <b>Demo Result</b><br>" +
-    "⚠️ वास्तविक marks/result बाद में database से जोड़े जा सकते हैं।";
-}
 
 </script>
 
