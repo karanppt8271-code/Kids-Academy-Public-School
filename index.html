@@ -1,571 +1,480 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kid's Academy Public School</title>
-<meta name="description" content="Kid's Academy Public School provides quality education, experienced teachers, disciplined learning and a positive environment for students.">
-<meta name="keywords" content="Kid's Academy Public School, Kids Academy School, school, education, teachers, admission">
-<meta name="author" content="Kid's Academy Public School">
-<meta name="robots" content="index, follow">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<title>Kid's Academy Public School</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f8ff;
-            color: #222;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #063970, #0879c9);
-            color: white;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f8ff;
+    color:#222;
+}
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+header{
+    background:linear-gradient(135deg,#123c88,#1677d2);
+    color:white;
+    padding:25px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
 
-        .logo-icon {
-            font-size: 40px;
-        }
+.logo h1{
+    font-size:27px;
+}
 
-        .logo h1 {
-            font-size: 22px;
-        }
+.logo p{
+    font-size:13px;
+    margin-top:5px;
+}
 
-        .logo p {
-            font-size: 12px;
-            opacity: 0.9;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+    font-weight:bold;
+    font-size:14px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+nav a:hover{
+    color:#ffd43b;
+}
 
-        nav a:hover {
-            color: #ffd700;
-        }
+.hero{
+    min-height:88vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:
+    linear-gradient(rgba(10,45,100,.75),rgba(10,45,100,.75)),
+    linear-gradient(135deg,#5aa9ff,#8ed1ff);
+    color:white;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background:
-                linear-gradient(rgba(0,40,90,0.7), rgba(0,80,150,0.7)),
-                url("https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
+.hero h2{
+    font-size:50px;
+    margin-bottom:15px;
+}
 
-        .hero-content h2 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
+.hero p{
+    font-size:20px;
+    margin-bottom:25px;
+}
 
-        .hero-content p {
-            font-size: 20px;
-            margin-bottom: 25px;
-        }
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    background:#ffd43b;
+    color:#111;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    margin:5px;
+    border:none;
+    cursor:pointer;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 13px 28px;
-            background: #ffd700;
-            color: #111;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.btn:hover{
+    transform:scale(1.05);
+    background:#fff;
+}
 
-        .btn:hover {
-            transform: scale(1.05);
-            background: white;
-        }
+section{
+    padding:70px 7%;
+}
 
-        /* COMMON */
-        section {
-            padding: 70px 8%;
-        }
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-        .title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.title h2{
+    font-size:35px;
+    color:#123c88;
+}
 
-        .title h2 {
-            color: #063970;
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
+.title p{
+    margin-top:10px;
+    color:#666;
+}
 
-        .title p {
-            color: #666;
-        }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
 
-        /* ABOUT */
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+.card{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
 
-        .about img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
+.card:hover{
+    transform:translateY(-8px);
+}
 
-        .about-text h3 {
-            font-size: 28px;
-            color: #0879c9;
-            margin-bottom: 15px;
-        }
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
 
-        .about-text p {
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
+.card h3{
+    color:#123c88;
+    margin-bottom:12px;
+}
 
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.admission{
+    background:linear-gradient(135deg,#e8f2ff,#ffffff);
+}
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-        }
+.admission-box{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,.12);
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-        }
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
 
-        .card .icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+input,select{
+    width:100%;
+    padding:14px;
+    margin:8px 0 18px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+}
 
-        .card h3 {
-            color: #063970;
-            margin-bottom: 10px;
-        }
+label{
+    font-weight:bold;
+    color:#333;
+}
 
-        .card p {
-            color: #666;
-            line-height: 1.6;
-        }
+.result{
+    background:#f0f7ff;
+}
 
-        /* PRINCIPAL */
-        .principal {
-            background: #eaf4ff;
-        }
+.result-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 25px rgba(0,0,0,.12);
+    text-align:center;
+}
 
-        .principal-box {
-            max-width: 850px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
+.result-box input{
+    max-width:400px;
+}
 
-        .principal-photo {
-            width: 130px;
-            height: 130px;
-            margin: auto;
-            border-radius: 50%;
-            background: #0879c9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 65px;
-            color: white;
-            margin-bottom: 20px;
-        }
+#resultMessage{
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
 
-        .principal-box h3 {
-            color: #063970;
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-        .principal-box p {
-            line-height: 1.8;
-            color: #555;
-        }
+.gallery div{
+    height:180px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    background:linear-gradient(135deg,#d8ebff,#fff);
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
 
-        /* TEACHERS */
-        .teacher {
-            background: white;
-        }
+.contact{
+    background:#123c88;
+    color:white;
+}
 
-        /* GALLERY */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.contact .title h2{
+    color:white;
+}
 
-        .gallery img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
+.contact-card{
+    text-align:center;
+    font-size:18px;
+    line-height:2;
+}
 
-        .gallery img:hover {
-            transform: scale(1.03);
-        }
+footer{
+    background:#092653;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
 
-        /* CONTACT */
-        .contact {
-            background: #063970;
-            color: white;
-        }
+@media(max-width:800px){
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
 
-        .contact .title h2 {
-            color: white;
-        }
+    nav{
+        text-align:center;
+        line-height:2.5;
+    }
 
-        .contact-box {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            text-align: center;
-        }
+    .hero h2{
+        font-size:35px;
+    }
 
-        .contact-item {
-            padding: 25px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-        }
-
-        .contact-item span {
-            font-size: 35px;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #031f3d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav {
-                text-align: center;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 5px;
-                font-size: 14px;
-            }
-
-            .hero-content h2 {
-                font-size: 34px;
-            }
-
-            .hero-content p {
-                font-size: 17px;
-            }
-
-            .about,
-            .cards,
-            .gallery,
-            .contact-box {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 50px 6%;
-            }
-        }
-    </style>
+    .form-row{
+        grid-template-columns:1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <header>
-
     <div class="logo">
-        <div class="logo-icon">🏫</div>
-
-        <div>
-            <h1>Kid's Academy Public School</h1>
-            <p>Manikpur, Pirpainti Bazar</p>
-        </div>
+        <h1>🎓 Kid's Academy Public School</h1>
+        <p>Quality Education • Bright Future</p>
     </div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#principal">Principal</a>
         <a href="#teachers">Teachers</a>
+        <a href="#admission">Admission</a>
+        <a href="#result">Result</a>
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
-
 </header>
 
 
 <!-- HOME -->
 <section class="hero" id="home">
-
-    <div class="hero-content">
-
+    <div>
         <h2>Welcome to Kid's Academy Public School</h2>
 
         <p>
-            शिक्षा • संस्कार • सफलता
+            शिक्षा, संस्कार और सफलता की ओर आपका पहला कदम
         </p>
 
-        <a href="#about" class="btn">
-            हमारे स्कूल के बारे में जानें
-        </a>
-
+        <a href="#admission" class="btn">🎓 Admission Open</a>
+        <a href="#result" class="btn">📊 Check Result</a>
     </div>
-
 </section>
 
 
 <!-- ABOUT -->
 <section id="about">
-
     <div class="title">
-
         <h2>About Our School</h2>
-
-        <p>
-            हमारे विद्यालय के बारे में
-        </p>
-
-    </div>
-
-    <div class="about">
-
-        <img
-        src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80"
-        alt="School">
-
-        <div class="about-text">
-
-            <h3>Kid's Academy Public School</h3>
-
-            <p>
-                Kid's Academy Public School एक आधुनिक एवं गुणवत्तापूर्ण
-                शिक्षा प्रदान करने वाला विद्यालय है।
-            </p>
-
-            <p>
-                हमारा उद्देश्य बच्चों को बेहतर शिक्षा के साथ-साथ
-                अनुशासन, संस्कार, आत्मविश्वास और अच्छे भविष्य के लिए
-                तैयार करना है।
-            </p>
-
-            <p>
-                📍 स्थान: <b>Manikpur, Pirpainti Bazar</b>
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FACILITIES -->
-<section>
-
-    <div class="title">
-
-        <h2>Our Facilities</h2>
-
-        <p>विद्यार्थियों के लिए हमारी सुविधाएँ</p>
-
+        <p>हम बच्चों के उज्ज्वल भविष्य के लिए प्रतिबद्ध हैं</p>
     </div>
 
     <div class="cards">
 
         <div class="card">
+            <div class="icon">🏫</div>
+            <h3>Modern Education</h3>
+            <p>
+                आधुनिक शिक्षा प्रणाली और बेहतर learning environment.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">👨‍🏫</div>
+            <h3>Experienced Teachers</h3>
+            <p>
+                Dedicated और experienced teachers द्वारा शिक्षा.
+            </p>
+        </div>
+
+        <div class="card">
             <div class="icon">📚</div>
-            <h3>Quality Education</h3>
+            <h3>Quality Learning</h3>
             <p>
-                विद्यार्थियों को गुणवत्तापूर्ण एवं आधुनिक शिक्षा।
+                बच्चों की क्षमता के अनुसार quality education.
             </p>
         </div>
 
         <div class="card">
-            <div class="icon">💻</div>
-            <h3>Computer Lab</h3>
+            <div class="icon">🏆</div>
+            <h3>Bright Future</h3>
             <p>
-                तकनीकी शिक्षा के लिए आधुनिक कंप्यूटर सुविधा।
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⚽</div>
-            <h3>Sports</h3>
-            <p>
-                बच्चों के शारीरिक विकास के लिए खेल-कूद की सुविधा।
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🔬</div>
-            <h3>Science Learning</h3>
-            <p>
-                विज्ञान को प्रयोग और गतिविधियों के माध्यम से सीखने का अवसर।
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Creative Activities</h3>
-            <p>
-                बच्चों की रचनात्मक क्षमता को बढ़ाने वाली गतिविधियाँ।
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🚌</div>
-            <h3>Transport</h3>
-            <p>
-                विद्यार्थियों के लिए सुविधाजनक परिवहन व्यवस्था।
+                बच्चों को भविष्य की चुनौतियों के लिए तैयार करना.
             </p>
         </div>
 
     </div>
-
-</section>
-
-
-<!-- PRINCIPAL -->
-<section class="principal" id="principal">
-
-    <div class="title">
-
-        <h2>Our Principal</h2>
-
-        <p>प्रधानाचार्य का संदेश</p>
-
-    </div>
-
-    <div class="principal-box">
-
-        <div class="principal-photo">
-            👨‍🏫
-        </div>
-
-        <h3>Principal</h3>
-
-        <p>
-            हमारे विद्यालय का उद्देश्य प्रत्येक विद्यार्थी की प्रतिभा को
-            पहचानना और उसे सही दिशा देना है। हम शिक्षा के साथ
-            अच्छे संस्कार और अनुशासन को भी महत्वपूर्ण मानते हैं।
-        </p>
-
-    </div>
-
 </section>
 
 
 <!-- TEACHERS -->
-<section class="teacher" id="teachers">
-
+<section id="teachers">
     <div class="title">
-
         <h2>Our Teachers</h2>
-
-        <p>हमारे शिक्षक</p>
-
+        <p>हमारे dedicated teachers</p>
     </div>
 
     <div class="cards">
 
         <div class="card">
-
             <div class="icon">👩‍🏫</div>
-
             <h3>Teacher 1</h3>
-
-            <p>
-                Dedicated & Experienced Teacher
-            </p>
-
+            <p>Dedicated & Experienced Teacher</p>
         </div>
 
         <div class="card">
-
             <div class="icon">👨‍🏫</div>
-
             <h3>Teacher 2</h3>
-
-            <p>
-                Dedicated & Experienced Teacher
-            </p>
-
+            <p>Dedicated & Experienced Teacher</p>
         </div>
 
         <div class="card">
-
             <div class="icon">👩‍🏫</div>
-
             <h3>Teacher 3</h3>
-
-            <p>
-                Dedicated & Experienced Teacher
-            </p>
-
+            <p>Dedicated & Experienced Teacher</p>
         </div>
+
+    </div>
+</section>
+
+
+<!-- ADMISSION -->
+<section class="admission" id="admission">
+
+    <div class="title">
+        <h2>🎓 Online Admission</h2>
+        <p>School admission के लिए form भरें</p>
+    </div>
+
+    <div class="admission-box">
+
+        <form onsubmit="submitAdmission(event)">
+
+            <div class="form-row">
+
+                <div>
+                    <label>Student Name</label>
+                    <input type="text" id="studentName"
+                    placeholder="Student का नाम" required>
+                </div>
+
+                <div>
+                    <label>Father's Name</label>
+                    <input type="text" id="fatherName"
+                    placeholder="Father का नाम" required>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div>
+                    <label>Class</label>
+
+                    <select id="className" required>
+                        <option value="">Class चुनें</option>
+                        <option>Nursery</option>
+                        <option>LKG</option>
+                        <option>UKG</option>
+                        <option>Class 1</option>
+                        <option>Class 2</option>
+                        <option>Class 3</option>
+                        <option>Class 4</option>
+                        <option>Class 5</option>
+                        <option>Class 6</option>
+                        <option>Class 7</option>
+                        <option>Class 8</option>
+                        <option>Class 9</option>
+                        <option>Class 10</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Mobile Number</label>
+                    <input type="tel" id="mobile"
+                    placeholder="Mobile Number" required>
+                </div>
+
+            </div>
+
+            <label>Address</label>
+
+            <input type="text" id="address"
+            placeholder="पूरा पता" required>
+
+            <div style="text-align:center;">
+                <button class="btn" type="submit">
+                    Submit Admission
+                </button>
+            </div>
+
+        </form>
+
+        <p id="admissionMessage"
+        style="text-align:center;margin-top:20px;font-weight:bold;">
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RESULT -->
+<section class="result" id="result">
+
+    <div class="title">
+        <h2>📊 Student Result</h2>
+        <p>अपना Roll Number डालकर result देखें</p>
+    </div>
+
+    <div class="result-box">
+
+        <input type="text"
+        id="rollNumber"
+        placeholder="Enter Roll Number">
+
+        <br>
+
+        <button class="btn" onclick="checkResult()">
+            🔍 Check Result
+        </button>
+
+        <div id="resultMessage"></div>
 
     </div>
 
@@ -576,38 +485,18 @@
 <section id="gallery">
 
     <div class="title">
-
-        <h2>School Gallery</h2>
-
-        <p>विद्यालय की झलकियाँ</p>
-
+        <h2>📸 School Gallery</h2>
+        <p>School activities और memories</p>
     </div>
 
     <div class="gallery">
 
-        <img
-        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
-        alt="Students">
-
-        <img
-        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
-        alt="School">
-
-        <img
-        src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
-        alt="Classroom">
-
-        <img
-        src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80"
-        alt="Students">
-
-        <img
-        src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80"
-        alt="Class">
-
-        <img
-        src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80"
-        alt="Education">
+        <div>🏫</div>
+        <div>👨‍🎓</div>
+        <div>👩‍🎓</div>
+        <div>📚</div>
+        <div>⚽</div>
+        <div>🎨</div>
 
     </div>
 
@@ -618,50 +507,16 @@
 <section class="contact" id="contact">
 
     <div class="title">
-
         <h2>Contact Us</h2>
-
         <p>हमसे संपर्क करें</p>
-
     </div>
 
-    <div class="contact-box">
+    <div class="contact-card">
 
-        <div class="contact-item">
-
-            <span>📍</span>
-
-            <h3>Address</h3>
-
-            <p>
-                Manikpur, Pirpainti Bazar
-            </p>
-
-        </div>
-
-        <div class="contact-item">
-
-            <span>📞</span>
-
-            <h3>Phone</h3>
-
-            <p>
-                आपका मोबाइल नंबर यहाँ डालें
-            </p>
-
-        </div>
-
-        <div class="contact-item">
-
-            <span>✉️</span>
-
-            <h3>Email</h3>
-
-            <p>
-                school@example.com
-            </p>
-
-        </div>
+        <p>🏫 Kid's Academy Public School</p>
+        <p>📍 Manikpur, Pirpainti Bazar</p>
+        <p>📞 +91 XXXXXXXXXX</p>
+        <p>✉️ school@example.com</p>
 
     </div>
 
@@ -672,10 +527,53 @@
 <footer>
 
     <p>
-        © 2026 Kid's Academy Public School | All Rights Reserved
+        © 2026 Kid's Academy Public School |
+        All Rights Reserved
     </p>
 
 </footer>
+
+
+<script>
+
+function submitAdmission(event){
+
+    event.preventDefault();
+
+    let name = document.getElementById("studentName").value;
+    let studentClass = document.getElementById("className").value;
+
+    document.getElementById("admissionMessage").innerHTML =
+    "✅ धन्यवाद " + name +
+    "! आपकी admission enquiry Class " +
+    studentClass + " के लिए प्राप्त हो गई है।";
+
+}
+
+
+function checkResult(){
+
+    let roll = document.getElementById("rollNumber").value;
+
+    let message = document.getElementById("resultMessage");
+
+    if(roll === ""){
+
+        message.innerHTML =
+        "⚠️ कृपया Roll Number डालें।";
+
+        return;
+    }
+
+    message.innerHTML =
+    "✅ Result Portal में Roll Number " +
+    roll +
+    " खोजा गया।<br><br>" +
+    "📚 Result: <b>Demo Result</b><br>" +
+    "⚠️ वास्तविक marks/result बाद में database से जोड़े जा सकते हैं।";
+}
+
+</script>
 
 </body>
 </html>
