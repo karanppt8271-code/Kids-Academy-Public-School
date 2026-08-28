@@ -4,10 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kid's Academy Public School</title>
+<title>Kid's Academy Public School | Manikpur, Pirpainti</title>
 
-<meta name="description" content="Kid's Academy Public School - Quality Education, Experienced Teachers and Bright Future.">
-<meta name="keywords" content="Kid's Academy Public School, school, education, admission">
+<meta name="description" content="Kid's Academy Public School, Manikpur, Pirpainti, Bhagalpur, Bihar. Quality education, experienced teachers, online admission and school activities.">
+
+<meta name="keywords" content="Kid's Academy Public School, Kids Academy Public School, school in Manikpur, school in Pirpainti, school in Bhagalpur, school admission">
+
+<meta name="robots" content="index, follow">
 
 <style>
 *{
@@ -18,8 +21,8 @@
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#f4f7fb;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f8ff;
     color:#17233c;
 }
 
@@ -27,108 +30,184 @@ body{
 .topbar{
     background:#071d49;
     color:white;
-    padding:8px 6%;
+    padding:10px 6%;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     font-size:14px;
 }
 
-/* HEADER */
+.topbar a{
+    color:white;
+    text-decoration:none;
+}
+
+/* NAVBAR */
 header{
     background:white;
-    padding:15px 6%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    box-shadow:0 3px 15px rgba(0,0,0,.12);
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:12px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo-area{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:12px;
 }
 
-.logo{
-    width:75px;
-    height:75px;
+.logo-area img{
+    width:65px;
+    height:65px;
     object-fit:contain;
-    border-radius:50%;
 }
 
-.logo-area h1{
-    color:#09265c;
-    font-size:25px;
+.logo-text h2{
+    color:#0b3d91;
+    font-size:21px;
 }
 
-.logo-area p{
-    color:#e7a900;
-    font-weight:bold;
-    font-size:13px;
+.logo-text p{
+    color:#777;
+    font-size:12px;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    align-items:center;
 }
 
 nav a{
     text-decoration:none;
     color:#17233c;
+    padding:10px 13px;
+    border-radius:8px;
     font-weight:bold;
-    margin-left:20px;
+    font-size:14px;
+    transition:.3s;
 }
 
 nav a:hover{
-    color:#e4a900;
+    background:#0b5ed7;
+    color:white;
+}
+
+.admission-btn{
+    background:#f5a400 !important;
+    color:white !important;
 }
 
 /* HERO */
 .hero{
-    min-height:570px;
-    background:linear-gradient(135deg,#08235a,#1767b1);
-    color:white;
+    min-height:590px;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:60px 20px;
+    padding:70px 20px;
+    color:white;
+    background:
+    linear-gradient(rgba(4,28,70,.82),rgba(8,73,150,.82)),
+    radial-gradient(circle at top,#4e9cff,#071d49);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before,
+.hero:after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+}
+
+.hero:before{
+    width:350px;
+    height:350px;
+    top:-150px;
+    left:-100px;
+}
+
+.hero:after{
+    width:450px;
+    height:450px;
+    bottom:-250px;
+    right:-100px;
 }
 
 .hero-content{
+    position:relative;
+    z-index:2;
     max-width:900px;
 }
 
-.hero h2{
-    font-size:52px;
-    margin-bottom:20px;
+.hero-logo{
+    width:130px;
+    height:130px;
+    background:white;
+    padding:8px;
+    border-radius:50%;
+    object-fit:contain;
+    box-shadow:0 10px 35px rgba(0,0,0,.3);
+    animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+    50%{transform:translateY(-10px);}
+}
+
+.hero h1{
+    font-size:48px;
+    margin:25px 0 12px;
+}
+
+.hero h1 span{
+    color:#ffd166;
 }
 
 .hero p{
     font-size:20px;
-    line-height:1.7;
+    line-height:1.6;
     margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 28px;
+    padding:14px 25px;
+    margin:5px;
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
-    margin:7px;
-    background:#f2b300;
-    color:#071d49;
+    transition:.3s;
 }
 
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
+.btn-primary{
+    background:#f5a400;
+    color:white;
 }
 
 .btn-white{
     background:white;
+    color:#0b3d91;
 }
 
-/* SECTIONS */
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* COMMON */
 section{
     padding:75px 7%;
 }
@@ -139,8 +218,8 @@ section{
 }
 
 .title h2{
-    font-size:36px;
-    color:#08265e;
+    color:#0b3d91;
+    font-size:35px;
     margin-bottom:10px;
 }
 
@@ -148,86 +227,113 @@ section{
     color:#666;
 }
 
-/* ABOUT */
-.about{
+/* CARDS */
+.cards{
+    max-width:1200px;
+    margin:auto;
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:35px;
-    align-items:center;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.about-box{
+.card{
     background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-.about-box h3{
-    color:#0a55a5;
-    margin-bottom:15px;
-    font-size:26px;
-}
-
-.about-box p{
-    line-height:1.8;
-    color:#555;
-}
-
-/* FEATURES */
-.features{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.feature{
-    background:white;
-    padding:30px 20px;
-    text-align:center;
+    padding:30px;
     border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
-.feature .icon{
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
     font-size:45px;
     margin-bottom:15px;
 }
 
+.card h3{
+    color:#0b3d91;
+    margin-bottom:10px;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+}
+
+.about-box{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-text h2{
+    color:#0b3d91;
+    font-size:36px;
+    margin-bottom:18px;
+}
+
+.about-text p{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:15px;
+}
+
+.points{
+    list-style:none;
+}
+
+.points li{
+    padding:9px 0;
+    font-weight:bold;
+}
+
+.points li::before{
+    content:"✓";
+    color:#f5a400;
+    margin-right:10px;
+}
+
 /* PRINCIPAL */
 .principal{
-    background:#eaf2ff;
+    background:linear-gradient(135deg,#eef5ff,#ffffff);
 }
 
 .principal-box{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
     background:white;
-    padding:35px;
     border-radius:25px;
-    display:flex;
+    padding:35px;
+    display:grid;
+    grid-template-columns:230px 1fr;
     gap:35px;
     align-items:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    box-shadow:0 10px 35px rgba(0,0,0,.1);
 }
 
 .principal-photo{
-    width:190px;
-    height:220px;
+    width:210px;
+    height:210px;
+    border-radius:20px;
     object-fit:cover;
-    border-radius:18px;
-    border:5px solid #e5ae16;
-    background:#ddd;
+    background:#e8eef8;
 }
 
-.principal-info h3{
+.principal-info h2{
+    color:#0b3d91;
     font-size:30px;
-    color:#08265e;
     margin-bottom:10px;
 }
 
 .principal-info h4{
-    color:#d09200;
+    color:#f5a400;
     margin-bottom:15px;
 }
 
@@ -237,7 +343,9 @@ section{
 }
 
 /* TEACHERS */
-.teachers{
+.teacher-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:22px;
@@ -245,54 +353,58 @@ section{
 
 .teacher{
     background:white;
-    padding:25px;
+    padding:20px;
+    border-radius:18px;
     text-align:center;
-    border-radius:20px;
-    box-shadow:0 8px 22px rgba(0,0,0,.08);
+    box-shadow:0 7px 22px rgba(0,0,0,.08);
     transition:.3s;
 }
 
 .teacher:hover{
-    transform:translateY(-8px);
+    transform:translateY(-7px);
 }
 
 .teacher img{
-    width:125px;
-    height:125px;
+    width:130px;
+    height:130px;
     border-radius:50%;
     object-fit:cover;
-    border:4px solid #e7ad16;
-    background:#ddd;
+    background:#e9eef7;
+    border:5px solid #eef4ff;
 }
 
 .teacher h3{
-    margin:15px 0 7px;
-    color:#09265c;
+    color:#0b3d91;
+    margin-top:15px;
 }
 
 .teacher p{
-    color:#666;
+    color:#777;
+    margin-top:7px;
 }
 
 /* ADMISSION */
 .admission{
-    background:linear-gradient(135deg,#08235a,#155ca3);
+    background:linear-gradient(135deg,#073477,#0b65c2);
     color:white;
 }
 
-.admission .title h2,
+.admission .title h2{
+    color:white;
+}
+
 .admission .title p{
-    color:white;
+    color:#e8f2ff;
 }
 
-.form-box{
+.form{
     max-width:850px;
     margin:auto;
     background:white;
-    color:#17233c;
     padding:35px;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    color:#17233c;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
 }
 
 .form-grid{
@@ -310,189 +422,239 @@ section{
     grid-column:1/-1;
 }
 
-.form-group label{
+.form label{
     font-weight:bold;
     margin-bottom:7px;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
+.form input,
+.form select,
+.form textarea{
     padding:13px;
-    border:1px solid #ccd4df;
+    border:1px solid #d4dbea;
     border-radius:8px;
+    outline:none;
     font-size:15px;
 }
 
-.form-group textarea{
-    min-height:100px;
+.form input:focus,
+.form select:focus,
+.form textarea:focus{
+    border-color:#0b65c2;
+}
+
+.form textarea{
+    min-height:110px;
+    resize:vertical;
 }
 
 .submit{
-    margin-top:20px;
     width:100%;
-    border:none;
+    border:0;
+    background:#f5a400;
+    color:white;
     padding:15px;
-    background:#e7ad16;
-    color:#071d49;
+    border-radius:10px;
     font-size:17px;
     font-weight:bold;
-    border-radius:10px;
     cursor:pointer;
+    margin-top:10px;
 }
 
 /* GALLERY */
-<!-- BEAUTIFUL SCHOOL GALLERY -->
-<section id="gallery" class="school-gallery">
+.gallery{
+    background:#f5f8ff;
+}
 
-  <div class="gallery-title">
-    <span>📸</span>
-    <h2>School Gallery</h2>
-    <p>Memorable Moments of Kid's Academy Public School</p>
-  </div>
-
-  <div class="gallery-grid">
-
-    <div class="gallery-card">
-      <img src="gallery1.jpg" alt="School Campus">
-      <div class="gallery-caption">
-        <h3>🏫 School Campus</h3>
-        <p>Our beautiful school campus</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="gallery2.jpg" alt="Students">
-      <div class="gallery-caption">
-        <h3>👨‍🎓 Students</h3>
-        <p>Learning and growing together</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="gallery3.jpg" alt="Classroom">
-      <div class="gallery-caption">
-        <h3>📚 Classroom</h3>
-        <p>Modern learning environment</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="gallery4.jpg" alt="School Activity">
-      <div class="gallery-caption">
-        <h3>🎨 School Activities</h3>
-        <p>Fun and educational activities</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="gallery5.jpg" alt="Annual Function">
-      <div class="gallery-caption">
-        <h3>🎉 Annual Function</h3>
-        <p>Celebrating our achievements</p>
-      </div>
-    </div>
-
-    <div class="gallery-card">
-      <img src="gallery6.jpg" alt="Sports">
-      <div class="gallery-caption">
-        <h3>🏆 Sports & Games</h3>
-        <p>Healthy body, healthy mind</p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-/* CONTACT */
-.contact{
+.gallery-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.contact-box{
+.gallery-item{
+    height:230px;
+    border-radius:18px;
+    overflow:hidden;
+    background:#dfe8f7;
+    box-shadow:0 7px 20px rgba(0,0,0,.1);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+/* CONTACT */
+.contact{
     background:white;
+}
+
+.contact-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.contact-card{
     padding:30px;
     text-align:center;
     border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    background:#f4f7fc;
 }
 
-.contact-box .icon{
-    font-size:40px;
-    margin-bottom:15px;
+.contact-card .icon{
+    font-size:38px;
+}
+
+.contact-card h3{
+    color:#0b3d91;
+    margin-bottom:8px;
+}
+
+.contact-card p{
+    color:#666;
+    line-height:1.6;
 }
 
 /* FOOTER */
 footer{
-    background:#071a40;
+    background:#061a3d;
     color:white;
     text-align:center;
-    padding:30px 20px;
+    padding:35px 20px;
+}
+
+footer h2{
+    margin-bottom:10px;
 }
 
 footer p{
+    color:#cbd7eb;
     margin:7px;
 }
 
+.social{
+    margin:20px 0;
+}
+
+.social a{
+    display:inline-block;
+    margin:5px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    border-radius:50%;
+    background:#12376f;
+    color:white;
+    text-decoration:none;
+}
+
 /* MOBILE */
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
 @media(max-width:900px){
 
     .topbar{
         display:none;
     }
 
-    header{
+    nav{
+        display:none;
+        position:absolute;
+        top:90px;
+        left:0;
+        right:0;
+        background:white;
         flex-direction:column;
-        gap:15px;
+        padding:20px;
+        box-shadow:0 10px 20px rgba(0,0,0,.1);
     }
 
-    nav{
+    nav.show{
         display:flex;
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:10px;
     }
 
     nav a{
-        margin:5px;
-        font-size:14px;
-    }
-
-    .hero h2{
-        font-size:36px;
-    }
-
-    .features,
-    .teachers{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .about,
-    .contact{
-        grid-template-columns:1fr;
-    }
-
-    .principal-box{
-        flex-direction:column;
+        width:100%;
         text-align:center;
     }
 
-    .gallery{
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .cards,
+    .teacher-grid,
+    .gallery-grid,
+    .contact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-box,
+    .principal-box{
         grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .principal-photo{
+        margin:auto;
     }
 }
 
-@media(max-width:550px){
+@media(max-width:600px){
 
     section{
         padding:55px 5%;
     }
 
-    .features,
-    .teachers,
+    .logo-area img{
+        width:50px;
+        height:50px;
+    }
+
+    .logo-text h2{
+        font-size:16px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .title h2{
+        font-size:29px;
+    }
+
+    .cards,
+    .teacher-grid,
+    .gallery-grid,
+    .contact-grid,
     .form-grid{
         grid-template-columns:1fr;
     }
@@ -501,16 +663,8 @@ footer p{
         grid-column:auto;
     }
 
-    .logo-area h1{
-        font-size:20px;
-    }
-
-    .hero{
-        min-height:500px;
-    }
-
-    .hero h2{
-        font-size:30px;
+    .gallery-item{
+        height:220px;
     }
 }
 </style>
@@ -520,369 +674,411 @@ footer p{
 
 <!-- TOP BAR -->
 <div class="topbar">
-    <span>🎓 Quality Education for a Bright Future</span>
-    <span>📚 Kid's Academy Public School</span>
+    <span>📍 Manikpur, Pirpainti, Bhagalpur, Bihar</span>
+    <span>📞 Contact School Office</span>
 </div>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 <header>
-<img src="school-logo.png" alt="Kid's Academy Public School Logo" class="school-logo">
-<div class="logo-area">
-    <img src="school-logo.png" class="logo" alt="School Logo">
-    <div>
-        <h1>Kid's Academy Public School</h1>
-        <p>LEARN • GROW • SUCCEED</p>
+<div class="navbar">
+
+    <div class="logo-area">
+        <img src="school-logo.png" alt="Kid's Academy Public School Logo">
+
+        <div class="logo-text">
+            <h2>Kid's Academy Public School</h2>
+            <p>Learn • Grow • Succeed</p>
+        </div>
     </div>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#principal">Principal</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="#admission" class="admission-btn">Admission</a>
+    </nav>
+
 </div>
-
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#principal">Principal</a>
-    <a href="#teachers">Teachers</a>
-    <a href="#admission">Admission</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-</nav>
-
 </header>
 
-<!-- HOME -->
+<!-- HERO -->
 <section class="hero" id="home">
-
 <div class="hero-content">
 
-<h2>Welcome to Kid's Academy Public School</h2>
+    <img src="school-logo.png"
+         class="hero-logo"
+         alt="School Logo">
 
-<p>
-A place where children learn, grow, discover their talents
-and build a bright future with knowledge and confidence.
-</p>
+    <h1>Welcome to <span>Kid's Academy</span> Public School</h1>
 
-<a href="#admission" class="btn">📝 Apply for Admission</a>
+    <p>
+        ज्ञान • अनुशासन • संस्कार • सफलता<br>
+        बच्चों के उज्ज्वल भविष्य के लिए गुणवत्तापूर्ण शिक्षा
+    </p>
 
-<a href="#about" class="btn btn-white">🏫 Explore School</a>
+    <a href="#admission" class="btn btn-primary">
+        📝 Online Admission
+    </a>
 
-</div>
-
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-
-<div class="title">
-<h2>About Our School</h2>
-<p>Building strong foundations for a successful future</p>
-</div>
-
-<div class="about">
-
-<div class="about-box">
-<h3>🎓 Quality Education</h3>
-<p>
-Kid's Academy Public School is committed to providing
-quality education in a safe, friendly and inspiring
-environment. Our goal is to develop knowledgeable,
-confident and responsible students.
-</p>
-</div>
-
-<div class="about-box">
-<h3>🌟 Our Mission</h3>
-<p>
-We focus on academic excellence, discipline,
-creativity, good values and overall development
-of every child.
-</p>
-</div>
+    <a href="#about" class="btn btn-white">
+        📖 Explore School
+    </a>
 
 </div>
-
 </section>
 
 <!-- FEATURES -->
 <section>
-
 <div class="title">
-<h2>Why Choose Us?</h2>
-<p>Everything your child needs to grow</p>
+    <h2>Why Choose Our School?</h2>
+    <p>हम आपके बच्चे के उज्ज्वल भविष्य के लिए प्रतिबद्ध हैं।</p>
 </div>
 
-<div class="features">
+<div class="cards">
 
-<div class="feature">
-<div class="icon">📚</div>
-<h3>Quality Education</h3>
-<p>Strong academic foundation</p>
-</div>
+    <div class="card">
+        <div class="icon">📚</div>
+        <h3>Quality Education</h3>
+        <p>बच्चों को बेहतर एवं गुणवत्तापूर्ण शिक्षा प्रदान करना हमारा लक्ष्य है।</p>
+    </div>
 
-<div class="feature">
-<div class="icon">👨‍🏫</div>
-<h3>Expert Teachers</h3>
-<p>Dedicated teaching staff</p>
-</div>
+    <div class="card">
+        <div class="icon">👨‍🏫</div>
+        <h3>Experienced Teachers</h3>
+        <p>समर्पित एवं अनुभवी शिक्षक बच्चों के सीखने में सहायता करते हैं।</p>
+    </div>
 
-<div class="feature">
-<div class="icon">🏆</div>
-<h3>Activities</h3>
-<p>Learning beyond classrooms</p>
-</div>
-
-<div class="feature">
-<div class="icon">🛡️</div>
-<h3>Safe Environment</h3>
-<p>Secure and caring campus</p>
-</div>
+    <div class="card">
+        <div class="icon">🌟</div>
+        <h3>Bright Future</h3>
+        <p>शिक्षा के साथ संस्कार, आत्मविश्वास और प्रतिभा का विकास।</p>
+    </div>
 
 </div>
+</section>
 
+<!-- ABOUT -->
+<section class="about" id="about">
+
+<div class="about-box">
+
+    <div class="about-text">
+
+        <h2>About Our School</h2>
+
+        <p>
+            <b>Kid's Academy Public School</b> बच्चों के लिए
+            एक बेहतर और सकारात्मक learning environment प्रदान करने
+            के उद्देश्य से कार्य करता है।
+        </p>
+
+        <p>
+            हमारा उद्देश्य विद्यार्थियों में ज्ञान के साथ-साथ
+            अनुशासन, संस्कार, आत्मविश्वास और रचनात्मक सोच विकसित करना है।
+        </p>
+
+        <ul class="points">
+            <li>Quality Education</li>
+            <li>Experienced Teachers</li>
+            <li>Child Friendly Environment</li>
+            <li>Co-Curricular Activities</li>
+            <li>Focus on Overall Development</li>
+        </ul>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🎓</div>
+            <h3>Education</h3>
+            <p>Strong educational foundation for every child.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏆</div>
+            <h3>Activities</h3>
+            <p>Learning through activities and creativity.</p>
+        </div>
+
+    </div>
+
+</div>
 </section>
 
 <!-- PRINCIPAL -->
 <section class="principal" id="principal">
 
 <div class="title">
-<h2>Our Principal</h2>
-<p>Leadership with vision and dedication</p>
+    <h2>Our Principal</h2>
+    <p>Leadership with vision and dedication</p>
 </div>
 
 <div class="principal-box">
 
-<img src="principal.jpg" class="principal-photo" alt="Principal Photo">
+    <!-- अगर principal की photo हो तो principal.jpg नाम रखें -->
+    <img src="principal.jpg"
+         class="principal-photo"
+         alt="Principal">
 
-<div class="principal-info">
+    <div class="principal-info">
 
-<h3>Principal's Name</h3>
+        <h2>School Principal</h2>
 
-<h4>Principal | M.Ed., B.Ed.</h4>
+        <h4>Principal • Kid's Academy Public School</h4>
 
-<p>
-Welcome to Kid's Academy Public School.
-Our aim is to provide every student with
-knowledge, discipline, confidence and
-opportunities to achieve their dreams.
-</p>
+        <p>
+            हमारे Principal का उद्देश्य विद्यार्थियों को
+            गुणवत्तापूर्ण शिक्षा के साथ अनुशासन, संस्कार और
+            आत्मविश्वास प्रदान करना है।
+        </p>
+
+        <p>
+            <b>Qualification:</b> M.A. • B.Ed.
+        </p>
+
+    </div>
 
 </div>
-
-</div>
-
 </section>
 
 <!-- TEACHERS -->
 <section id="teachers">
 
 <div class="title">
-<h2>Our Teachers</h2>
-<p>Our dedicated and experienced teaching team</p>
+    <h2>Our Teachers</h2>
+    <p>Dedicated & Experienced Teaching Team</p>
 </div>
 
-<div class="teachers">
+<div class="teacher-grid">
 
-<div class="teacher">
-<img src="teacher1.jpg" alt="Teacher 1">
-<h3>Teacher 1</h3>
-<p>Experienced Teacher</p>
+    <div class="teacher">
+        <img src="teacher1.jpg" alt="Teacher 1">
+        <h3>Teacher 1</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher2.jpg" alt="Teacher 2">
+        <h3>Teacher 2</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher3.jpg" alt="Teacher 3">
+        <h3>Teacher 3</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher4.jpg" alt="Teacher 4">
+        <h3>Teacher 4</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher5.jpg" alt="Teacher 5">
+        <h3>Teacher 5</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher6.jpg" alt="Teacher 6">
+        <h3>Teacher 6</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher7.jpg" alt="Teacher 7">
+        <h3>Teacher 7</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
+    <div class="teacher">
+        <img src="teacher8.jpg" alt="Teacher 8">
+        <h3>Teacher 8</h3>
+        <p>Experienced Teacher</p>
+    </div>
+
 </div>
-
-<div class="teacher">
-<img src="teacher2.jpg" alt="Teacher 2">
-<h3>Teacher 2</h3>
-<p>Experienced Teacher</p>
-</div>
-
-<div class="teacher">
-<img src="teacher3.jpg" alt="Teacher 3">
-<h3>Teacher 3</h3>
-<p>Experienced Teacher</p>
-</div>
-
-<div class="teacher">
-<img src="teacher4.jpg" alt="Teacher 4">
-<h3>Teacher 4</h3>
-<p>Experienced Teacher</p>
-</div>
-
-<div class="teacher">
-<img src="teacher5.jpg" alt="Teacher 5">
-<h3>Teacher 5</h3>
-<p>Experienced Teacher</p>
-</div>
-
-<div class="teacher">
-<img src="teacher6.jpg" alt="Teacher 6">
-<h3>Teacher 6</h3>
-<p>Experienced Teacher</p>
-</div>
-
-<div class="teacher">
-<img src="teacher7.jpg" alt="Teacher 7">
-<h3>Teacher 7</h3>
-<p>Experienced Teacher</p>
-</div>
-
-<div class="teacher">
-<img src="teacher8.jpg" alt="Teacher 8">
-<h3>Teacher 8</h3>
-<p>Experienced Teacher</p>
-</div>
-
-</div>
-
 </section>
 
 <!-- ADMISSION -->
 <section class="admission" id="admission">
 
 <div class="title">
-
-<h2>Online Admission</h2>
-
-<p>
-Fill the form below for school admission enquiry
-</p>
-
+    <h2>Online Admission</h2>
+    <p>School admission के लिए नीचे form भरें</p>
 </div>
 
-<div class="form-box">
-
-<form onsubmit="submitAdmission(event)">
+<form class="form" onsubmit="submitAdmission(event)">
 
 <div class="form-grid">
 
-<div class="form-group">
-<label>Student Name *</label>
-<input type="text" required placeholder="Enter student name">
-</div>
+    <div class="form-group">
+        <label>Student Name</label>
+        <input type="text" id="studentName"
+               placeholder="Student का नाम" required>
+    </div>
 
-<div class="form-group">
-<label>Father's Name *</label>
-<input type="text" required placeholder="Enter father's name">
-</div>
+    <div class="form-group">
+        <label>Parent Name</label>
+        <input type="text"
+               placeholder="Father / Mother Name" required>
+    </div>
 
-<div class="form-group">
-<label>Mother's Name</label>
-<input type="text" placeholder="Enter mother's name">
-</div>
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="tel"
+               placeholder="Mobile Number" required>
+    </div>
 
-<div class="form-group">
-<label>Mobile Number *</label>
-<input type="tel" required placeholder="Enter mobile number">
-</div>
+    <div class="form-group">
+        <label>Class</label>
+        <select required>
+            <option value="">Select Class</option>
+            <option>Nursery</option>
+            <option>LKG</option>
+            <option>UKG</option>
+            <option>Class 1</option>
+            <option>Class 2</option>
+            <option>Class 3</option>
+            <option>Class 4</option>
+            <option>Class 5</option>
+            <option>Class 6</option>
+            <option>Class 7</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+        </select>
+    </div>
 
-<div class="form-group">
-<label>Date of Birth</label>
-<input type="date">
-</div>
-
-<div class="form-group">
-<label>Class</label>
-<select>
-<option>Select Class</option>
-<option>Nursery</option>
-<option>LKG</option>
-<option>UKG</option>
-<option>Class 1</option>
-<option>Class 2</option>
-<option>Class 3</option>
-<option>Class 4</option>
-<option>Class 5</option>
-<option>Class 6</option>
-<option>Class 7</option>
-<option>Class 8</option>
-<option>Class 9</option>
-<option>Class 10</option>
-</select>
-</div>
-
-<div class="form-group full">
-<label>Address</label>
-<textarea placeholder="Enter complete address"></textarea>
-</div>
+    <div class="form-group full">
+        <label>Address</label>
+        <textarea placeholder="पूरा Address"></textarea>
+    </div>
 
 </div>
 
-<button class="submit" type="submit">
-Submit Admission Enquiry
+<button type="submit" class="submit">
+    📝 Submit Admission Form
 </button>
 
 </form>
-
-</div>
-
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section class="gallery" id="gallery">
 
 <div class="title">
-<h2>School Gallery</h2>
-<p>Memories and activities of our school</p>
+    <h2>School Gallery</h2>
+    <p>हमारे स्कूल की यादगार झलकियाँ</p>
 </div>
 
-<div class="gallery">
+<div class="gallery-grid">
 
-<div class="gallery-box">🏫</div>
-<div class="gallery-box">📚</div>
-<div class="gallery-box">👨‍🏫</div>
-<div class="gallery-box">🎨</div>
-<div class="gallery-box">🏆</div>
-<div class="gallery-box">🌳</div>
+    <div class="gallery-item">
+        <img src="gallery1.jpg" alt="School Activity">
+    </div>
+
+    <div class="gallery-item">
+        <img src="gallery2.jpg" alt="School Event">
+    </div>
+
+    <div class="gallery-item">
+        <img src="gallery3.jpg" alt="Students">
+    </div>
+
+    <div class="gallery-item">
+        <img src="gallery4.jpg" alt="School Campus">
+    </div>
+
+    <div class="gallery-item">
+        <img src="gallery5.jpg" alt="School Function">
+    </div>
+
+    <div class="gallery-item">
+        <img src="gallery6.jpg" alt="School Activity">
+    </div>
 
 </div>
-
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section class="contact" id="contact">
 
 <div class="title">
-<h2>Contact Us</h2>
-<p>We are happy to help you</p>
+    <h2>Contact Us</h2>
+    <p>हमसे संपर्क करने के लिए</p>
 </div>
 
-<div class="contact">
+<div class="contact-grid">
 
-<div class="contact-box">
-<div class="icon">📍</div>
-<h3>Address</h3>
-<p>Kid's Academy Public School</p>
+    <div class="contact-card">
+        <div class="icon">📍</div>
+        <h3>School Address</h3>
+        <p>
+            Kid's Academy Public School<br>
+            Manikpur, Pirpainti<br>
+            Bhagalpur, Bihar
+        </p>
+    </div>
+
+    <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Phone</h3>
+        <p>School Office<br>Contact Number</p>
+    </div>
+
+    <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h3>Email</h3>
+        <p>School Email Address</p>
+    </div>
+
 </div>
-
-<div class="contact-box">
-<div class="icon">📞</div>
-<h3>Phone</h3>
-<p>Contact School Office</p>
-</div>
-
-<div class="contact-box">
-<div class="icon">✉️</div>
-<h3>Email</h3>
-<p>school@example.com</p>
-</div>
-
-</div>
-
 </section>
 
 <!-- FOOTER -->
 <footer>
 
-<p>© 2026 Kid's Academy Public School</p>
+    <h2>Kid's Academy Public School</h2>
 
-<p>LEARN • GROW • SUCCEED</p>
+    <p>Learn • Grow • Succeed</p>
+
+    <div class="social">
+        <a href="#">f</a>
+        <a href="#">▶</a>
+        <a href="#">in</a>
+    </div>
+
+    <p>
+        © 2026 Kid's Academy Public School. All Rights Reserved.
+    </p>
 
 </footer>
 
 <script>
 
+function toggleMenu(){
+    document.getElementById("nav").classList.toggle("show");
+}
+
 function submitAdmission(event){
 
-event.preventDefault();
+    event.preventDefault();
 
-alert(
-"Thank you! Your admission enquiry has been submitted."
-);
+    let name = document.getElementById("studentName").value;
+
+    alert(
+        "Thank you! " + name +
+        " का Admission Form successfully submit हो गया है."
+    );
 
 }
 
