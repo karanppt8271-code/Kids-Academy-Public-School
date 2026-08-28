@@ -6,6 +6,9 @@
 
 <title>Kid's Academy Public School</title>
 
+<meta name="description" content="Kid's Academy Public School - Quality Education, Experienced Teachers and Bright Future.">
+<meta name="keywords" content="Kid's Academy Public School, school, education, admission">
+
 <style>
 *{
     margin:0;
@@ -16,224 +19,452 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:#f5f8ff;
-    color:#222;
+    background:#f4f7fb;
+    color:#17233c;
 }
 
-header{
-    background:linear-gradient(135deg,#123c88,#1677d2);
+/* TOP BAR */
+.topbar{
+    background:#071d49;
     color:white;
-    padding:25px 6%;
+    padding:8px 6%;
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 4px 15px rgba(0,0,0,.2);
-}
-
-.logo h1{
-    font-size:27px;
-}
-
-.logo p{
-    font-size:13px;
-    margin-top:5px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 8px;
-    font-weight:bold;
     font-size:14px;
 }
 
-nav a:hover{
-    color:#ffd43b;
+/* HEADER */
+header{
+    background:white;
+    padding:15px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.hero{
-    min-height:88vh;
+.logo-area{
     display:flex;
-    justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:40px 20px;
-    background:
-    linear-gradient(rgba(10,45,100,.75),rgba(10,45,100,.75)),
-    linear-gradient(135deg,#5aa9ff,#8ed1ff);
+    gap:15px;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.logo-area h1{
+    color:#09265c;
+    font-size:25px;
+}
+
+.logo-area p{
+    color:#e7a900;
+    font-weight:bold;
+    font-size:13px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#17233c;
+    font-weight:bold;
+    margin-left:20px;
+}
+
+nav a:hover{
+    color:#e4a900;
+}
+
+/* HERO */
+.hero{
+    min-height:570px;
+    background:linear-gradient(135deg,#08235a,#1767b1);
     color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero-content{
+    max-width:900px;
 }
 
 .hero h2{
-    font-size:50px;
-    margin-bottom:15px;
+    font-size:52px;
+    margin-bottom:20px;
 }
 
 .hero p{
     font-size:20px;
-    margin-bottom:25px;
+    line-height:1.7;
+    margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:13px 25px;
-    background:#ffd43b;
-    color:#111;
-    text-decoration:none;
+    padding:14px 28px;
     border-radius:30px;
+    text-decoration:none;
     font-weight:bold;
-    margin:5px;
-    border:none;
-    cursor:pointer;
+    margin:7px;
+    background:#f2b300;
+    color:#071d49;
 }
 
 .btn:hover{
-    transform:scale(1.05);
-    background:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
+.btn-white{
+    background:white;
+}
+
+/* SECTIONS */
 section{
-    padding:70px 7%;
+    padding:75px 7%;
 }
 
 .title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
 .title h2{
-    font-size:35px;
-    color:#123c88;
+    font-size:36px;
+    color:#08265e;
+    margin-bottom:10px;
 }
 
 .title p{
-    margin-top:10px;
     color:#666;
 }
 
-.cards{
+/* ABOUT */
+.about{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
 }
 
-.card{
+.about-box{
     background:white;
-    padding:30px;
-    border-radius:18px;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.about-box h3{
+    color:#0a55a5;
+    margin-bottom:15px;
+    font-size:26px;
+}
+
+.about-box p{
+    line-height:1.8;
+    color:#555;
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature{
+    background:white;
+    padding:30px 20px;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-    transition:.3s;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.icon{
+.feature .icon{
     font-size:45px;
     margin-bottom:15px;
 }
 
-.card h3{
-    color:#123c88;
-    margin-bottom:12px;
+/* PRINCIPAL */
+.principal{
+    background:#eaf2ff;
 }
 
-.admission{
-    background:linear-gradient(135deg,#e8f2ff,#ffffff);
-}
-
-.admission-box{
+.principal-box{
     max-width:900px;
     margin:auto;
     background:white;
     padding:35px;
-    border-radius:20px;
-    box-shadow:0 5px 25px rgba(0,0,0,.12);
+    border-radius:25px;
+    display:flex;
+    gap:35px;
+    align-items:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
-.form-row{
+.principal-photo{
+    width:190px;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+    border:5px solid #e5ae16;
+    background:#ddd;
+}
+
+.principal-info h3{
+    font-size:30px;
+    color:#08265e;
+    margin-bottom:10px;
+}
+
+.principal-info h4{
+    color:#d09200;
+    margin-bottom:15px;
+}
+
+.principal-info p{
+    line-height:1.8;
+    color:#555;
+}
+
+/* TEACHERS */
+.teachers{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.teacher{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.teacher:hover{
+    transform:translateY(-8px);
+}
+
+.teacher img{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #e7ad16;
+    background:#ddd;
+}
+
+.teacher h3{
+    margin:15px 0 7px;
+    color:#09265c;
+}
+
+.teacher p{
+    color:#666;
+}
+
+/* ADMISSION */
+.admission{
+    background:linear-gradient(135deg,#08235a,#155ca3);
+    color:white;
+}
+
+.admission .title h2,
+.admission .title p{
+    color:white;
+}
+
+.form-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    color:#17233c;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.form-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:20px;
+    gap:18px;
 }
 
-input,select{
-    width:100%;
-    padding:14px;
-    margin:8px 0 18px;
-    border:1px solid #ccc;
-    border-radius:10px;
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    padding:13px;
+    border:1px solid #ccd4df;
+    border-radius:8px;
     font-size:15px;
 }
 
-label{
-    font-weight:bold;
-    color:#333;
+.form-group textarea{
+    min-height:100px;
 }
 
+.submit{
+    margin-top:20px;
+    width:100%;
+    border:none;
+    padding:15px;
+    background:#e7ad16;
+    color:#071d49;
+    font-size:17px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+}
 
-
+/* GALLERY */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.gallery div{
-    height:180px;
+.gallery-box{
+    height:210px;
+    background:linear-gradient(135deg,#dceaff,#fff);
     border-radius:18px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:55px;
-    background:linear-gradient(135deg,#d8ebff,#fff);
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    font-size:60px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
+/* CONTACT */
 .contact{
-    background:#123c88;
-    color:white;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.contact .title h2{
-    color:white;
-}
-
-.contact-card{
+.contact-box{
+    background:white;
+    padding:30px;
     text-align:center;
-    font-size:18px;
-    line-height:2;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
+.contact-box .icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+/* FOOTER */
 footer{
-    background:#092653;
+    background:#071a40;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px 20px;
 }
 
-@media(max-width:800px){
+footer p{
+    margin:7px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .topbar{
+        display:none;
+    }
+
     header{
         flex-direction:column;
         gap:15px;
     }
 
     nav{
-        text-align:center;
-        line-height:2.5;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    nav a{
+        margin:5px;
+        font-size:14px;
     }
 
     .hero h2{
-        font-size:35px;
+        font-size:36px;
     }
 
-    .form-row{
+    .features,
+    .teachers{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about,
+    .contact{
         grid-template-columns:1fr;
+    }
+
+    .principal-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:55px 5%;
+    }
+
+    .features,
+    .teachers,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .logo-area h1{
+        font-size:20px;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero h2{
+        font-size:30px;
     }
 }
 </style>
@@ -241,315 +472,373 @@ footer{
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+    <span>🎓 Quality Education for a Bright Future</span>
+    <span>📚 Kid's Academy Public School</span>
+</div>
+
 <!-- HEADER -->
 <header>
-    <div class="logo">
-        <h1>🎓 Kid's Academy Public School</h1>
-        <p>Quality Education • Bright Future</p>
+
+<div class="logo-area">
+    <img src="school-logo.png" class="logo" alt="School Logo">
+    <div>
+        <h1>Kid's Academy Public School</h1>
+        <p>LEARN • GROW • SUCCEED</p>
     </div>
+</div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#teachers">Teachers</a>
-        <a href="#admission">Admission</a>
-        <a href="#principal">Principal</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#principal">Principal</a>
+    <a href="#teachers">Teachers</a>
+    <a href="#admission">Admission</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 </header>
-
 
 <!-- HOME -->
 <section class="hero" id="home">
-    <div>
-        <h2>Welcome to Kid's Academy Public School</h2>
 
-        <p>
-            शिक्षा, संस्कार और सफलता की ओर आपका पहला कदम
-        </p>
+<div class="hero-content">
 
-        <a href="#admission" class="btn">🎓 Admission Open</a>
-      
-    </div>
+<h2>Welcome to Kid's Academy Public School</h2>
+
+<p>
+A place where children learn, grow, discover their talents
+and build a bright future with knowledge and confidence.
+</p>
+
+<a href="#admission" class="btn">📝 Apply for Admission</a>
+
+<a href="#about" class="btn btn-white">🏫 Explore School</a>
+
+</div>
+
 </section>
-
 
 <!-- ABOUT -->
 <section id="about">
-    <div class="title">
-        <h2>About Our School</h2>
-        <p>हम बच्चों के उज्ज्वल भविष्य के लिए प्रतिबद्ध हैं</p>
-    </div>
 
-    <div class="cards">
+<div class="title">
+<h2>About Our School</h2>
+<p>Building strong foundations for a successful future</p>
+</div>
 
-        <div class="card">
-            <div class="icon">🏫</div>
-            <h3>Modern Education</h3>
-            <p>
-                आधुनिक शिक्षा प्रणाली और बेहतर learning environment.
-            </p>
-        </div>
+<div class="about">
 
-        <div class="card">
-            <div class="icon">👨‍🏫</div>
-            <h3>Experienced Teachers</h3>
-            <p>
-                Dedicated और experienced teachers द्वारा शिक्षा.
-            </p>
-        </div>
+<div class="about-box">
+<h3>🎓 Quality Education</h3>
+<p>
+Kid's Academy Public School is committed to providing
+quality education in a safe, friendly and inspiring
+environment. Our goal is to develop knowledgeable,
+confident and responsible students.
+</p>
+</div>
 
-        <div class="card">
-            <div class="icon">📚</div>
-            <h3>Quality Learning</h3>
-            <p>
-                बच्चों की क्षमता के अनुसार quality education.
-            </p>
-        </div>
+<div class="about-box">
+<h3>🌟 Our Mission</h3>
+<p>
+We focus on academic excellence, discipline,
+creativity, good values and overall development
+of every child.
+</p>
+</div>
 
-        <div class="card">
-            <div class="icon">🏆</div>
-            <h3>Bright Future</h3>
-            <p>
-                बच्चों को भविष्य की चुनौतियों के लिए तैयार करना.
-            </p>
-        </div>
+</div>
 
-    </div>
 </section>
-<!-- PRINCIPAL -->
-<section id="principal">
-    <div class="title">
-        <h2>👩‍💼 Our Principal</h2>
-        <p>School Leadership</p>
-    </div> 
-    <div class="cards">
-        <div class="card">
-            <div class="icon">👩‍💼</div>
-            <h3>Principal</h3>
-            <p>Experienced & Dedicated Principal</p>
 
-            
+<!-- FEATURES -->
+<section>
+
+<div class="title">
+<h2>Why Choose Us?</h2>
+<p>Everything your child needs to grow</p>
+</div>
+
+<div class="features">
+
+<div class="feature">
+<div class="icon">📚</div>
+<h3>Quality Education</h3>
+<p>Strong academic foundation</p>
+</div>
+
+<div class="feature">
+<div class="icon">👨‍🏫</div>
+<h3>Expert Teachers</h3>
+<p>Dedicated teaching staff</p>
+</div>
+
+<div class="feature">
+<div class="icon">🏆</div>
+<h3>Activities</h3>
+<p>Learning beyond classrooms</p>
+</div>
+
+<div class="feature">
+<div class="icon">🛡️</div>
+<h3>Safe Environment</h3>
+<p>Secure and caring campus</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRINCIPAL -->
+<section class="principal" id="principal">
+
+<div class="title">
+<h2>Our Principal</h2>
+<p>Leadership with vision and dedication</p>
+</div>
+
+<div class="principal-box">
+
+<img src="principal.jpg" class="principal-photo" alt="Principal Photo">
+
+<div class="principal-info">
+
+<h3>Principal's Name</h3>
+
+<h4>Principal | M.Ed., B.Ed.</h4>
+
+<p>
+Welcome to Kid's Academy Public School.
+Our aim is to provide every student with
+knowledge, discipline, confidence and
+opportunities to achieve their dreams.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- TEACHERS -->
 <section id="teachers">
-    <div class="title">
-        <h2>Our Teachers</h2>
-        <p>हमारे dedicated teachers</p>
-    </div>
 
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">👩‍🏫</div>
-            <h3>Radhika</h3>
-            <p>Dedicated & Experienced Teacher</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">👨‍🏫</div>
-            <h3>Karan</h3>
-            <p>Dedicated & Experienced Teacher</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">👩‍🏫</div>
-            <h3>Teacher 3</h3>
-            <p>Dedicated & Experienced Teacher</p>
-        </div>
-<div class="card">
-    <div class="icon">👩‍🏫</div>
-    <h3>Teacher 4</h3>
-    <p>Dedicated & Experienced Teacher</p>
+<div class="title">
+<h2>Our Teachers</h2>
+<p>Our dedicated and experienced teaching team</p>
 </div>
 
-<div class="card">
-    <div class="icon">👨‍🏫</div>
-    <h3>Teacher 5</h3>
-    <p>Dedicated & Experienced Teacher</p>
+<div class="teachers">
+
+<div class="teacher">
+<img src="teacher1.jpg" alt="Teacher 1">
+<h3>Teacher 1</h3>
+<p>Experienced Teacher</p>
 </div>
 
-<div class="card">
-    <div class="icon">👩‍🏫</div>
-    <h3>Teacher 6</h3>
-    <p>Dedicated & Experienced Teacher</p>
+<div class="teacher">
+<img src="teacher2.jpg" alt="Teacher 2">
+<h3>Teacher 2</h3>
+<p>Experienced Teacher</p>
 </div>
 
-<div class="card">
-    <div class="icon">👨‍🏫</div>
-    <h3>Teacher 7</h3>
-    <p>Dedicated & Experienced Teacher</p>
+<div class="teacher">
+<img src="teacher3.jpg" alt="Teacher 3">
+<h3>Teacher 3</h3>
+<p>Experienced Teacher</p>
 </div>
 
-<div class="card">
-    <div class="icon">👩‍🏫</div>
-    <h3>Teacher 8</h3>
-    <p>Dedicated & Experienced Teacher</p>
+<div class="teacher">
+<img src="teacher4.jpg" alt="Teacher 4">
+<h3>Teacher 4</h3>
+<p>Experienced Teacher</p>
 </div>
-    </div>
-</section>
 
-    </div>
+<div class="teacher">
+<img src="teacher5.jpg" alt="Teacher 5">
+<h3>Teacher 5</h3>
+<p>Experienced Teacher</p>
+</div>
+
+<div class="teacher">
+<img src="teacher6.jpg" alt="Teacher 6">
+<h3>Teacher 6</h3>
+<p>Experienced Teacher</p>
+</div>
+
+<div class="teacher">
+<img src="teacher7.jpg" alt="Teacher 7">
+<h3>Teacher 7</h3>
+<p>Experienced Teacher</p>
+</div>
+
+<div class="teacher">
+<img src="teacher8.jpg" alt="Teacher 8">
+<h3>Teacher 8</h3>
+<p>Experienced Teacher</p>
+</div>
+
+</div>
+
 </section>
 
 <!-- ADMISSION -->
 <section class="admission" id="admission">
 
-    <div class="title">
-        <h2>🎓 Online Admission</h2>
-        <p>School admission के लिए form भरें</p>
-    </div>
+<div class="title">
 
-    <div class="admission-box">
+<h2>Online Admission</h2>
 
-        <form onsubmit="submitAdmission(event)">
+<p>
+Fill the form below for school admission enquiry
+</p>
 
-            <div class="form-row">
+</div>
 
-                <div>
-                    <label>Student Name</label>
-                    <input type="text" id="studentName"
-                    placeholder="Student का नाम" required>
-                </div>
+<div class="form-box">
 
-                <div>
-                    <label>Father's Name</label>
-                    <input type="text" id="fatherName"
-                    placeholder="Father का नाम" required>
-                </div>
+<form onsubmit="submitAdmission(event)">
 
-            </div>
+<div class="form-grid">
 
-            <div class="form-row">
+<div class="form-group">
+<label>Student Name *</label>
+<input type="text" required placeholder="Enter student name">
+</div>
 
-                <div>
-                    <label>Class</label>
+<div class="form-group">
+<label>Father's Name *</label>
+<input type="text" required placeholder="Enter father's name">
+</div>
 
-                    <select id="className" required>
-                        <option value="">Class चुनें</option>
-                        <option>Nursery</option>
-                        <option>LKG</option>
-                        <option>UKG</option>
-                        <option>Class 1</option>
-                        <option>Class 2</option>
-                        <option>Class 3</option>
-                        <option>Class 4</option>
-                        <option>Class 5</option>
-                        <option>Class 6</option>
-                        <option>Class 7</option>
-                        <option>Class 8</option>
-                        <option>Class 9</option>
-                        <option>Class 10</option>
-                    </select>
-                </div>
+<div class="form-group">
+<label>Mother's Name</label>
+<input type="text" placeholder="Enter mother's name">
+</div>
 
-                <div>
-                    <label>Mobile Number</label>
-                    <input type="tel" id="mobile"
-                    placeholder="Mobile Number" required>
-                </div>
+<div class="form-group">
+<label>Mobile Number *</label>
+<input type="tel" required placeholder="Enter mobile number">
+</div>
 
-            </div>
+<div class="form-group">
+<label>Date of Birth</label>
+<input type="date">
+</div>
 
-            <label>Address</label>
+<div class="form-group">
+<label>Class</label>
+<select>
+<option>Select Class</option>
+<option>Nursery</option>
+<option>LKG</option>
+<option>UKG</option>
+<option>Class 1</option>
+<option>Class 2</option>
+<option>Class 3</option>
+<option>Class 4</option>
+<option>Class 5</option>
+<option>Class 6</option>
+<option>Class 7</option>
+<option>Class 8</option>
+<option>Class 9</option>
+<option>Class 10</option>
+</select>
+</div>
 
-            <input type="text" id="address"
-            placeholder="पूरा पता" required>
+<div class="form-group full">
+<label>Address</label>
+<textarea placeholder="Enter complete address"></textarea>
+</div>
 
-            <div style="text-align:center;">
-                <button class="btn" type="submit">
-                    Submit Admission
-                </button>
-            </div>
+</div>
 
-        </form>
+<button class="submit" type="submit">
+Submit Admission Enquiry
+</button>
 
-        <p id="admissionMessage"
-        style="text-align:center;margin-top:20px;font-weight:bold;">
-        </p>
+</form>
 
-    </div>
-
-</section>
-
-
-
-    </div>
+</div>
 
 </section>
-
 
 <!-- GALLERY -->
 <section id="gallery">
 
-    <div class="title">
-        <h2>📸 School Gallery</h2>
-        <p>School activities और memories</p>
-    </div>
+<div class="title">
+<h2>School Gallery</h2>
+<p>Memories and activities of our school</p>
+</div>
 
-    <div class="gallery">
+<div class="gallery">
 
-        <div>🏫</div>
-        <div>👨‍🎓</div>
-        <div>👩‍🎓</div>
-        <div>📚</div>
-        <div>⚽</div>
-        <div>🎨</div>
+<div class="gallery-box">🏫</div>
+<div class="gallery-box">📚</div>
+<div class="gallery-box">👨‍🏫</div>
+<div class="gallery-box">🎨</div>
+<div class="gallery-box">🏆</div>
+<div class="gallery-box">🌳</div>
 
-    </div>
+</div>
 
 </section>
-
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section id="contact">
 
-    <div class="title">
-        <h2>Contact Us</h2>
-        <p>हमसे संपर्क करें</p>
-    </div>
+<div class="title">
+<h2>Contact Us</h2>
+<p>We are happy to help you</p>
+</div>
 
-    <div class="contact-card">
+<div class="contact">
 
-        <p>🏫 Kid's Academy Public School</p>
-        <p>📍 Manikpur, Pirpainti Bazar</p>
-        <p>📞 +91 XXXXXXXXXX</p>
-        <p>✉️ school@example.com</p>
+<div class="contact-box">
+<div class="icon">📍</div>
+<h3>Address</h3>
+<p>Kid's Academy Public School</p>
+</div>
 
-    </div>
+<div class="contact-box">
+<div class="icon">📞</div>
+<h3>Phone</h3>
+<p>Contact School Office</p>
+</div>
+
+<div class="contact-box">
+<div class="icon">✉️</div>
+<h3>Email</h3>
+<p>school@example.com</p>
+</div>
+
+</div>
 
 </section>
-
 
 <!-- FOOTER -->
 <footer>
 
-    <p>
-        © 2026 Kid's Academy Public School |
-        All Rights Reserved
-    </p>
+<p>© 2026 Kid's Academy Public School</p>
+
+<p>LEARN • GROW • SUCCEED</p>
 
 </footer>
-
 
 <script>
 
 function submitAdmission(event){
 
-    event.preventDefault();
+event.preventDefault();
 
-    let name = document.getElementById("studentName").value;
-    let studentClass = document.getElementById("className").value;
-
-    document.getElementById("admissionMessage").innerHTML =
-    "✅ धन्यवाद " + name +
-    "! आपकी admission enquiry Class " +
-    studentClass + " के लिए प्राप्त हो गई है।";
+alert(
+"Thank you! Your admission enquiry has been submitted."
+);
 
 }
-
-
-
 
 </script>
 
