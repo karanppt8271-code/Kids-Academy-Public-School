@@ -1149,6 +1149,617 @@ function submitAdmission(event){
 }
 
 </script>
+<!-- ============================= -->
+<!-- GALLERY + FACILITIES + ADMISSION + CONTACT -->
+<!-- ============================= -->
 
+<style>
+/* ===== COMMON SECTION STYLE ===== */
+.pro-section {
+  padding: 70px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.pro-container {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.pro-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.pro-title span {
+  display: inline-block;
+  background: #e8f1ff;
+  color: #1769aa;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.pro-title h2 {
+  font-size: 38px;
+  margin: 15px 0 10px;
+  color: #172554;
+}
+
+.pro-title p {
+  color: #666;
+  font-size: 17px;
+}
+
+
+/* ===== GALLERY ===== */
+.gallery-section {
+  background: linear-gradient(135deg, #f8fbff, #eef6ff);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+  transition: 0.3s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.16);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card h3 {
+  margin: 0;
+  padding: 18px;
+  text-align: center;
+  color: #172554;
+}
+
+
+/* ===== FACILITIES ===== */
+.facilities-section {
+  background: white;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.facility-card {
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s;
+}
+
+.facility-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+}
+
+.facility-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.facility-card h3 {
+  color: #172554;
+  margin: 10px 0;
+}
+
+.facility-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* ===== ADMISSION ===== */
+.admission-section {
+  background: linear-gradient(135deg, #172554, #2563eb);
+  color: white;
+}
+
+.admission-box {
+  max-width: 950px;
+  margin: auto;
+  text-align: center;
+  padding: 55px 30px;
+}
+
+.admission-box h2 {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.admission-box p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.admission-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.admission-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.call-btn {
+  background: white;
+  color: #172554;
+}
+
+.whatsapp-btn {
+  background: #22c55e;
+  color: white;
+}
+
+.admission-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== CONTACT ===== */
+.contact-section {
+  background: #f8fafc;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.contact-card h3 {
+  color: #172554;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 22px 0;
+}
+
+.contact-icon {
+  font-size: 28px;
+  min-width: 40px;
+}
+
+.contact-item strong {
+  color: #172554;
+}
+
+.contact-item p {
+  margin: 5px 0 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 25px;
+  border-radius: 30px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-btn:hover {
+  background: #172554;
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .pro-section {
+    padding: 50px 15px;
+  }
+
+  .pro-title h2 {
+    font-size: 30px;
+  }
+
+  .gallery-grid,
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card img {
+    height: 220px;
+  }
+
+  .admission-box h2 {
+    font-size: 30px;
+  }
+}
+</style>
+
+
+<!-- ============================= -->
+<!-- GALLERY -->
+<!-- ============================= -->
+
+<section class="pro-section gallery-section" id="gallery">
+
+  <div class="pro-container">
+
+    <div class="pro-title">
+      <span>📸 OUR GALLERY</span>
+      <h2>School Gallery</h2>
+      <p>विद्यालय की गतिविधियों और यादगार पलों की झलक</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="school-logo.png" alt="Kid's Academy Public School">
+        <h3>Our School</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="principal.jpg" alt="School Principal">
+        <h3>Our Principal</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="Classroom">
+        <h3>Classroom</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80" alt="Students">
+        <h3>Students</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=900&q=80" alt="School Activity">
+        <h3>School Activities</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80" alt="Learning">
+        <h3>Learning Together</h3>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- FACILITIES -->
+<!-- ============================= -->
+
+<section class="pro-section facilities-section" id="facilities">
+
+  <div class="pro-container">
+
+    <div class="pro-title">
+      <span>⭐ OUR FACILITIES</span>
+      <h2>Why Choose Our School?</h2>
+      <p>बच्चों के बेहतर विकास के लिए हमारी सुविधाएँ</p>
+    </div>
+
+    <div class="facilities-grid">
+
+      <div class="facility-card">
+        <div class="facility-icon">📚</div>
+        <h3>Quality Education</h3>
+        <p>
+          विद्यार्थियों को गुणवत्तापूर्ण और उपयोगी शिक्षा प्रदान करना।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">👩‍🏫</div>
+        <h3>Dedicated Teachers</h3>
+        <p>
+          बच्चों के विकास के लिए समर्पित एवं सहयोगी शिक्षक।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">💻</div>
+        <h3>Computer Education</h3>
+        <p>
+          विद्यार्थियों को आधुनिक तकनीक और computer education से परिचित कराना।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">⚽</div>
+        <h3>Sports & Activities</h3>
+        <p>
+          खेल एवं रचनात्मक गतिविधियों द्वारा बच्चों का सर्वांगीण विकास।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">🎨</div>
+        <h3>Creative Learning</h3>
+        <p>
+          बच्चों में creativity और नई चीजें सीखने की क्षमता विकसित करना।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">🛡️</div>
+        <h3>Safe Environment</h3>
+        <p>
+          बच्चों के लिए सुरक्षित, अनुशासित और सकारात्मक वातावरण।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">🌱</div>
+        <h3>Good Values</h3>
+        <p>
+          शिक्षा के साथ अच्छे संस्कार और नैतिक मूल्यों पर ध्यान।
+        </p>
+      </div>
+
+      <div class="facility-card">
+        <div class="facility-icon">🏆</div>
+        <h3>Bright Future</h3>
+        <p>
+          विद्यार्थियों को आत्मविश्वास के साथ भविष्य के लिए तैयार करना।
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- ADMISSION -->
+<!-- ============================= -->
+
+<section class="pro-section admission-section" id="admission">
+
+  <div class="admission-box">
+
+    <span>🎓 ADMISSIONS OPEN</span>
+
+    <h2>Admission Open 2026–27</h2>
+
+    <p>
+      Kid's Academy Public School में नए सत्र के लिए Admission शुरू है।
+      अपने बच्चे के उज्ज्वल भविष्य के लिए आज ही संपर्क करें।
+    </p>
+
+    <div class="admission-buttons">
+
+      <a
+        href="tel:9931780962"
+        class="admission-btn call-btn">
+        📞 Call Now
+      </a>
+
+      <a
+        href="https://wa.me/919931780962?text=Hello%20Kid's%20Academy%20Public%20School,%20I%20want%20information%20about%20admission."
+        target="_blank"
+        class="admission-btn whatsapp-btn">
+        💬 WhatsApp Enquiry
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- CONTACT -->
+<!-- ============================= -->
+
+<section class="pro-section contact-section" id="contact">
+
+  <div class="pro-container">
+
+    <div class="pro-title">
+      <span>📞 CONTACT US</span>
+      <h2>Get In Touch</h2>
+      <p>Admission और अन्य जानकारी के लिए हमसे संपर्क करें</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- SCHOOL INFORMATION -->
+      <div class="contact-card">
+
+        <h3>🏫 School Information</h3>
+
+        <div class="contact-item">
+          <div class="contact-icon">🏫</div>
+          <div>
+            <strong>School Name</strong>
+            <p>Kid's Academy Public School</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <strong>Address</strong>
+            <p>Manikpur, Pirpainti Bazar</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📅</div>
+          <div>
+            <strong>Established</strong>
+            <p>2021</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">👨‍🏫</div>
+          <div>
+            <strong>Principal</strong>
+            <p>Md Imtiyaz (Monu)</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- CONTACT DETAILS -->
+      <div class="contact-card">
+
+        <h3>📱 Contact Details</h3>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <strong>Phone Number</strong>
+            <p>9931780962</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🎓</div>
+          <div>
+            <strong>Principal Qualification</strong>
+            <p>B.Com & B.Ed</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🕘</div>
+          <div>
+            <strong>Admission Enquiry</strong>
+            <p>Call us for admission information.</p>
+          </div>
+        </div>
+
+        <a
+          href="tel:9931780962"
+          class="contact-btn">
+          📞 Call School
+        </a>
+
+        <a
+          href="https://wa.me/919931780962"
+          target="_blank"
+          class="contact-btn">
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- PROFESSIONAL FOOTER -->
+<!-- ============================= -->
+
+<footer style="
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:35px 20px;
+">
+
+  <img
+    src="school-logo.png"
+    alt="School Logo"
+    style="
+      width:75px;
+      height:75px;
+      object-fit:contain;
+      border-radius:50%;
+      background:white;
+      padding:5px;
+    "
+  >
+
+  <h3 style="margin:15px 0 8px;">
+    Kid's Academy Public School
+  </h3>
+
+  <p style="margin:5px 0;color:#cbd5e1;">
+    Manikpur, Pirpainti Bazar
+  </p>
+
+  <p style="margin:5px 0;color:#cbd5e1;">
+    📞 9931780962
+  </p>
+
+  <p style="
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid #334155;
+    color:#94a3b8;
+  ">
+    © 2026 Kid's Academy Public School. All Rights Reserved.
+  </p>
+
+</footer>
 </body>
 </html>
