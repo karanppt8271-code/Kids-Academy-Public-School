@@ -1760,31 +1760,64 @@ function submitAdmission(event){
   ">
     © 2026 Kid's Academy Public School. All Rights Reserved.
   </p>
-<!-- ================================
-     PROFESSIONAL EXAM ADMIT CARD
-================================ -->
+<!-- =====================================================
+     KID'S ACADEMY PUBLIC SCHOOL
+     ONLINE EXAM ADMIT CARD
+===================================================== -->
 
-<section id="admit-card" class="admit-card-section">
+<section id="admit-card" class="admit-section">
 
-    <div class="admit-title">
-        <span>🎓 EXAMINATION</span>
-        <h2>Admit Card</h2>
-        <p>Kid's Academy Public School</p>
+    <div class="admit-heading">
+        <div class="cap">🎓</div>
+
+        <h2>Exam Admit Card</h2>
+
+        <p>
+            Kid's Academy Public School
+        </p>
     </div>
 
-    <div class="admit-card">
 
-        <!-- SCHOOL HEADER -->
-        <div class="admit-header">
+    <!-- SEARCH BOX -->
 
-            <!-- SCHOOL LOGO -->
+    <div class="search-box">
+
+        <h3>🔍 Find Your Admit Card</h3>
+
+        <p>Enter your Roll Number</p>
+
+        <input
+            type="text"
+            id="rollInput"
+            placeholder="Enter Roll Number"
+            maxlength="10"
+        >
+
+        <button onclick="searchAdmitCard()">
+            Search Admit Card
+        </button>
+
+        <p id="errorMessage" class="error-message">
+            ❌ Roll Number नहीं मिला।
+        </p>
+
+    </div>
+
+
+    <!-- ADMIT CARD -->
+
+    <div id="admitCard" class="admit-card">
+
+        <div class="school-header">
+
             <img
                 src="school-logo.png"
-                alt="Kid's Academy Public School Logo"
-                class="admit-logo"
+                alt="School Logo"
+                class="school-logo"
             >
 
-            <div class="school-info">
+            <div>
+
                 <h1>Kid's Academy Public School</h1>
 
                 <p>
@@ -1794,396 +1827,756 @@ function submitAdmission(event){
                 <p>
                     Established: 2021
                 </p>
+
             </div>
 
         </div>
 
 
         <div class="exam-heading">
+
             <h2>EXAMINATION ADMIT CARD</h2>
-            <p>Academic Session 2026–27</p>
+
+            <p>
+                Annual Examination 2026–27
+            </p>
+
         </div>
 
 
-        <!-- STUDENT DETAILS -->
-        <div class="student-details">
+        <div class="student-info">
 
-            <div class="detail-box">
+            <div>
                 <span>👤 Student Name</span>
-                <strong>________________________</strong>
+                <strong id="studentName"></strong>
             </div>
 
-            <div class="detail-box">
+            <div>
                 <span>🔢 Roll Number</span>
-                <strong>________________________</strong>
+                <strong id="studentRoll"></strong>
             </div>
 
-            <div class="detail-box">
+            <div>
                 <span>📚 Class</span>
-                <strong>________________________</strong>
+                <strong id="studentClass"></strong>
             </div>
 
-            <div class="detail-box">
+            <div>
                 <span>📝 Examination</span>
                 <strong>Annual Examination</strong>
             </div>
 
-        </div>
-
-
-        <!-- EXAM DETAILS -->
-        <div class="exam-info">
-
             <div>
                 <span>📅 Exam Date</span>
-                <strong>________________</strong>
+                <strong id="examDate"></strong>
             </div>
 
             <div>
                 <span>⏰ Exam Time</span>
-                <strong>________________</strong>
+                <strong id="examTime"></strong>
             </div>
 
         </div>
 
 
-        <!-- INSTRUCTIONS -->
         <div class="instructions">
 
             <h3>📌 Important Instructions</h3>
 
             <ul>
-                <li>Admit Card परीक्षा के समय साथ लाना अनिवार्य है।</li>
-                <li>विद्यार्थी परीक्षा शुरू होने से 15 मिनट पहले विद्यालय पहुँचें।</li>
-                <li>परीक्षा कक्ष में अनुशासन बनाए रखें।</li>
-                <li>अपनी आवश्यक stationery साथ लेकर आएँ।</li>
+
+                <li>
+                    Admit Card परीक्षा के समय साथ लाना अनिवार्य है।
+                </li>
+
+                <li>
+                    विद्यार्थी परीक्षा शुरू होने से 15 मिनट पहले विद्यालय पहुँचें।
+                </li>
+
+                <li>
+                    परीक्षा कक्ष में अनुशासन बनाए रखें।
+                </li>
+
+                <li>
+                    आवश्यक stationery अपने साथ लाएँ।
+                </li>
+
             </ul>
 
         </div>
 
 
-        <!-- SIGNATURE -->
         <div class="signatures">
 
             <div>
-                <div class="sign-line"></div>
+                <div class="signature-line"></div>
                 <p>Student Signature</p>
             </div>
 
             <div>
-                <div class="sign-line"></div>
+                <div class="signature-line"></div>
                 <p>Principal Signature</p>
             </div>
 
         </div>
 
 
-        <!-- PRINT BUTTON -->
-        <div class="print-area">
+        <button
+            class="print-button"
+            onclick="printAdmitCard()">
 
-            <button onclick="window.print()" class="print-admit-btn">
-                🖨️ Print Admit Card
-            </button>
+            🖨️ Print Admit Card
 
-        </div>
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- ================================
-     ADMIT CARD DESIGN
-================================ -->
+
+<!-- =====================================================
+     ADMIT CARD CSS
+===================================================== -->
 
 <style>
 
-.admit-card-section {
+.admit-section {
+
     padding: 70px 20px;
-    background: linear-gradient(135deg, #eef6ff, #ffffff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef6ff,
+            #ffffff
+        );
+
     font-family: Arial, sans-serif;
+
 }
 
-.admit-title {
+
+.admit-heading {
+
     text-align: center;
+
     margin-bottom: 35px;
+
 }
 
-.admit-title span {
-    color: #2563eb;
-    font-weight: bold;
-    letter-spacing: 2px;
+
+.admit-heading .cap {
+
+    font-size: 50px;
+
 }
 
-.admit-title h2 {
+
+.admit-heading h2 {
+
     margin: 8px 0;
-    font-size: 40px;
+
     color: #123b66;
+
+    font-size: 40px;
+
 }
 
-.admit-title p {
+
+.admit-heading p {
+
     color: #666;
+
     font-size: 17px;
+
 }
 
 
-/* CARD */
+/* SEARCH */
+
+.search-box {
+
+    max-width: 550px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.10);
+
+}
+
+
+.search-box h3 {
+
+    color: #123b66;
+
+    font-size: 23px;
+
+}
+
+
+.search-box input {
+
+    width: 70%;
+
+    padding: 14px;
+
+    border:
+        1px solid #ccd6e3;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+
+}
+
+
+.search-box button {
+
+    margin-left: 8px;
+
+    padding: 14px 18px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #123b66;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.search-box button:hover {
+
+    background: #2563eb;
+
+}
+
+
+.error-message {
+
+    display: none;
+
+    color: #dc2626;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+}
+
+
+/* ADMIT CARD */
 
 .admit-card {
+
+    display: none;
+
     max-width: 850px;
-    margin: auto;
+
+    margin: 35px auto 0;
+
     background: white;
-    border: 3px solid #123b66;
+
+    border:
+        3px solid #123b66;
+
     border-radius: 18px;
+
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.15);
+
 }
 
 
-/* HEADER */
+/* SCHOOL HEADER */
 
-.admit-header {
+.school-header {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 25px;
+
     padding: 25px;
-    background: linear-gradient(135deg,#123b66,#2563eb);
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b66,
+            #2563eb
+        );
+
     color: white;
+
 }
 
-.admit-logo {
+
+.school-logo {
+
     width: 90px;
+
     height: 90px;
+
     object-fit: contain;
+
     background: white;
+
+    padding: 5px;
+
     border-radius: 50%;
-    padding: 6px;
+
 }
 
-.school-info h1 {
+
+.school-header h1 {
+
     margin: 0 0 8px;
+
     font-size: 28px;
+
 }
 
-.school-info p {
+
+.school-header p {
+
     margin: 5px 0;
+
 }
 
 
-/* EXAM TITLE */
+/* EXAM HEADING */
 
 .exam-heading {
+
     text-align: center;
+
     padding: 18px;
+
     background: #eef6ff;
+
 }
+
 
 .exam-heading h2 {
+
     margin: 0;
+
     color: #123b66;
+
     font-size: 23px;
+
 }
+
 
 .exam-heading p {
-    margin: 7px 0 0;
+
     color: #666;
+
 }
 
 
-/* STUDENT DETAILS */
+/* STUDENT INFO */
 
-.student-details {
+.student-info {
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap: 18px;
+
     padding: 30px;
+
 }
 
-.detail-box {
+
+.student-info div {
+
     padding: 15px;
-    border: 1px solid #dce5f0;
+
+    background: #f8fbff;
+
+    border:
+        1px solid #dce5ef;
+
     border-radius: 10px;
-    background: #f9fbff;
+
 }
 
-.detail-box span {
+
+.student-info span {
+
     display: block;
+
     color: #666;
+
     font-size: 14px;
+
     margin-bottom: 7px;
+
 }
 
-.detail-box strong {
+
+.student-info strong {
+
     color: #123b66;
+
     font-size: 16px;
-}
 
-
-/* EXAM INFO */
-
-.exam-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    padding: 0 30px 25px;
-}
-
-.exam-info div {
-    background: #f1f7ff;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.exam-info span {
-    display: block;
-    color: #666;
-    margin-bottom: 7px;
-}
-
-.exam-info strong {
-    color: #123b66;
 }
 
 
 /* INSTRUCTIONS */
 
 .instructions {
+
     margin: 0 30px;
+
     padding: 20px;
+
     background: #fff8e8;
-    border-left: 5px solid #f0a500;
+
+    border-left:
+        5px solid #f0a500;
+
     border-radius: 8px;
+
 }
+
 
 .instructions h3 {
-    margin-top: 0;
+
     color: #8a5a00;
+
+    margin-top: 0;
+
 }
 
+
 .instructions li {
+
     margin: 8px 0;
+
     color: #555;
+
 }
 
 
 /* SIGNATURE */
 
 .signatures {
+
     display: flex;
+
     justify-content: space-between;
-    padding: 45px 40px 20px;
+
+    padding: 45px 40px 15px;
+
 }
+
 
 .signatures > div {
-    text-align: center;
+
     width: 200px;
-}
 
-.sign-line {
-    border-top: 1px solid #333;
-    margin-bottom: 8px;
-}
-
-.signatures p {
-    margin: 0;
-    color: #555;
-}
-
-
-/* PRINT */
-
-.print-area {
     text-align: center;
-    padding: 25px;
+
 }
 
-.print-admit-btn {
+
+.signature-line {
+
+    border-top:
+        1px solid #333;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* PRINT BUTTON */
+
+.print-button {
+
+    display: block;
+
+    margin: 25px auto 30px;
+
     padding: 14px 30px;
+
     border: none;
+
     border-radius: 10px;
-    background: #123b66;
+
+    background: #198754;
+
     color: white;
+
     font-size: 17px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
 
-.print-admit-btn:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
+
+.print-button:hover {
+
+    background: #157347;
+
 }
 
 
 /* MOBILE */
 
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
-    .admit-header {
-        flex-direction: column;
-        text-align: center;
+    .admit-section {
+
+        padding: 50px 15px;
+
     }
 
-    .school-info h1 {
-        font-size: 22px;
+
+    .admit-heading h2 {
+
+        font-size: 31px;
+
     }
 
-    .student-details,
-    .exam-info {
+
+    .search-box input {
+
+        width: 100%;
+
+        margin-bottom: 12px;
+
+    }
+
+
+    .search-box button {
+
+        width: 100%;
+
+        margin-left: 0;
+
+    }
+
+
+    .student-info {
+
         grid-template-columns: 1fr;
+
     }
+
+
+    .school-header {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .school-header h1 {
+
+        font-size: 22px;
+
+    }
+
 
     .signatures {
-        padding: 35px 20px 20px;
-        gap: 25px;
-    }
 
-    .signatures > div {
-        width: 45%;
-    }
+        padding: 35px 15px;
 
-    .admit-title h2 {
-        font-size: 32px;
     }
 
 }
 
 
-/* PRINT SETTINGS */
+/* PRINT */
 
 @media print {
 
     body * {
+
         visibility: hidden;
+
     }
+
 
     #admit-card,
     #admit-card * {
+
         visibility: visible;
+
     }
+
 
     #admit-card {
+
         position: absolute;
+
         left: 0;
+
         top: 0;
+
         width: 100%;
+
         padding: 0;
+
         background: white;
+
     }
 
-    .print-area {
+
+    .print-button {
+
         display: none;
-    }
 
-    .admit-card {
-        box-shadow: none;
-        max-width: 100%;
     }
 
 }
 
 </style>
+
+
+
+<!-- =====================================================
+     STUDENT DATA + JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const students = {
+
+    "1001": {
+
+        name: "Rahul Kumar",
+
+        className: "Class 8",
+
+        examDate: "15 March 2027",
+
+        examTime: "10:00 AM"
+
+    }
+
+};
+
+
+function searchAdmitCard() {
+
+    const roll =
+        document
+        .getElementById("rollInput")
+        .value
+        .trim();
+
+
+    const admitCard =
+        document.getElementById("admitCard");
+
+
+    const error =
+        document.getElementById("errorMessage");
+
+
+    if (students[roll]) {
+
+        const student =
+            students[roll];
+
+
+        document.getElementById(
+            "studentName"
+        ).textContent =
+            student.name;
+
+
+        document.getElementById(
+            "studentRoll"
+        ).textContent =
+            roll;
+
+
+        document.getElementById(
+            "studentClass"
+        ).textContent =
+            student.className;
+
+
+        document.getElementById(
+            "examDate"
+        ).textContent =
+            student.examDate;
+
+
+        document.getElementById(
+            "examTime"
+        ).textContent =
+            student.examTime;
+
+
+        error.style.display = "none";
+
+        admitCard.style.display = "block";
+
+
+        admitCard.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
+    else {
+
+        admitCard.style.display = "none";
+
+        error.style.display = "block";
+
+    }
+
+}
+
+
+function printAdmitCard() {
+
+    window.print();
+
+}
+
+</script>
 </section>
 </footer>
 </body>
