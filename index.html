@@ -1760,7 +1760,430 @@ function submitAdmission(event){
   ">
     © 2026 Kid's Academy Public School. All Rights Reserved.
   </p>
+<!-- ================================
+     PROFESSIONAL EXAM ADMIT CARD
+================================ -->
 
+<section id="admit-card" class="admit-card-section">
+
+    <div class="admit-title">
+        <span>🎓 EXAMINATION</span>
+        <h2>Admit Card</h2>
+        <p>Kid's Academy Public School</p>
+    </div>
+
+    <div class="admit-card">
+
+        <!-- SCHOOL HEADER -->
+        <div class="admit-header">
+
+            <!-- SCHOOL LOGO -->
+            <img
+                src="school-logo.png"
+                alt="Kid's Academy Public School Logo"
+                class="admit-logo"
+            >
+
+            <div class="school-info">
+                <h1>Kid's Academy Public School</h1>
+
+                <p>
+                    Manikpur, Pirpainti Bazar
+                </p>
+
+                <p>
+                    Established: 2021
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="exam-heading">
+            <h2>EXAMINATION ADMIT CARD</h2>
+            <p>Academic Session 2026–27</p>
+        </div>
+
+
+        <!-- STUDENT DETAILS -->
+        <div class="student-details">
+
+            <div class="detail-box">
+                <span>👤 Student Name</span>
+                <strong>________________________</strong>
+            </div>
+
+            <div class="detail-box">
+                <span>🔢 Roll Number</span>
+                <strong>________________________</strong>
+            </div>
+
+            <div class="detail-box">
+                <span>📚 Class</span>
+                <strong>________________________</strong>
+            </div>
+
+            <div class="detail-box">
+                <span>📝 Examination</span>
+                <strong>Annual Examination</strong>
+            </div>
+
+        </div>
+
+
+        <!-- EXAM DETAILS -->
+        <div class="exam-info">
+
+            <div>
+                <span>📅 Exam Date</span>
+                <strong>________________</strong>
+            </div>
+
+            <div>
+                <span>⏰ Exam Time</span>
+                <strong>________________</strong>
+            </div>
+
+        </div>
+
+
+        <!-- INSTRUCTIONS -->
+        <div class="instructions">
+
+            <h3>📌 Important Instructions</h3>
+
+            <ul>
+                <li>Admit Card परीक्षा के समय साथ लाना अनिवार्य है।</li>
+                <li>विद्यार्थी परीक्षा शुरू होने से 15 मिनट पहले विद्यालय पहुँचें।</li>
+                <li>परीक्षा कक्ष में अनुशासन बनाए रखें।</li>
+                <li>अपनी आवश्यक stationery साथ लेकर आएँ।</li>
+            </ul>
+
+        </div>
+
+
+        <!-- SIGNATURE -->
+        <div class="signatures">
+
+            <div>
+                <div class="sign-line"></div>
+                <p>Student Signature</p>
+            </div>
+
+            <div>
+                <div class="sign-line"></div>
+                <p>Principal Signature</p>
+            </div>
+
+        </div>
+
+
+        <!-- PRINT BUTTON -->
+        <div class="print-area">
+
+            <button onclick="window.print()" class="print-admit-btn">
+                🖨️ Print Admit Card
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================
+     ADMIT CARD DESIGN
+================================ -->
+
+<style>
+
+.admit-card-section {
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #eef6ff, #ffffff);
+    font-family: Arial, sans-serif;
+}
+
+.admit-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.admit-title span {
+    color: #2563eb;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.admit-title h2 {
+    margin: 8px 0;
+    font-size: 40px;
+    color: #123b66;
+}
+
+.admit-title p {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* CARD */
+
+.admit-card {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    border: 3px solid #123b66;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+
+/* HEADER */
+
+.admit-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+    background: linear-gradient(135deg,#123b66,#2563eb);
+    color: white;
+}
+
+.admit-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+.school-info h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.school-info p {
+    margin: 5px 0;
+}
+
+
+/* EXAM TITLE */
+
+.exam-heading {
+    text-align: center;
+    padding: 18px;
+    background: #eef6ff;
+}
+
+.exam-heading h2 {
+    margin: 0;
+    color: #123b66;
+    font-size: 23px;
+}
+
+.exam-heading p {
+    margin: 7px 0 0;
+    color: #666;
+}
+
+
+/* STUDENT DETAILS */
+
+.student-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 30px;
+}
+
+.detail-box {
+    padding: 15px;
+    border: 1px solid #dce5f0;
+    border-radius: 10px;
+    background: #f9fbff;
+}
+
+.detail-box span {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.detail-box strong {
+    color: #123b66;
+    font-size: 16px;
+}
+
+
+/* EXAM INFO */
+
+.exam-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 0 30px 25px;
+}
+
+.exam-info div {
+    background: #f1f7ff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.exam-info span {
+    display: block;
+    color: #666;
+    margin-bottom: 7px;
+}
+
+.exam-info strong {
+    color: #123b66;
+}
+
+
+/* INSTRUCTIONS */
+
+.instructions {
+    margin: 0 30px;
+    padding: 20px;
+    background: #fff8e8;
+    border-left: 5px solid #f0a500;
+    border-radius: 8px;
+}
+
+.instructions h3 {
+    margin-top: 0;
+    color: #8a5a00;
+}
+
+.instructions li {
+    margin: 8px 0;
+    color: #555;
+}
+
+
+/* SIGNATURE */
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 40px 20px;
+}
+
+.signatures > div {
+    text-align: center;
+    width: 200px;
+}
+
+.sign-line {
+    border-top: 1px solid #333;
+    margin-bottom: 8px;
+}
+
+.signatures p {
+    margin: 0;
+    color: #555;
+}
+
+
+/* PRINT */
+
+.print-area {
+    text-align: center;
+    padding: 25px;
+}
+
+.print-admit-btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    background: #123b66;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.print-admit-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .admit-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .school-info h1 {
+        font-size: 22px;
+    }
+
+    .student-details,
+    .exam-info {
+        grid-template-columns: 1fr;
+    }
+
+    .signatures {
+        padding: 35px 20px 20px;
+        gap: 25px;
+    }
+
+    .signatures > div {
+        width: 45%;
+    }
+
+    .admit-title h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* PRINT SETTINGS */
+
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    #admit-card,
+    #admit-card * {
+        visibility: visible;
+    }
+
+    #admit-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0;
+        background: white;
+    }
+
+    .print-area {
+        display: none;
+    }
+
+    .admit-card {
+        box-shadow: none;
+        max-width: 100%;
+    }
+
+}
+
+</style>
 </section>
 </footer>
 </body>
