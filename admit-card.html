@@ -1,1 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Exam Admit Card | Kid's Academy Public School</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#eef6ff,#ffffff);
+    color:#123b66;
+}
+
+.container{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.search{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.search input{
+    width:70%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    padding:14px 25px;
+    border:0;
+    border-radius:8px;
+    background:#123b66;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#admitCard{
+    display:none;
+    margin-top:30px;
+    background:white;
+    border:3px solid #123b66;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.header{
+    background:#123b66;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    background:white;
+    border-radius:50%;
+}
+
+.details{
+    padding:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.detail{
+    padding:15px;
+    background:#f5f9ff;
+    border-radius:10px;
+}
+
+.detail span{
+    display:block;
+    color:#777;
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+.instructions{
+    margin:0 30px 25px;
+    padding:20px;
+    background:#fff8e8;
+    border-radius:10px;
+}
+
+.print{
+    text-align:center;
+    padding:25px;
+}
+
+.error{
+    display:none;
+    color:red;
+    margin-top:15px;
+}
+
+@media(max-width:600px){
+    .search input{
+        width:100%;
+        box-sizing:border-box;
+        margin-bottom:12px;
+    }
+
+    .details{
+        grid-template-columns:1fr;
+    }
+}
+
+@media print{
+    body *{
+        visibility:hidden;
+    }
+
+    #admitCard,
+    #admitCard *{
+        visibility:visible;
+    }
+
+    #admitCard{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        margin:0;
+    }
+
+    .print{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="search">
+
+        <h1>🎓 Exam Admit Card</h1>
+
+        <p>Kid's Academy Public School</p>
+
+        <p>Roll Number डालकर Admit Card देखें</p>
+
+        <input
+            type="text"
+            id="roll"
+            placeholder="Enter Roll Number"
+        >
+
+        <button onclick="searchStudent()">
+            🔍 Search
+        </button>
+
+        <div id="error" class="error">
+            ❌ Roll Number नहीं मिला।
+        </div>
+
+    </div>
+
+
+    <div id="admitCard">
+
+        <div class="header">
+
+            <img
+                src="school-logo.png"
+                class="logo"
+                alt="School Logo"
+            >
+
+            <h1>Kid's Academy Public School</h1>
+
+            <p>Manikpur, Pirpainti Bazar</p>
+
+            <h2>EXAMINATION ADMIT CARD</h2>
+
+            <p>Academic Session 2026–27</p>
+
+        </div>
+
+
+        <div class="details">
+
+            <div class="detail">
+                <span>👤 Student Name</span>
+                <strong id="name"></strong>
+            </div>
+
+            <div class="detail">
+                <span>🔢 Roll Number</span>
+                <strong id="rollNo"></strong>
+            </div>
+
+            <div class="detail">
+                <span>📚 Class</span>
+                <strong id="className"></strong>
+            </div>
+
+            <div class="detail">
+                <span>📝 Examination</span>
+                <strong>Annual Examination</strong>
+            </div>
+
+            <div class="detail">
+                <span>📅 Exam Date</span>
+                <strong id="date"></strong>
+            </div>
+
+            <div class="detail">
+                <span>⏰ Exam Time</span>
+                <strong id="time"></strong>
+            </div>
+
+        </div>
+
+
+        <div class="instructions">
+
+            <h3>📌 Important Instructions</h3>
+
+            <ul>
+                <li>Admit Card परीक्षा में साथ लाना अनिवार्य है।</li>
+                <li>परीक्षा से 15 मिनट पहले विद्यालय पहुँचें।</li>
+                <li>परीक्षा कक्ष में अनुशासन बनाए रखें।</li>
+            </ul>
+
+        </div>
+
+
+        <div class="print">
+
+            <button onclick="window.print()">
+                🖨️ Print Admit Card
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const students = {
+
+    "1001": {
+        name: "Rahul Kumar",
+        className: "Class 8",
+        date: "15 March 2027",
+        time: "10:00 AM"
+    }
+
+};
+
+
+function searchStudent(){
+
+    let roll =
+        document.getElementById("roll").value.trim();
+
+    let student = students[roll];
+
+    if(student){
+
+        document.getElementById("name").textContent =
+            student.name;
+
+        document.getElementById("rollNo").textContent =
+            roll;
+
+        document.getElementById("className").textContent =
+            student.className;
+
+        document.getElementById("date").textContent =
+            student.date;
+
+        document.getElementById("time").textContent =
+            student.time;
+
+        document.getElementById("admitCard").style.display =
+            "block";
+
+        document.getElementById("error").style.display =
+            "none";
+
+    }else{
+
+        document.getElementById("admitCard").style.display =
+            "none";
+
+        document.getElementById("error").style.display =
+            "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
