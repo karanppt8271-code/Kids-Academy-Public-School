@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Result | Kid's Academy Public School</title>
+
+<title>Result - Kid's Academy Public School</title>
 
 <style>
 *{
@@ -19,7 +20,7 @@ body{
     min-height:100vh;
 }
 
-/* ================= SEARCH AREA ================= */
+/* ================= SEARCH ================= */
 
 .search-area{
     max-width:650px;
@@ -64,7 +65,7 @@ body{
     border:0;
     border-radius:8px;
     background:#173f8f;
-    color:#fff;
+    color:white;
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
@@ -93,9 +94,9 @@ body{
     min-height:297mm;
     margin:30px auto;
     padding:9mm;
-    background:#fff;
+    background:white;
     position:relative;
-    border:7px double #173f8f;
+    border:8px double #173f8f;
     box-shadow:0 12px 40px rgba(0,0,0,.18);
     overflow:hidden;
 }
@@ -104,16 +105,12 @@ body{
     display:block;
 }
 
-/* INNER BORDER */
-
 .marksheet-inner{
     min-height:278mm;
     border:1px solid #8fa3c7;
     padding:8mm;
     position:relative;
 }
-
-/* WATERMARK */
 
 .watermark{
     position:absolute;
@@ -127,8 +124,6 @@ body{
     pointer-events:none;
     z-index:0;
 }
-
-/* CONTENT ABOVE WATERMARK */
 
 .content{
     position:relative;
@@ -172,6 +167,8 @@ body{
     color:#64748b;
 }
 
+/* ================= EXAM TITLE ================= */
+
 .exam-title{
     text-align:center;
     margin:17px 0;
@@ -201,6 +198,7 @@ body{
     color:#173f8f;
     margin:12px 0 8px;
     text-transform:uppercase;
+    font-weight:bold;
 }
 
 .student-details{
@@ -220,13 +218,9 @@ body{
     border-right:1px solid #cbd5e1;
 }
 
-.detail:nth-last-child(-n+2){
-    border-bottom:0;
-}
-
 .detail span{
     color:#64748b;
-    font-size:11px;
+    font-size:10px;
     display:block;
     text-transform:uppercase;
     margin-bottom:3px;
@@ -235,6 +229,24 @@ body{
 .detail strong{
     font-size:14px;
     color:#172033;
+}
+
+/* ================= TOPPER BADGE ================= */
+
+.topper-badge{
+    display:none;
+    text-align:center;
+    margin:12px auto;
+    padding:10px 20px;
+    width:max-content;
+    max-width:100%;
+    background:#fff7cc;
+    border:2px solid #d4a600;
+    border-radius:30px;
+    color:#8a6500;
+    font-weight:bold;
+    font-size:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
 /* ================= MARKS TABLE ================= */
@@ -246,6 +258,10 @@ body{
     font-size:15px;
 }
 
+.table-wrap{
+    overflow-x:auto;
+}
+
 .marks-table{
     width:100%;
     border-collapse:collapse;
@@ -253,7 +269,7 @@ body{
 
 .marks-table th{
     background:#173f8f;
-    color:#fff;
+    color:white;
     padding:10px 7px;
     border:1px solid #173f8f;
     font-size:12px;
@@ -266,7 +282,7 @@ body{
     font-size:13px;
 }
 
-.marks-table td:first-child{
+.marks-table td:nth-child(2){
     text-align:left;
     font-weight:bold;
 }
@@ -289,14 +305,14 @@ body{
 
 .summary{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
+    grid-template-columns:repeat(5,1fr);
+    gap:7px;
     margin-top:14px;
 }
 
 .summary-box{
     text-align:center;
-    padding:10px 5px;
+    padding:10px 4px;
     border:1px solid #9aaac2;
     border-radius:5px;
     background:#f8fafc;
@@ -304,7 +320,7 @@ body{
 
 .summary-box span{
     display:block;
-    font-size:10px;
+    font-size:9px;
     color:#64748b;
     text-transform:uppercase;
 }
@@ -313,7 +329,7 @@ body{
     display:block;
     margin-top:4px;
     color:#173f8f;
-    font-size:17px;
+    font-size:16px;
 }
 
 .pass{
@@ -322,6 +338,10 @@ body{
 
 .fail{
     color:#dc2626 !important;
+}
+
+.rank-one{
+    color:#b77900 !important;
 }
 
 /* ================= REMARK ================= */
@@ -366,10 +386,10 @@ body{
     color:#64748b;
 }
 
-/* ================= PRINT BUTTON ================= */
+/* ================= PRINT ================= */
 
 .print-btn{
-    display:block;
+    display:none;
     margin:20px auto 50px;
     padding:13px 30px;
     border:0;
@@ -380,12 +400,6 @@ body{
     font-weight:bold;
     cursor:pointer;
 }
-
-.print-btn:hover{
-    background:#166534;
-}
-
-/* ================= MOBILE ================= */
 
 @media(max-width:750px){
 
@@ -416,28 +430,14 @@ body{
         border-right:0;
     }
 
-    .detail:nth-last-child(-n+2){
-        border-bottom:1px solid #cbd5e1;
-    }
-
-    .detail:last-child{
-        border-bottom:0;
-    }
-
     .summary{
         grid-template-columns:1fr 1fr;
-    }
-
-    .marksheet{
-        overflow-x:auto;
     }
 
     .watermark{
         font-size:25px;
     }
 }
-
-/* ================= PRINT ================= */
 
 @media print{
 
@@ -447,7 +447,7 @@ body{
     }
 
     body{
-        background:#fff;
+        background:white;
     }
 
     .search-area,
@@ -461,16 +461,13 @@ body{
         min-height:297mm;
         margin:0;
         box-shadow:none;
-        border:7px double #173f8f;
     }
 
 }
 </style>
 </head>
 
-
 <body>
-
 
 <!-- ================= SEARCH ================= -->
 
@@ -481,9 +478,7 @@ body{
     <label>📚 Select Class</label>
 
     <select id="className">
-
         <option value="">-- अपनी Class चुनें --</option>
-
         <option value="STD 1">STD 1</option>
         <option value="STD 2">STD 2</option>
         <option value="STD 3">STD 3</option>
@@ -492,9 +487,7 @@ body{
         <option value="STD 6">STD 6</option>
         <option value="STD 7">STD 7</option>
         <option value="STD 8">STD 8</option>
-
     </select>
-
 
     <label>🔢 Roll Number</label>
 
@@ -504,14 +497,9 @@ body{
         placeholder="अपना Roll Number डालें"
     >
 
-
-    <button
-        class="search-btn"
-        onclick="searchResult()"
-    >
+    <button class="search-btn" onclick="searchResult()">
         🔍 CHECK RESULT
     </button>
-
 
     <div class="error" id="error">
         Result नहीं मिला।
@@ -520,7 +508,7 @@ body{
 </div>
 
 
-<!-- ================= PROFESSIONAL MARKSHEET ================= -->
+<!-- ================= MARKSHEET ================= -->
 
 <div class="marksheet" id="resultBox">
 
@@ -530,9 +518,7 @@ body{
             KID'S ACADEMY PUBLIC SCHOOL
         </div>
 
-
         <div class="content">
-
 
             <!-- SCHOOL HEADER -->
 
@@ -555,7 +541,7 @@ body{
                     </div>
 
                     <div class="school-contact">
-                        Affiliated School • Academic Session 2026
+                        Academic Session 2026
                     </div>
 
                 </div>
@@ -563,7 +549,7 @@ body{
             </div>
 
 
-            <!-- EXAM TITLE -->
+            <!-- EXAM -->
 
             <div class="exam-title">
 
@@ -576,7 +562,7 @@ body{
             </div>
 
 
-            <!-- STUDENT DETAILS -->
+            <!-- STUDENT INFORMATION -->
 
             <div class="details-title">
                 Student Information
@@ -585,48 +571,45 @@ body{
             <div class="student-details">
 
                 <div class="detail">
-
                     <span>Student Name</span>
-
-                    <strong id="studentName">
-                        -
-                    </strong>
-
+                    <strong id="studentName">-</strong>
                 </div>
 
-
                 <div class="detail">
-
                     <span>Roll Number</span>
-
-                    <strong id="studentRoll">
-                        -
-                    </strong>
-
+                    <strong id="studentRoll">-</strong>
                 </div>
 
-
                 <div class="detail">
-
                     <span>Class</span>
-
-                    <strong id="studentClass">
-                        -
-                    </strong>
-
+                    <strong id="studentClass">-</strong>
                 </div>
-
 
                 <div class="detail">
-
                     <span>Academic Session</span>
-
-                    <strong>
-                        2026
-                    </strong>
-
+                    <strong>2026</strong>
                 </div>
 
+                <div class="detail">
+                    <span>Class Rank</span>
+                    <strong id="studentRank">-</strong>
+                </div>
+
+                <div class="detail">
+                    <span>Position</span>
+                    <strong id="studentPosition">-</strong>
+                </div>
+
+            </div>
+
+
+            <!-- TOPPER -->
+
+            <div
+                class="topper-badge"
+                id="topperBadge"
+            >
+                🏆 CLASS TOPPER 🏆
             </div>
 
 
@@ -636,39 +619,27 @@ body{
                 Academic Performance
             </div>
 
+            <div class="table-wrap">
 
-            <table class="marks-table">
+                <table class="marks-table">
 
-                <thead>
+                    <thead>
 
-                    <tr>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Subject</th>
+                            <th>Maximum Marks</th>
+                            <th>Obtained Marks</th>
+                        </tr>
 
-                        <th>
-                            S.No.
-                        </th>
+                    </thead>
 
-                        <th>
-                            Subject
-                        </th>
+                    <tbody id="marksTable">
+                    </tbody>
 
-                        <th>
-                            Maximum Marks
-                        </th>
+                </table>
 
-                        <th>
-                            Obtained Marks
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="marksTable">
-
-                </tbody>
-
-            </table>
+            </div>
 
 
             <!-- SUMMARY -->
@@ -676,55 +647,42 @@ body{
             <div class="summary">
 
                 <div class="summary-box">
-
-                    <span>
-                        Total
-                    </span>
-
-                    <strong id="totalMarks">
-                        -
-                    </strong>
-
+                    <span>Total</span>
+                    <strong id="totalMarks">-</strong>
                 </div>
-
 
                 <div class="summary-box">
-
-                    <span>
-                        Percentage
-                    </span>
-
-                    <strong id="percentage">
-                        -
-                    </strong>
-
+                    <span>Percentage</span>
+                    <strong id="percentage">-</strong>
                 </div>
-
 
                 <div class="summary-box">
-
-                    <span>
-                        Grade
-                    </span>
-
-                    <strong id="grade">
-                        -
-                    </strong>
-
+                    <span>Grade</span>
+                    <strong id="grade">-</strong>
                 </div>
-
 
                 <div class="summary-box">
-
-                    <span>
-                        Result
-                    </span>
-
-                    <strong id="finalResult">
-                        -
-                    </strong>
-
+                    <span>Rank</span>
+                    <strong id="rankSummary">-</strong>
                 </div>
+
+                <div class="summary-box">
+                    <span>Result</span>
+                    <strong id="finalResult">-</strong>
+                </div>
+
+            </div>
+
+
+            <!-- TOPPER NAME -->
+
+            <div class="remark">
+
+                <b>🏆 Class Topper:</b>
+
+                <span id="topperName">
+                    -
+                </span>
 
             </div>
 
@@ -765,7 +723,6 @@ body{
 
             </div>
 
-
         </div>
 
     </div>
@@ -777,7 +734,6 @@ body{
     class="print-btn"
     id="printButton"
     onclick="window.print()"
-    style="display:none;"
 >
     🖨️ PRINT MARK SHEET
 </button>
@@ -785,9 +741,9 @@ body{
 
 <script>
 
-/* ==========================================
+/* ==================================================
    STUDENT DATA
-   ========================================== */
+   ================================================== */
 
 const students = {
 
@@ -967,9 +923,9 @@ const students = {
 };
 
 
-/* ==========================================
+/* ==================================================
    SEARCH RESULT
-   ========================================== */
+   ================================================== */
 
 function searchResult(){
 
@@ -977,9 +933,7 @@ function searchResult(){
         document.getElementById("className").value;
 
     const rollNo =
-        Number(
-            document.getElementById("rollNo").value
-        );
+        Number(document.getElementById("rollNo").value);
 
     const error =
         document.getElementById("error");
@@ -990,6 +944,9 @@ function searchResult(){
     const printButton =
         document.getElementById("printButton");
 
+    const topperBadge =
+        document.getElementById("topperBadge");
+
 
     error.style.display = "none";
 
@@ -997,11 +954,15 @@ function searchResult(){
 
     printButton.style.display = "none";
 
+    topperBadge.style.display = "none";
+
+
+    /* CHECK CLASS */
 
     if(!className){
 
         error.innerText =
-        "⚠️ पहले Class चुनें।";
+        "⚠️ पहले अपनी Class चुनें।";
 
         error.style.display = "block";
 
@@ -1009,10 +970,12 @@ function searchResult(){
     }
 
 
+    /* CHECK ROLL */
+
     if(!rollNo){
 
         error.innerText =
-        "⚠️ Roll Number डालें।";
+        "⚠️ अपना Roll Number डालें।";
 
         error.style.display = "block";
 
@@ -1035,6 +998,8 @@ function searchResult(){
     }
 
 
+    /* FIND STUDENT */
+
     const student =
         list.find(
             item => item.roll === rollNo
@@ -1052,19 +1017,200 @@ function searchResult(){
     }
 
 
-    /* STUDENT DETAILS */
+    /* ==================================================
+       CALCULATE TOTAL FOR EVERY STUDENT
+       ================================================== */
+
+    const rankedStudents =
+        list
+        .map(function(item){
+
+            const marks = [
+
+                item.Hindi,
+                item.English,
+                item.Math,
+                item.Science,
+                item.SSI,
+                item.Computer,
+                item.GK,
+                item.Drawing
+
+            ];
+
+
+            let total = 0;
+
+            let absent = false;
+
+
+            marks.forEach(function(mark){
+
+                if(mark === "ABS"){
+
+                    absent = true;
+
+                }else{
+
+                    total += Number(mark);
+
+                }
+
+            });
+
+
+            return {
+
+                student:item,
+                total:total,
+                absent:absent
+
+            };
+
+        })
+        .filter(function(item){
+
+            return !item.absent;
+
+        })
+        .sort(function(a,b){
+
+            return b.total - a.total;
+
+        });
+
+
+    /* ==================================================
+       FIND RANK
+       ================================================== */
+
+    const rankIndex =
+        rankedStudents.findIndex(
+            item =>
+            item.student.roll === student.roll
+        );
+
+
+    const rank =
+        rankIndex === -1
+        ? null
+        : rankIndex + 1;
+
+
+    /* ==================================================
+       TOPPER
+       ================================================== */
+
+    let topper = null;
+
+    if(rankedStudents.length > 0){
+
+        topper =
+        rankedStudents[0].student;
+
+    }
+
+
+    /* ==================================================
+       STUDENT DETAILS
+       ================================================== */
 
     document.getElementById("studentName")
-    .innerText = student.name;
+    .innerText =
+    student.name;
+
 
     document.getElementById("studentRoll")
-    .innerText = student.roll;
+    .innerText =
+    student.roll;
+
 
     document.getElementById("studentClass")
-    .innerText = className;
+    .innerText =
+    className;
 
 
-    /* SUBJECT LIST */
+    document.getElementById("studentRank")
+    .innerText =
+    rank
+    ? "Rank " + rank
+    : "—";
+
+
+    document.getElementById("rankSummary")
+    .innerText =
+    rank
+    ? "#" + rank
+    : "—";
+
+
+    /* ==================================================
+       POSITION
+       ================================================== */
+
+    let position = "—";
+
+
+    if(rank === 1){
+
+        position = "🏆 TOPPER";
+
+    }else if(rank === 2){
+
+        position = "🥈 2nd";
+
+    }else if(rank === 3){
+
+        position = "🥉 3rd";
+
+    }else if(rank){
+
+        position =
+        rank + "th";
+
+    }
+
+
+    document.getElementById("studentPosition")
+    .innerText =
+    position;
+
+
+    /* ==================================================
+       TOPPER NAME
+       ================================================== */
+
+    if(topper){
+
+        document.getElementById("topperName")
+        .innerText =
+        topper.name +
+        " - " +
+        topper.total +
+        "/800";
+
+    }else{
+
+        document.getElementById("topperName")
+        .innerText =
+        "—";
+
+    }
+
+
+    /* TOPPER BADGE */
+
+    if(rank === 1){
+
+        topperBadge.style.display =
+        "block";
+
+    }
+
+
+    /* ==================================================
+       SUBJECTS
+       ================================================== */
 
     const subjects = [
 
@@ -1080,61 +1226,60 @@ function searchResult(){
     ];
 
 
-    let html = "";
+    let tableHTML = "";
 
     let total = 0;
 
     let absent = false;
 
 
-    subjects.forEach(
-        (subject,index) => {
+    subjects.forEach(function(subject,index){
 
-            const mark = subject[1];
-
-
-            html += `
-
-                <tr>
-
-                    <td>
-                        ${index + 1}
-                    </td>
-
-                    <td>
-                        ${subject[0]}
-                    </td>
-
-                    <td>
-                        100
-                    </td>
-
-                    <td>
-                        ${mark}
-                    </td>
-
-                </tr>
-
-            `;
+        const mark =
+        subject[1];
 
 
-            if(mark === "ABS"){
+        tableHTML += `
 
-                absent = true;
+            <tr>
 
-            }else{
+                <td>
+                    ${index + 1}
+                </td>
 
-                total += Number(mark);
+                <td>
+                    ${subject[0]}
+                </td>
 
-            }
+                <td>
+                    100
+                </td>
+
+                <td>
+                    ${mark}
+                </td>
+
+            </tr>
+
+        `;
+
+
+        if(mark === "ABS"){
+
+            absent = true;
+
+        }else{
+
+            total += Number(mark);
 
         }
-    );
+
+    });
 
 
-    /* TOTAL */
+    /* TOTAL ROW */
 
-    html += `
+    tableHTML += `
 
         <tr class="total-row">
 
@@ -1156,18 +1301,18 @@ function searchResult(){
 
 
     document.getElementById("marksTable")
-    .innerHTML = html;
+    .innerHTML =
+    tableHTML;
 
 
-    document.getElementById("totalMarks")
-    .innerText =
-    total + " / 800";
-
-
-    /* GRADE + RESULT */
+    /* ==================================================
+       PERCENTAGE
+       ================================================== */
 
     let percentage = 0;
+
     let grade = "";
+
     let resultText = "";
 
 
@@ -1180,13 +1325,16 @@ function searchResult(){
         resultText = "ABSENT";
 
         document.getElementById("finalResult")
-        .className = "fail";
+        .className =
+        "fail";
 
     }else{
 
         percentage =
         (total / 800) * 100;
 
+
+        /* GRADE */
 
         if(percentage >= 90){
 
@@ -1219,6 +1367,8 @@ function searchResult(){
         }
 
 
+        /* RESULT */
+
         resultText =
         percentage >= 33
         ? "PASS"
@@ -1232,6 +1382,11 @@ function searchResult(){
         : "fail";
 
     }
+
+
+    document.getElementById("totalMarks")
+    .innerText =
+    total + " / 800";
 
 
     document.getElementById("percentage")
@@ -1251,14 +1406,32 @@ function searchResult(){
     resultText;
 
 
-    /* REMARK */
+    /* ==================================================
+       TEACHER REMARK
+       ================================================== */
 
     let remark = "";
+
 
     if(resultText === "ABSENT"){
 
         remark =
         "Student was absent in one or more subjects.";
+
+    }else if(rank === 1){
+
+        remark =
+        "Outstanding performance! Congratulations on securing First Rank.";
+
+    }else if(rank === 2){
+
+        remark =
+        "Excellent performance! Keep working hard.";
+
+    }else if(rank === 3){
+
+        remark =
+        "Very good performance. Keep improving.";
 
     }else if(percentage >= 80){
 
@@ -1288,11 +1461,14 @@ function searchResult(){
     remark;
 
 
-    /* SHOW */
+    /* ==================================================
+       SHOW MARKSHEET
+       ================================================== */
 
     resultBox.classList.add("show");
 
-    printButton.style.display = "block";
+    printButton.style.display =
+    "block";
 
 
     resultBox.scrollIntoView({
@@ -1303,7 +1479,9 @@ function searchResult(){
 }
 
 
-/* ENTER KEY */
+/* ==================================================
+   ENTER KEY
+   ================================================== */
 
 document.getElementById("rollNo")
 .addEventListener(
