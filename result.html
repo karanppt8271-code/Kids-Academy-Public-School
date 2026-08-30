@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student Result | Kid's Academy Public School</title>
+<title>School Result | Kid's Academy Public School</title>
 
 <style>
 *{
@@ -14,366 +14,185 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#eef7ff,#fdf4ff);
-    min-height:100vh;
-    padding:25px 12px;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#e0f2fe,#fdf2f8);
     color:#222;
 }
 
-.container{
-    max-width:850px;
-    margin:auto;
-}
-
-/* SEARCH BOX */
-
-.search-box{
-    background:white;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,.10);
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.search-box h1{
-    color:#174ea6;
-    font-size:28px;
-    margin-bottom:7px;
-}
-
-.search-box p{
-    color:#666;
-    margin-bottom:20px;
-}
-
-.search-area{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-}
-
-.search-area input{
-    width:280px;
-    padding:14px;
-    border:2px solid #d5d5d5;
-    border-radius:10px;
-    font-size:17px;
-    outline:none;
-}
-
-.search-area input:focus{
-    border-color:#174ea6;
-}
-
-.search-area button{
-    padding:14px 25px;
-    border:none;
-    border-radius:10px;
-    background:#174ea6;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.search-area button:hover{
-    background:#0d47a1;
-}
-
-/* RESULT CARD */
-
-#result{
-    display:none;
-}
-
-.result-card{
-    background:white;
-    border-radius:20px;
-    box-shadow:0 8px 35px rgba(0,0,0,.12);
-    overflow:hidden;
-}
-
-/* HEADER */
-
-.school-header{
-    background:linear-gradient(135deg,#174ea6,#673ab7);
+.header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
     color:white;
     text-align:center;
     padding:25px 15px;
 }
 
-.school-header img{
-    width:80px;
-    height:80px;
+.header img{
+    width:75px;
+    height:75px;
     object-fit:contain;
     background:white;
-    padding:5px;
     border-radius:50%;
-    margin-bottom:10px;
+    padding:5px;
 }
 
-.school-header h2{
-    font-size:27px;
-    margin-bottom:6px;
+.header h1{
+    margin-top:10px;
+    font-size:28px;
 }
 
-.school-header h3{
-    font-size:19px;
-    font-weight:normal;
+.header p{
+    margin-top:5px;
+    font-size:16px;
 }
 
-.school-header p{
-    margin-top:7px;
-    font-size:15px;
+.container{
+    max-width:1100px;
+    margin:25px auto;
+    padding:15px;
 }
 
-/* STUDENT INFO */
-
-.student-info{
-    padding:20px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    background:#f8fbff;
-}
-
-.info{
-    border:1px solid #dce7f5;
-    padding:12px 15px;
-    border-radius:10px;
+.class-box{
     background:white;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    margin-bottom:25px;
 }
 
-.info span{
-    display:block;
-    font-size:13px;
-    color:#777;
-    margin-bottom:4px;
-}
-
-.info strong{
-    font-size:17px;
-    color:#222;
-}
-
-/* MARKS */
-
-.marks-title{
+.class-box h2{
     text-align:center;
-    font-size:21px;
-    color:#174ea6;
-    margin:20px 0 12px;
+    color:#2563eb;
+    margin-bottom:15px;
 }
 
-.table-wrap{
+select{
+    width:100%;
+    padding:13px;
+    border:2px solid #2563eb;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+}
+
+.result-card{
+    display:none;
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
     overflow-x:auto;
-    padding:0 20px;
+}
+
+.result-card.active{
+    display:block;
+}
+
+.result-title{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.result-title h2{
+    color:#111827;
+}
+
+.result-title p{
+    color:#555;
+    margin-top:5px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:600px;
+    min-width:850px;
 }
 
 th{
-    background:#174ea6;
+    background:#2563eb;
     color:white;
-    padding:12px 8px;
-    font-size:14px;
+    padding:11px;
+    border:1px solid #ddd;
 }
 
 td{
-    border:1px solid #d7dce5;
-    padding:11px 8px;
+    padding:10px;
     text-align:center;
-    font-size:15px;
-}
-
-td:first-child{
-    text-align:left;
-    font-weight:bold;
+    border:1px solid #ddd;
 }
 
 tr:nth-child(even){
-    background:#f6f9fd;
+    background:#f1f5f9;
 }
 
-.total-row{
-    background:#e8f2ff !important;
+.total{
+    font-weight:bold;
+    color:#16a34a;
+}
+
+.rank{
     font-weight:bold;
 }
 
-.total-row td{
-    color:#174ea6;
-    font-size:17px;
+.topper{
+    margin-top:20px;
+    padding:15px;
+    background:#dcfce7;
+    border-radius:12px;
 }
 
-/* SUMMARY */
-
-.summary{
-    margin:20px;
-    padding:18px;
-    border-radius:14px;
-    background:linear-gradient(135deg,#f0f7ff,#f8efff);
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    text-align:center;
-}
-
-.summary-box{
-    background:white;
-    padding:14px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
-}
-
-.summary-box span{
-    display:block;
-    color:#777;
-    font-size:13px;
-    margin-bottom:5px;
-}
-
-.summary-box strong{
-    font-size:21px;
-    color:#174ea6;
-}
-
-/* BUTTON */
-
-.print-area{
-    text-align:center;
-    padding:5px 20px 25px;
+.topper h3{
+    color:#15803d;
+    margin-bottom:8px;
 }
 
 .print-btn{
-    border:none;
-    background:#198754;
+    display:block;
+    margin:20px auto 0;
+    background:#16a34a;
     color:white;
-    padding:13px 28px;
+    border:none;
+    padding:12px 25px;
     border-radius:10px;
     font-size:16px;
-    font-weight:bold;
     cursor:pointer;
 }
 
 .print-btn:hover{
-    background:#146c43;
+    background:#15803d;
 }
 
-/* ERROR */
-
-.error{
-    display:none;
-    background:#fff0f0;
-    color:#c62828;
-    padding:15px;
-    border-radius:10px;
-    margin-top:15px;
-    font-weight:bold;
+footer{
+    margin-top:30px;
+    background:#111827;
+    color:#cbd5e1;
+    text-align:center;
+    padding:20px;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
-
-    body{
-        padding:12px 8px;
-    }
-
-    .search-box{
-        padding:20px 12px;
-    }
-
-    .search-box h1{
-        font-size:23px;
-    }
-
-    .search-area{
-        flex-direction:column;
-    }
-
-    .search-area input{
-        width:100%;
-    }
-
-    .search-area button{
-        width:100%;
-    }
-
-    .school-header h2{
+    .header h1{
         font-size:21px;
     }
 
-    .school-header h3{
-        font-size:16px;
-    }
-
-    .student-info{
-        grid-template-columns:1fr;
-        padding:15px;
-    }
-
-    .summary{
-        grid-template-columns:1fr;
-        margin:15px;
-    }
-
-    .table-wrap{
-        padding:0 12px;
+    .container{
+        padding:10px;
     }
 }
 
-/* PRINT */
-
 @media print{
+    .class-box,
+    .print-btn,
+    footer{
+        display:none;
+    }
 
     body{
         background:white;
-        padding:0;
-    }
-
-    .search-box,
-    .print-area{
-        display:none !important;
-    }
-
-    #result{
-        display:block !important;
     }
 
     .result-card{
+        display:block !important;
         box-shadow:none;
-        border:1px solid #222;
-        border-radius:0;
-    }
-
-    .school-header{
-        color:#000;
-        background:white;
-        border-bottom:2px solid #000;
-    }
-
-    .school-header img{
-        border:1px solid #999;
-    }
-
-    .marks-title{
-        color:#000;
-    }
-
-    th{
-        background:#ddd !important;
-        color:#000 !important;
-    }
-
-    .summary-box{
-        box-shadow:none;
-        border:1px solid #ccc;
     }
 }
 </style>
@@ -381,558 +200,604 @@ tr:nth-child(even){
 
 <body>
 
+<header class="header">
+
+    <img src="school-logo.png" alt="School Logo">
+
+    <h1>KID'S ACADEMY PUBLIC SCHOOL</h1>
+
+    <p>Manikpur, Pirpainti Bazar, Bhagalpur, Bihar</p>
+
+    <p><b>FIRST TERMINAL EXAM RESULT - 2026</b></p>
+
+</header>
+
+
 <div class="container">
 
-    <!-- SEARCH -->
+    <div class="class-box">
 
-    <div class="search-box">
+        <h2>📚 Class Wise Result</h2>
 
-        <h1>🎓 Student Result</h1>
+        <select id="classSelect" onchange="showResult()">
 
-        <p>
-            Kid's Academy Public School<br>
-            First Terminal Exam - 2026
-        </p>
+            <option value="">-- अपनी Class चुनें --</option>
 
-        <div class="search-area">
+            <option value="std1">STD 1</option>
+            <option value="std2">STD 2</option>
+            <option value="std3">STD 3</option>
+            <option value="std4">STD 4</option>
+            <option value="std5">STD 5</option>
+            <option value="std6">STD 6</option>
+            <option value="std7">STD 7</option>
+            <option value="std8">STD 8</option>
 
-            <input
-                type="number"
-                id="rollInput"
-                placeholder="Enter Roll Number"
-                min="1"
-                max="13"
-            >
-
-            <button onclick="searchResult()">
-                🔍 Search Result
-            </button>
-
-        </div>
-
-        <div class="error" id="error">
-            ❌ Result नहीं मिला। कृपया सही Roll Number डालें।
-        </div>
+        </select>
 
     </div>
 
 
-    <!-- RESULT -->
+    <!-- ================= STD 1 ================= -->
 
-    <div id="result">
+    <div id="std1" class="result-card">
 
-        <div class="result-card">
+        <div class="result-title">
 
-            <!-- SCHOOL HEADER -->
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
 
-            <div class="school-header">
-
-                <img
-                    src="school-logo.png"
-                    alt="School Logo"
-                >
-
-                <h2>KID'S ACADEMY PUBLIC SCHOOL</h2>
-
-                <h3>FIRST TERMINAL EXAM - 2026</h3>
-
-                <p>CLASS - STD 2</p>
-
-            </div>
-
-
-            <!-- STUDENT INFORMATION -->
-
-            <div class="student-info">
-
-                <div class="info">
-                    <span>Student Name</span>
-                    <strong id="studentName">-</strong>
-                </div>
-
-                <div class="info">
-                    <span>Roll Number</span>
-                    <strong id="rollNumber">-</strong>
-                </div>
-
-                <div class="info">
-                    <span>Class</span>
-                    <strong>STD 2</strong>
-                </div>
-
-                <div class="info">
-                    <span>Exam</span>
-                    <strong>First Terminal Exam - 2026</strong>
-                </div>
-
-            </div>
-
-
-            <!-- MARKS -->
-
-            <h3 class="marks-title">
-                📋 Subject Wise Marks
-            </h3>
-
-            <div class="table-wrap">
-
-                <table>
-
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Marks</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td>Hindi</td>
-                            <td id="hindi">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>English</td>
-                            <td id="english">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>Math</td>
-                            <td id="math">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>Science</td>
-                            <td id="science">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>S.S.I</td>
-                            <td id="ssi">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>Computer</td>
-                            <td id="computer">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>G.K</td>
-                            <td id="gk">-</td>
-                        </tr>
-
-                        <tr>
-                            <td>Drawing</td>
-                            <td id="drawing">-</td>
-                        </tr>
-
-                        <tr class="total-row">
-                            <td>TOTAL</td>
-                            <td id="total">-</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-
-            <!-- SUMMARY -->
-
-            <div class="summary">
-
-                <div class="summary-box">
-
-                    <span>Total Marks</span>
-
-                    <strong id="total2">
-                        -
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-box">
-
-                    <span>Percentage</span>
-
-                    <strong id="percentage">
-                        -
-                    </strong>
-
-                </div>
-
-
-                <div class="summary-box">
-
-                    <span>Rank</span>
-
-                    <strong id="rank">
-                        -
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <!-- PRINT -->
-
-            <div class="print-area">
-
-                <button
-                    class="print-btn"
-                    onclick="window.print()"
-                >
-                    🖨️ Print Result
-                </button>
-
-            </div>
+            <p><b>CLASS - STD 1</b></p>
 
         </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Computer</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td class="rank">1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>92</td>
+                <td>95</td>
+                <td>88</td>
+                <td>90</td>
+                <td class="total">455</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Student Name 2</td>
+                <td>85</td>
+                <td>88</td>
+                <td>90</td>
+                <td>84</td>
+                <td>86</td>
+                <td class="total">433</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 2 ================= -->
+
+    <div id="std2" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 2</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>S.S.I</th>
+                <th>Computer</th>
+                <th>G.K</th>
+                <th>Drawing</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td><b>Md Altamash</b></td>
+                <td>98</td>
+                <td>90</td>
+                <td>90</td>
+                <td>92</td>
+                <td>95</td>
+                <td>94</td>
+                <td>90</td>
+                <td>92</td>
+                <td class="total">741</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td><b>Md Akram</b></td>
+                <td>95</td>
+                <td>85</td>
+                <td>85</td>
+                <td>70</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+                <td>90</td>
+                <td class="total">695</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><b>Anika Khatun</b></td>
+                <td>92</td>
+                <td>100</td>
+                <td>90</td>
+                <td>75</td>
+                <td>93</td>
+                <td>92</td>
+                <td>55</td>
+                <td>95</td>
+                <td class="total">692</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Rahima Khatun</td>
+                <td>82</td>
+                <td>40</td>
+                <td>75</td>
+                <td>50</td>
+                <td>80</td>
+                <td>78</td>
+                <td>50</td>
+                <td>80</td>
+                <td class="total">535</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Jarin Khatun</td>
+                <td>88</td>
+                <td>50</td>
+                <td>75</td>
+                <td>80</td>
+                <td>85</td>
+                <td>80</td>
+                <td>65</td>
+                <td>85</td>
+                <td class="total">608</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>Chahat Khatun</td>
+                <td>85</td>
+                <td>40</td>
+                <td>70</td>
+                <td>50</td>
+                <td>82</td>
+                <td>72</td>
+                <td>60</td>
+                <td>75</td>
+                <td class="total">534</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>Sona Khatun</td>
+                <td>30</td>
+                <td>50</td>
+                <td>80</td>
+                <td>62</td>
+                <td>80</td>
+                <td>70</td>
+                <td>40</td>
+                <td>80</td>
+                <td class="total">492</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>Md Safi Alam</td>
+                <td>85</td>
+                <td>85</td>
+                <td>85</td>
+                <td>70</td>
+                <td>90</td>
+                <td>87</td>
+                <td>85</td>
+                <td>90</td>
+                <td class="total">677</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>Md Ayan</td>
+                <td>88</td>
+                <td>90</td>
+                <td>87</td>
+                <td>68</td>
+                <td>85</td>
+                <td>89</td>
+                <td>80</td>
+                <td>90</td>
+                <td class="total">677</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>Manju Kumari</td>
+                <td>90</td>
+                <td>90</td>
+                <td>75</td>
+                <td>74</td>
+                <td>75</td>
+                <td>75</td>
+                <td>45</td>
+                <td>80</td>
+                <td class="total">604</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>Md Adnan</td>
+                <td>95</td>
+                <td>74</td>
+                <td>84</td>
+                <td>74</td>
+                <td>89</td>
+                <td>84</td>
+                <td>90</td>
+                <td>90</td>
+                <td class="total">680</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td>Md Ahad</td>
+                <td>60</td>
+                <td>40</td>
+                <td>70</td>
+                <td>70</td>
+                <td>75</td>
+                <td>70</td>
+                <td>35</td>
+                <td>75</td>
+                <td class="total">495</td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td>Md Abjal</td>
+                <td>80</td>
+                <td>ABS</td>
+                <td>ABS</td>
+                <td>ABS</td>
+                <td>ABS</td>
+                <td>ABS</td>
+                <td>ABS</td>
+                <td>ABS</td>
+                <td class="total">80</td>
+            </tr>
+
+        </table>
+
+        <div class="topper">
+
+            <h3>🏆 Class Topper</h3>
+
+            <p>🥇 <b>1st</b> - Md Altamash = <b>741</b></p>
+            <p>🥈 <b>2nd</b> - Md Akram = <b>695</b></p>
+            <p>🥉 <b>3rd</b> - Anika Khatun = <b>692</b></p>
+
+        </div>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 3 ================= -->
+
+    <div id="std3" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 3</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>90</td>
+                <td>95</td>
+                <td>92</td>
+                <td class="total">367</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 4 ================= -->
+
+    <div id="std4" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 4</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>90</td>
+                <td>95</td>
+                <td>92</td>
+                <td class="total">367</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 5 ================= -->
+
+    <div id="std5" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 5</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>90</td>
+                <td>95</td>
+                <td>92</td>
+                <td class="total">367</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 6 ================= -->
+
+    <div id="std6" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 6</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>90</td>
+                <td>95</td>
+                <td>92</td>
+                <td class="total">367</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 7 ================= -->
+
+    <div id="std7" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 7</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>90</td>
+                <td>95</td>
+                <td>92</td>
+                <td class="total">367</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+
+    </div>
+
+
+    <!-- ================= STD 8 ================= -->
+
+    <div id="std8" class="result-card">
+
+        <div class="result-title">
+
+            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+            <p><b>CLASS - STD 8</b></p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Rank</th>
+                <th>Student Name</th>
+                <th>Hindi</th>
+                <th>English</th>
+                <th>Math</th>
+                <th>Science</th>
+                <th>Total</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Student Name 1</td>
+                <td>90</td>
+                <td>90</td>
+                <td>95</td>
+                <td>92</td>
+                <td class="total">367</td>
+            </tr>
+
+        </table>
+
+        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
 
     </div>
 
 </div>
 
 
+<footer>
+
+    © 2026 Kid's Academy Public School  
+    <br>
+    Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
+
+</footer>
+
+
 <script>
 
-/* =========================
-   STUDENT RESULT DATA
-   ========================= */
+function showResult(){
 
-const students = [
+    let selected = document.getElementById("classSelect").value;
 
-    {
-        roll:1,
-        name:"Md Akram",
-        hindi:95,
-        english:85,
-        math:85,
-        science:70,
-        ssi:90,
-        computer:90,
-        gk:90,
-        drawing:90,
-        total:695
-    },
+    let cards = document.querySelectorAll(".result-card");
 
-    {
-        roll:2,
-        name:"Anika Khatun",
-        hindi:92,
-        english:100,
-        math:90,
-        science:75,
-        ssi:93,
-        computer:92,
-        gk:55,
-        drawing:95,
-        total:692
-    },
-
-    {
-        roll:3,
-        name:"Rahima Khatun",
-        hindi:82,
-        english:40,
-        math:75,
-        science:50,
-        ssi:80,
-        computer:78,
-        gk:50,
-        drawing:80,
-        total:535
-    },
-
-    {
-        roll:4,
-        name:"Jarin Khatun",
-        hindi:88,
-        english:50,
-        math:75,
-        science:80,
-        ssi:85,
-        computer:80,
-        gk:65,
-        drawing:85,
-        total:608
-    },
-
-    {
-        roll:5,
-        name:"Chahat Khatun",
-        hindi:85,
-        english:40,
-        math:70,
-        science:50,
-        ssi:82,
-        computer:72,
-        gk:60,
-        drawing:75,
-        total:534
-    },
-
-    {
-        roll:6,
-        name:"Sona Khatun",
-        hindi:30,
-        english:50,
-        math:80,
-        science:62,
-        ssi:80,
-        computer:70,
-        gk:40,
-        drawing:80,
-        total:492
-    },
-
-    {
-        roll:7,
-        name:"Md Altamash",
-        hindi:98,
-        english:90,
-        math:90,
-        science:92,
-        ssi:95,
-        computer:94,
-        gk:90,
-        drawing:92,
-        total:741
-    },
-
-    {
-        roll:8,
-        name:"Md Safi Alam",
-        hindi:85,
-        english:85,
-        math:85,
-        science:70,
-        ssi:90,
-        computer:87,
-        gk:85,
-        drawing:90,
-        total:677
-    },
-
-    {
-        roll:9,
-        name:"Md Ayan",
-        hindi:88,
-        english:90,
-        math:87,
-        science:68,
-        ssi:85,
-        computer:89,
-        gk:80,
-        drawing:90,
-        total:677
-    },
-
-    {
-        roll:10,
-        name:"Manju Kumari",
-        hindi:90,
-        english:90,
-        math:75,
-        science:74,
-        ssi:75,
-        computer:75,
-        gk:45,
-        drawing:80,
-        total:604
-    },
-
-    {
-        roll:11,
-        name:"Md Adnan",
-        hindi:95,
-        english:74,
-        math:84,
-        science:74,
-        ssi:89,
-        computer:84,
-        gk:90,
-        drawing:90,
-        total:680
-    },
-
-    {
-        roll:12,
-        name:"Md Ahad",
-        hindi:60,
-        english:40,
-        math:70,
-        science:70,
-        ssi:75,
-        computer:70,
-        gk:35,
-        drawing:75,
-        total:495
-    },
-
-    {
-        roll:13,
-        name:"Md Abjal",
-        hindi:80,
-        english:"ABS",
-        math:"ABS",
-        science:"ABS",
-        ssi:"ABS",
-        computer:"ABS",
-        gk:"ABS",
-        drawing:"ABS",
-        total:80
-    }
-
-];
-
-
-/* =========================
-   RANK
-   ========================= */
-
-function getRank(total){
-
-    if(total === 741){
-        return "1st";
-    }
-
-    if(total === 695){
-        return "2nd";
-    }
-
-    if(total === 692){
-        return "3rd";
-    }
-
-    return "—";
-}
-
-
-/* =========================
-   SEARCH RESULT
-   ========================= */
-
-function searchResult(){
-
-    const roll =
-        parseInt(
-            document.getElementById("rollInput").value
-        );
-
-    const student =
-        students.find(
-            s => s.roll === roll
-        );
-
-    const result =
-        document.getElementById("result");
-
-    const error =
-        document.getElementById("error");
-
-
-    if(!student){
-
-        result.style.display="none";
-        error.style.display="block";
-
-        return;
-    }
-
-
-    error.style.display="none";
-    result.style.display="block";
-
-
-    /* STUDENT */
-
-    document.getElementById("studentName").textContent =
-        student.name;
-
-    document.getElementById("rollNumber").textContent =
-        student.roll;
-
-
-    /* MARKS */
-
-    document.getElementById("hindi").textContent =
-        student.hindi;
-
-    document.getElementById("english").textContent =
-        student.english;
-
-    document.getElementById("math").textContent =
-        student.math;
-
-    document.getElementById("science").textContent =
-        student.science;
-
-    document.getElementById("ssi").textContent =
-        student.ssi;
-
-    document.getElementById("computer").textContent =
-        student.computer;
-
-    document.getElementById("gk").textContent =
-        student.gk;
-
-    document.getElementById("drawing").textContent =
-        student.drawing;
-
-
-    /* TOTAL */
-
-    document.getElementById("total").textContent =
-        student.total;
-
-    document.getElementById("total2").textContent =
-        student.total;
-
-
-    /* PERCENTAGE */
-
-    const percentage =
-        (student.total / 900) * 100;
-
-    document.getElementById("percentage").textContent =
-        percentage.toFixed(2) + "%";
-
-
-    /* RANK */
-
-    document.getElementById("rank").textContent =
-        getRank(student.total);
-
-
-    /* RESULT SCREEN PAR LE JAYE */
-
-    result.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
+    cards.forEach(function(card){
+        card.classList.remove("active");
     });
 
-}
+    if(selected){
 
+        let result = document.getElementById(selected);
 
-/* =========================
-   ENTER KEY
-   ========================= */
-
-document.getElementById("rollInput")
-.addEventListener("keypress",function(event){
-
-    if(event.key === "Enter"){
-
-        searchResult();
+        if(result){
+            result.classList.add("active");
+        }
 
     }
 
-});
+}
 
 </script>
 
