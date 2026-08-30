@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>School Result | Kid's Academy Public School</title>
+<title>Student Result - Kid's Academy Public School</title>
 
 <style>
 *{
@@ -15,184 +15,265 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#e0f2fe,#fdf2f8);
-    color:#222;
+    background:linear-gradient(135deg,#dbeafe,#fce7f3);
+    min-height:100vh;
+    color:#1f2937;
 }
 
 .header{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    background:linear-gradient(135deg,#1d4ed8,#7c3aed);
     color:white;
     text-align:center;
     padding:25px 15px;
 }
 
 .header img{
-    width:75px;
-    height:75px;
+    width:80px;
+    height:80px;
     object-fit:contain;
     background:white;
     border-radius:50%;
-    padding:5px;
+    padding:6px;
 }
 
 .header h1{
     margin-top:10px;
-    font-size:28px;
+    font-size:27px;
 }
 
 .header p{
-    margin-top:5px;
-    font-size:16px;
+    margin-top:6px;
 }
 
-.container{
-    max-width:1100px;
-    margin:25px auto;
-    padding:15px;
-}
-
-.class-box{
+.search-box{
+    max-width:650px;
+    margin:30px auto;
     background:white;
-    padding:20px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
-    margin-bottom:25px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.class-box h2{
+.search-box h2{
     text-align:center;
-    color:#2563eb;
-    margin-bottom:15px;
+    color:#1d4ed8;
+    margin-bottom:20px;
 }
 
-select{
+label{
+    display:block;
+    font-weight:bold;
+    margin:12px 0 7px;
+}
+
+select,
+input{
     width:100%;
     padding:13px;
-    border:2px solid #2563eb;
+    border:2px solid #cbd5e1;
     border-radius:10px;
     font-size:16px;
     outline:none;
 }
 
-.result-card{
-    display:none;
-    background:white;
-    border-radius:18px;
-    padding:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
-    overflow-x:auto;
+select:focus,
+input:focus{
+    border-color:#2563eb;
 }
 
-.result-card.active{
+.search-btn{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:0;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.search-btn:hover{
+    background:#1d4ed8;
+}
+
+.result{
+    display:none;
+    max-width:1000px;
+    margin:25px auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.result.show{
     display:block;
 }
 
-.result-title{
+.result-header{
     text-align:center;
-    margin-bottom:15px;
+    border-bottom:2px solid #2563eb;
+    padding-bottom:15px;
+    margin-bottom:20px;
 }
 
-.result-title h2{
-    color:#111827;
+.result-header h2{
+    color:#1d4ed8;
 }
 
-.result-title p{
-    color:#555;
-    margin-top:5px;
+.student-info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.info{
+    background:#eff6ff;
+    padding:14px;
+    border-radius:10px;
+}
+
+.info b{
+    display:block;
+    color:#1d4ed8;
+    margin-bottom:5px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:850px;
 }
 
 th{
     background:#2563eb;
     color:white;
-    padding:11px;
+    padding:12px;
     border:1px solid #ddd;
 }
 
 td{
-    padding:10px;
+    padding:11px;
     text-align:center;
     border:1px solid #ddd;
 }
 
 tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.total-row{
+    font-weight:bold;
+    background:#dbeafe !important;
+}
+
+.summary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.summary-box{
+    padding:15px;
+    text-align:center;
+    border-radius:12px;
     background:#f1f5f9;
 }
 
-.total{
-    font-weight:bold;
-    color:#16a34a;
+.summary-box b{
+    display:block;
+    font-size:20px;
+    margin-top:5px;
 }
 
-.rank{
-    font-weight:bold;
-}
-
-.topper{
-    margin-top:20px;
-    padding:15px;
-    background:#dcfce7;
-    border-radius:12px;
-}
-
-.topper h3{
+.pass{
     color:#15803d;
-    margin-bottom:8px;
+}
+
+.fail{
+    color:#dc2626;
 }
 
 .print-btn{
     display:block;
-    margin:20px auto 0;
+    margin:25px auto 0;
+    padding:12px 30px;
     background:#16a34a;
     color:white;
-    border:none;
-    padding:12px 25px;
+    border:0;
     border-radius:10px;
     font-size:16px;
     cursor:pointer;
 }
 
-.print-btn:hover{
-    background:#15803d;
+.error{
+    display:none;
+    margin-top:15px;
+    padding:13px;
+    background:#fee2e2;
+    color:#b91c1c;
+    border-radius:10px;
+    text-align:center;
 }
 
 footer{
-    margin-top:30px;
+    margin-top:40px;
     background:#111827;
     color:#cbd5e1;
     text-align:center;
     padding:20px;
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
+
     .header h1{
         font-size:21px;
     }
 
-    .container{
-        padding:10px;
+    .student-info{
+        grid-template-columns:1fr;
+    }
+
+    .summary{
+        grid-template-columns:1fr;
+    }
+
+    .result{
+        margin:15px;
+        padding:15px;
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:650px;
     }
 }
 
 @media print{
-    .class-box,
-    .print-btn,
-    footer{
-        display:none;
-    }
 
     body{
         background:white;
     }
 
-    .result-card{
-        display:block !important;
+    .header{
+        background:white;
+        color:black;
+    }
+
+    .search-box,
+    .print-btn,
+    footer{
+        display:none;
+    }
+
+    .result{
+        display:block;
         box-shadow:none;
+        margin:0;
+        max-width:none;
     }
 }
 </style>
@@ -213,562 +294,123 @@ footer{
 </header>
 
 
-<div class="container">
+<div class="search-box">
 
-    <div class="class-box">
+    <h2>🔎 Student Result Search</h2>
 
-        <h2>📚 Class Wise Result</h2>
+    <label>📚 Select Class</label>
 
-        <select id="classSelect" onchange="showResult()">
+    <select id="className">
+        <option value="">-- अपनी Class चुनें --</option>
+        <option value="STD 1">STD 1</option>
+        <option value="STD 2">STD 2</option>
+        <option value="STD 3">STD 3</option>
+        <option value="STD 4">STD 4</option>
+        <option value="STD 5">STD 5</option>
+        <option value="STD 6">STD 6</option>
+        <option value="STD 7">STD 7</option>
+        <option value="STD 8">STD 8</option>
+    </select>
 
-            <option value="">-- अपनी Class चुनें --</option>
 
-            <option value="std1">STD 1</option>
-            <option value="std2">STD 2</option>
-            <option value="std3">STD 3</option>
-            <option value="std4">STD 4</option>
-            <option value="std5">STD 5</option>
-            <option value="std6">STD 6</option>
-            <option value="std7">STD 7</option>
-            <option value="std8">STD 8</option>
+    <label>🔢 Roll Number</label>
 
-        </select>
+    <input
+        type="number"
+        id="rollNo"
+        placeholder="अपना Roll Number डालें"
+        min="1"
+    >
+
+
+    <button class="search-btn" onclick="searchResult()">
+        🔍 Check Result
+    </button>
+
+    <div class="error" id="error">
+        ❌ Result नहीं मिला। कृपया Class और Roll Number सही डालें।
+    </div>
+
+</div>
+
+
+<div class="result" id="resultBox">
+
+    <div class="result-header">
+
+        <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+
+        <p id="resultClass"></p>
 
     </div>
 
 
-    <!-- ================= STD 1 ================= -->
+    <div class="student-info">
 
-    <div id="std1" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 1</b></p>
-
+        <div class="info">
+            <b>👨‍🎓 Student Name</b>
+            <span id="studentName"></span>
         </div>
 
-        <table>
+        <div class="info">
+            <b>🔢 Roll Number</b>
+            <span id="studentRoll"></span>
+        </div>
 
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Computer</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td class="rank">1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>92</td>
-                <td>95</td>
-                <td>88</td>
-                <td>90</td>
-                <td class="total">455</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Student Name 2</td>
-                <td>85</td>
-                <td>88</td>
-                <td>90</td>
-                <td>84</td>
-                <td>86</td>
-                <td class="total">433</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+        <div class="info">
+            <b>🏫 Class</b>
+            <span id="studentClass"></span>
+        </div>
 
     </div>
 
 
-    <!-- ================= STD 2 ================= -->
+    <table>
 
-    <div id="std2" class="result-card">
+        <thead>
 
-        <div class="result-title">
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
 
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
+        </thead>
 
-            <p><b>CLASS - STD 2</b></p>
+        <tbody id="marksTable"></tbody>
 
+    </table>
+
+
+    <div class="summary">
+
+        <div class="summary-box">
+            Total Marks
+            <b id="totalMarks"></b>
         </div>
 
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>S.S.I</th>
-                <th>Computer</th>
-                <th>G.K</th>
-                <th>Drawing</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td><b>Md Altamash</b></td>
-                <td>98</td>
-                <td>90</td>
-                <td>90</td>
-                <td>92</td>
-                <td>95</td>
-                <td>94</td>
-                <td>90</td>
-                <td>92</td>
-                <td class="total">741</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td><b>Md Akram</b></td>
-                <td>95</td>
-                <td>85</td>
-                <td>85</td>
-                <td>70</td>
-                <td>90</td>
-                <td>90</td>
-                <td>90</td>
-                <td>90</td>
-                <td class="total">695</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td><b>Anika Khatun</b></td>
-                <td>92</td>
-                <td>100</td>
-                <td>90</td>
-                <td>75</td>
-                <td>93</td>
-                <td>92</td>
-                <td>55</td>
-                <td>95</td>
-                <td class="total">692</td>
-            </tr>
-
-            <tr>
-                <td>4</td>
-                <td>Rahima Khatun</td>
-                <td>82</td>
-                <td>40</td>
-                <td>75</td>
-                <td>50</td>
-                <td>80</td>
-                <td>78</td>
-                <td>50</td>
-                <td>80</td>
-                <td class="total">535</td>
-            </tr>
-
-            <tr>
-                <td>5</td>
-                <td>Jarin Khatun</td>
-                <td>88</td>
-                <td>50</td>
-                <td>75</td>
-                <td>80</td>
-                <td>85</td>
-                <td>80</td>
-                <td>65</td>
-                <td>85</td>
-                <td class="total">608</td>
-            </tr>
-
-            <tr>
-                <td>6</td>
-                <td>Chahat Khatun</td>
-                <td>85</td>
-                <td>40</td>
-                <td>70</td>
-                <td>50</td>
-                <td>82</td>
-                <td>72</td>
-                <td>60</td>
-                <td>75</td>
-                <td class="total">534</td>
-            </tr>
-
-            <tr>
-                <td>7</td>
-                <td>Sona Khatun</td>
-                <td>30</td>
-                <td>50</td>
-                <td>80</td>
-                <td>62</td>
-                <td>80</td>
-                <td>70</td>
-                <td>40</td>
-                <td>80</td>
-                <td class="total">492</td>
-            </tr>
-
-            <tr>
-                <td>8</td>
-                <td>Md Safi Alam</td>
-                <td>85</td>
-                <td>85</td>
-                <td>85</td>
-                <td>70</td>
-                <td>90</td>
-                <td>87</td>
-                <td>85</td>
-                <td>90</td>
-                <td class="total">677</td>
-            </tr>
-
-            <tr>
-                <td>9</td>
-                <td>Md Ayan</td>
-                <td>88</td>
-                <td>90</td>
-                <td>87</td>
-                <td>68</td>
-                <td>85</td>
-                <td>89</td>
-                <td>80</td>
-                <td>90</td>
-                <td class="total">677</td>
-            </tr>
-
-            <tr>
-                <td>10</td>
-                <td>Manju Kumari</td>
-                <td>90</td>
-                <td>90</td>
-                <td>75</td>
-                <td>74</td>
-                <td>75</td>
-                <td>75</td>
-                <td>45</td>
-                <td>80</td>
-                <td class="total">604</td>
-            </tr>
-
-            <tr>
-                <td>11</td>
-                <td>Md Adnan</td>
-                <td>95</td>
-                <td>74</td>
-                <td>84</td>
-                <td>74</td>
-                <td>89</td>
-                <td>84</td>
-                <td>90</td>
-                <td>90</td>
-                <td class="total">680</td>
-            </tr>
-
-            <tr>
-                <td>12</td>
-                <td>Md Ahad</td>
-                <td>60</td>
-                <td>40</td>
-                <td>70</td>
-                <td>70</td>
-                <td>75</td>
-                <td>70</td>
-                <td>35</td>
-                <td>75</td>
-                <td class="total">495</td>
-            </tr>
-
-            <tr>
-                <td>13</td>
-                <td>Md Abjal</td>
-                <td>80</td>
-                <td>ABS</td>
-                <td>ABS</td>
-                <td>ABS</td>
-                <td>ABS</td>
-                <td>ABS</td>
-                <td>ABS</td>
-                <td>ABS</td>
-                <td class="total">80</td>
-            </tr>
-
-        </table>
-
-        <div class="topper">
-
-            <h3>🏆 Class Topper</h3>
-
-            <p>🥇 <b>1st</b> - Md Altamash = <b>741</b></p>
-            <p>🥈 <b>2nd</b> - Md Akram = <b>695</b></p>
-            <p>🥉 <b>3rd</b> - Anika Khatun = <b>692</b></p>
-
+        <div class="summary-box">
+            Percentage
+            <b id="percentage"></b>
         </div>
 
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
+        <div class="summary-box">
+            Result
+            <b id="finalResult"></b>
+        </div>
 
     </div>
 
 
-    <!-- ================= STD 3 ================= -->
-
-    <div id="std3" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 3</b></p>
-
-        </div>
-
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>90</td>
-                <td>95</td>
-                <td>92</td>
-                <td class="total">367</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
-
-    </div>
-
-
-    <!-- ================= STD 4 ================= -->
-
-    <div id="std4" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 4</b></p>
-
-        </div>
-
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>90</td>
-                <td>95</td>
-                <td>92</td>
-                <td class="total">367</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
-
-    </div>
-
-
-    <!-- ================= STD 5 ================= -->
-
-    <div id="std5" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 5</b></p>
-
-        </div>
-
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>90</td>
-                <td>95</td>
-                <td>92</td>
-                <td class="total">367</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
-
-    </div>
-
-
-    <!-- ================= STD 6 ================= -->
-
-    <div id="std6" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 6</b></p>
-
-        </div>
-
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>90</td>
-                <td>95</td>
-                <td>92</td>
-                <td class="total">367</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
-
-    </div>
-
-
-    <!-- ================= STD 7 ================= -->
-
-    <div id="std7" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 7</b></p>
-
-        </div>
-
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>90</td>
-                <td>95</td>
-                <td>92</td>
-                <td class="total">367</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
-
-    </div>
-
-
-    <!-- ================= STD 8 ================= -->
-
-    <div id="std8" class="result-card">
-
-        <div class="result-title">
-
-            <h2>FIRST TERMINAL EXAM RESULT - 2026</h2>
-
-            <p><b>CLASS - STD 8</b></p>
-
-        </div>
-
-        <table>
-
-            <tr>
-                <th>Rank</th>
-                <th>Student Name</th>
-                <th>Hindi</th>
-                <th>English</th>
-                <th>Math</th>
-                <th>Science</th>
-                <th>Total</th>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>Student Name 1</td>
-                <td>90</td>
-                <td>90</td>
-                <td>95</td>
-                <td>92</td>
-                <td class="total">367</td>
-            </tr>
-
-        </table>
-
-        <button class="print-btn" onclick="window.print()">🖨️ Print Result</button>
-
-    </div>
+    <button class="print-btn" onclick="window.print()">
+        🖨️ Print Mark Sheet
+    </button>
 
 </div>
 
 
 <footer>
 
-    © 2026 Kid's Academy Public School  
+    © 2026 Kid's Academy Public School
     <br>
     Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
 
@@ -777,25 +419,362 @@ footer{
 
 <script>
 
-function showResult(){
+/* =========================
+   STUDENT RESULT DATA
+   ========================= */
 
-    let selected = document.getElementById("classSelect").value;
+const students = {
 
-    let cards = document.querySelectorAll(".result-card");
+    "STD 2": [
 
-    cards.forEach(function(card){
-        card.classList.remove("active");
-    });
+        {
+            roll:1,
+            name:"Md Akram",
+            Hindi:95,
+            English:85,
+            Math:85,
+            Science:70,
+            SSI:90,
+            Computer:90,
+            GK:90,
+            Drawing:90
+        },
 
-    if(selected){
+        {
+            roll:2,
+            name:"Anika Khatun",
+            Hindi:92,
+            English:100,
+            Math:90,
+            Science:75,
+            SSI:93,
+            Computer:92,
+            GK:55,
+            Drawing:95
+        },
 
-        let result = document.getElementById(selected);
+        {
+            roll:3,
+            name:"Rahima Khatun",
+            Hindi:82,
+            English:40,
+            Math:75,
+            Science:50,
+            SSI:80,
+            Computer:78,
+            GK:50,
+            Drawing:80
+        },
 
-        if(result){
-            result.classList.add("active");
+        {
+            roll:4,
+            name:"Jarin Khatun",
+            Hindi:88,
+            English:50,
+            Math:75,
+            Science:80,
+            SSI:85,
+            Computer:80,
+            GK:65,
+            Drawing:85
+        },
+
+        {
+            roll:5,
+            name:"Chahat Khatun",
+            Hindi:85,
+            English:40,
+            Math:70,
+            Science:50,
+            SSI:82,
+            Computer:72,
+            GK:60,
+            Drawing:75
+        },
+
+        {
+            roll:6,
+            name:"Sona Khatun",
+            Hindi:30,
+            English:50,
+            Math:80,
+            Science:62,
+            SSI:80,
+            Computer:70,
+            GK:40,
+            Drawing:80
+        },
+
+        {
+            roll:7,
+            name:"Md Altamash",
+            Hindi:98,
+            English:90,
+            Math:90,
+            Science:92,
+            SSI:95,
+            Computer:94,
+            GK:90,
+            Drawing:92
+        },
+
+        {
+            roll:8,
+            name:"Md Safi Alam",
+            Hindi:85,
+            English:85,
+            Math:85,
+            Science:70,
+            SSI:90,
+            Computer:87,
+            GK:85,
+            Drawing:90
+        },
+
+        {
+            roll:9,
+            name:"Md Ayan",
+            Hindi:88,
+            English:90,
+            Math:87,
+            Science:68,
+            SSI:85,
+            Computer:89,
+            GK:80,
+            Drawing:90
+        },
+
+        {
+            roll:10,
+            name:"Manju Kumari",
+            Hindi:90,
+            English:90,
+            Math:75,
+            Science:74,
+            SSI:75,
+            Computer:75,
+            GK:45,
+            Drawing:80
+        },
+
+        {
+            roll:11,
+            name:"Md Adnan",
+            Hindi:95,
+            English:74,
+            Math:84,
+            Science:74,
+            SSI:89,
+            Computer:84,
+            GK:90,
+            Drawing:90
+        },
+
+        {
+            roll:12,
+            name:"Md Ahad",
+            Hindi:60,
+            English:40,
+            Math:70,
+            Science:70,
+            SSI:75,
+            Computer:70,
+            GK:35,
+            Drawing:75
+        },
+
+        {
+            roll:13,
+            name:"Md Abjal",
+            Hindi:80,
+            English:"ABS",
+            Math:"ABS",
+            Science:"ABS",
+            SSI:"ABS",
+            Computer:"ABS",
+            GK:"ABS",
+            Drawing:"ABS"
         }
 
+    ]
+
+};
+
+
+/* =========================
+   SEARCH RESULT
+   ========================= */
+
+function searchResult(){
+
+    const className =
+        document.getElementById("className").value;
+
+    const rollNo =
+        Number(document.getElementById("rollNo").value);
+
+    const resultBox =
+        document.getElementById("resultBox");
+
+    const error =
+        document.getElementById("error");
+
+
+    resultBox.classList.remove("show");
+    error.style.display="none";
+
+
+    if(!className || !rollNo){
+
+        error.innerText =
+        "❌ कृपया Class और Roll Number डालें।";
+
+        error.style.display="block";
+
+        return;
     }
+
+
+    const classStudents = students[className];
+
+
+    if(!classStudents){
+
+        error.innerText =
+        "⚠️ इस Class का Result अभी उपलब्ध नहीं है।";
+
+        error.style.display="block";
+
+        return;
+    }
+
+
+    const student =
+        classStudents.find(s => s.roll === rollNo);
+
+
+    if(!student){
+
+        error.innerText =
+        "❌ इस Roll Number का Result नहीं मिला।";
+
+        error.style.display="block";
+
+        return;
+    }
+
+
+    document.getElementById("resultClass").innerText =
+        "CLASS - " + className;
+
+
+    document.getElementById("studentName").innerText =
+        student.name;
+
+
+    document.getElementById("studentRoll").innerText =
+        student.roll;
+
+
+    document.getElementById("studentClass").innerText =
+        className;
+
+
+    const subjects = [
+
+        ["Hindi",student.Hindi],
+        ["English",student.English],
+        ["Math",student.Math],
+        ["Science",student.Science],
+        ["S.S.I",student.SSI],
+        ["Computer",student.Computer],
+        ["G.K",student.GK],
+        ["Drawing",student.Drawing]
+
+    ];
+
+
+    let tableHTML="";
+
+    let total=0;
+    let absent=false;
+
+
+    subjects.forEach(function(subject){
+
+        let mark=subject[1];
+
+        tableHTML += `
+            <tr>
+                <td><b>${subject[0]}</b></td>
+                <td>${mark}</td>
+            </tr>
+        `;
+
+
+        if(mark === "ABS"){
+
+            absent=true;
+
+        }else{
+
+            total += Number(mark);
+
+        }
+
+    });
+
+
+    tableHTML += `
+        <tr class="total-row">
+            <td>TOTAL</td>
+            <td>${total}</td>
+        </tr>
+    `;
+
+
+    document.getElementById("marksTable").innerHTML =
+        tableHTML;
+
+
+    document.getElementById("totalMarks").innerText =
+        total + " / 800";
+
+
+    if(absent){
+
+        document.getElementById("percentage").innerText =
+            "—";
+
+        document.getElementById("finalResult").innerText =
+            "ABSENT";
+
+        document.getElementById("finalResult").className =
+            "fail";
+
+    }else{
+
+        let percentage =
+            ((total / 800) * 100).toFixed(2);
+
+        document.getElementById("percentage").innerText =
+            percentage + "%";
+
+
+        document.getElementById("finalResult").innerText =
+            "PASS";
+
+        document.getElementById("finalResult").className =
+            "pass";
+
+    }
+
+
+    resultBox.classList.add("show");
+
+    resultBox.scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
