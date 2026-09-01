@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="hi">f
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -258,7 +258,86 @@ section{
     color:#0b3d91;
     margin-bottom:10px;
 }
+<!-- NOTICE BOARD -->
+<section class="notice-board">
 
+  <div class="notice-title">
+    📢 IMPORTANT NOTICE
+  </div>
+
+  <div class="notice-content">
+    <span>🔔</span>
+    <p>
+      First Terminal Exam 2026 का Result जारी कर दिया गया है।
+      विद्यार्थी अपना Result Roll Number डालकर देख सकते हैं।
+    </p>
+    <a href="result.html">📊 Check Result</a>
+  </div>
+
+</section>
+
+<style>
+.notice-board{
+  max-width:1200px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+.notice-title{
+  background:linear-gradient(135deg,#0b3d91,#1769d1);
+  color:white;
+  text-align:center;
+  padding:14px;
+  border-radius:14px 14px 0 0;
+  font-size:21px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.notice-content{
+  background:white;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  border:2px solid #1769d1;
+  border-top:0;
+  border-radius:0 0 14px 14px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.notice-content span{
+  font-size:30px;
+}
+
+.notice-content p{
+  flex:1;
+  margin:0;
+  color:#333;
+  font-size:16px;
+  line-height:1.5;
+}
+
+.notice-content a{
+  background:#f5a400;
+  color:white;
+  padding:11px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.notice-content a:hover{
+  background:#0b3d91;
+}
+
+@media(max-width:600px){
+  .notice-content{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
 /* ABOUT */
 .about{
     background:white;
