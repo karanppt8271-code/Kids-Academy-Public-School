@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>School Notice | Kid's Academy Public School</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7f8f5;
+    color:#26352d;
+}
+
+/* HEADER */
+
+header{
+    background:#12372a;
+    color:white;
+    padding:18px 20px;
+    text-align:center;
+    box-shadow:0 5px 20px #12372a33;
+}
+
+header h1{
+    font-size:28px;
+}
+
+header p{
+    margin-top:6px;
+    color:#e5c76b;
+}
+
+/* BACK BUTTON */
+
+.back{
+    max-width:1000px;
+    margin:25px auto 0;
+    padding:0 15px;
+}
+
+.back a{
+    display:inline-block;
+    background:#12372a;
+    color:white;
+    padding:11px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back a:hover{
+    background:#c99a2e;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    padding:35px 15px 25px;
+}
+
+.title small{
+    color:#c99a2e;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.title h2{
+    color:#12372a;
+    font-size:38px;
+    margin:8px 0;
+}
+
+.title p{
+    color:#68756e;
+}
+
+/* NOTICE LIST */
+
+.notice-container{
+    max-width:1000px;
+    margin:auto;
+    padding:0 15px 60px;
+}
+
+.notice{
+    background:white;
+    margin:18px 0;
+    padding:24px;
+
+    border-radius:18px;
+
+    border-left:6px solid #c99a2e;
+
+    box-shadow:0 8px 25px #12372a12;
+
+    transition:.3s;
+}
+
+.notice:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px #12372a20;
+}
+
+.notice-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:12px;
+}
+
+.notice h3{
+    color:#12372a;
+    font-size:21px;
+}
+
+.date{
+    background:#f8f3e7;
+    color:#9a7318;
+    padding:7px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.notice p{
+    color:#59675f;
+    line-height:1.7;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:12px;
+    background:#e8f3eb;
+    color:#1f6f4a;
+    padding:6px 11px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* IMPORTANT NOTICE */
+
+.important{
+    border-left-color:#b3261e;
+}
+
+.important .badge{
+    background:#fde8e7;
+    color:#b3261e;
+}
+
+/* FOOTER */
+
+footer{
+    background:#061a12;
+    color:#d2ded7;
+    text-align:center;
+    padding:25px;
+    line-height:1.7;
+}
+
+footer strong{
+    color:#e5c76b;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:21px;
+    }
+
+    .title h2{
+        font-size:30px;
+    }
+
+    .notice-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .date{
+        order:-1;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+<h1>
+🏫 Kid's Academy Public School
+</h1>
+
+<p>
+Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
+</p>
+
+</header>
+
+
+<div class="back">
+
+<a href="index.html">
+← Back to Home
+</a>
+
+</div>
+
+
+<div class="title">
+
+<small>
+SCHOOL INFORMATION
+</small>
+
+<h2>
+📢 Latest Notices
+</h2>
+
+<p>
+Important announcements for students and parents
+</p>
+
+</div>
+
+
+<div class="notice-container">
+
+
+<!-- NOTICE 1 -->
+
+<div class="notice important">
+
+<div class="notice-top">
+
+<h3>
+📌 Important School Notice
+</h3>
+
+<span class="date">
+27 Aug 2026
+</span>
+
+</div>
+
+<p>
+Students and parents are requested to regularly check
+the school website for important announcements,
+examination updates and school activities.
+</p>
+
+<span class="badge">
+IMPORTANT
+</span>
+
+</div>
+
+
+<!-- NOTICE 2 -->
+
+<div class="notice">
+
+<div class="notice-top">
+
+<h3>
+📝 Examination Notice
+</h3>
+
+<span class="date">
+26 Aug 2026
+</span>
+
+</div>
+
+<p>
+Students should keep their Admit Card ready before
+appearing in the examination. Please check the
+Admit Card section of the website.
+</p>
+
+<span class="badge">
+EXAMINATION
+</span>
+
+</div>
+
+
+<!-- NOTICE 3 -->
+
+<div class="notice">
+
+<div class="notice-top">
+
+<h3>
+📊 Result Update
+</h3>
+
+<span class="date">
+25 Aug 2026
+</span>
+
+</div>
+
+<p>
+Students can check their examination result by using
+their Class and Roll Number on the Result page.
+</p>
+
+<span class="badge">
+RESULT
+</span>
+
+</div>
+
+
+<!-- NOTICE 4 -->
+
+<div class="notice">
+
+<div class="notice-top">
+
+<h3>
+🎓 Academic Notice
+</h3>
+
+<span class="date">
+24 Aug 2026
+</span>
+
+</div>
+
+<p>
+Students are advised to attend classes regularly and
+complete their classwork and homework on time.
+</p>
+
+<span class="badge">
+ACADEMIC
+</span>
+
+</div>
+
+
+<!-- NOTICE 5 -->
+
+<div class="notice">
+
+<div class="notice-top">
+
+<h3>
+🏆 School Activity</h3>
+
+<span class="date">
+23 Aug 2026
+</span>
+
+</div>
+
+<p>
+Students are encouraged to participate actively in
+school activities, competitions and creative programs.
+</p>
+
+<span class="badge">
+ACTIVITY
+</span>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<strong>
+Kid's Academy Public School
+</strong>
+
+<br>
+
+Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
+
+<br>
+
+© 2026 All Rights Reserved
+
+</footer>
+
+
+</body>
+</html>
