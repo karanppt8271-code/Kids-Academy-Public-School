@@ -1,18 +1,20 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>School Notice | Kids Academy Public School</title>
 
 <style>
+
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -20,63 +22,64 @@ body{
     color:#29150d;
 }
 
+/* HEADER */
+
 header{
     background:#29150d;
     color:white;
-    padding:18px 20px;
     text-align:center;
+    padding:25px 15px;
     border-bottom:4px solid #e5aa2e;
 }
 
 header img{
-    width:70px;
-    height:70px;
+    width:75px;
+    height:75px;
     object-fit:contain;
     background:white;
-    border-radius:50%;
     padding:5px;
+    border-radius:50%;
 }
 
 header h1{
-    margin-top:8px;
     color:#e5aa2e;
+    margin-top:10px;
     font-size:28px;
 }
 
 header p{
     margin-top:5px;
-    color:#fff8e9;
 }
 
 .back{
     display:inline-block;
-    margin-top:12px;
-    padding:10px 18px;
+    margin-top:15px;
     background:#e5aa2e;
     color:#29150d;
     text-decoration:none;
+    padding:10px 20px;
     border-radius:25px;
     font-weight:bold;
 }
 
+/* MAIN */
+
 .container{
     max-width:900px;
-    margin:35px auto;
-    padding:0 18px;
+    margin:auto;
+    padding:35px 18px;
 }
 
 .title{
     text-align:center;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 .title h2{
     font-size:30px;
-    color:#29150d;
 }
 
-.title span{
-    display:block;
+.line{
     width:70px;
     height:4px;
     background:#e5aa2e;
@@ -84,52 +87,55 @@ header p{
     border-radius:5px;
 }
 
-.notice-card{
+/* NOTICE */
+
+.notice{
     background:white;
-    border-radius:15px;
+    margin-bottom:20px;
     padding:22px;
-    margin-bottom:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-radius:15px;
     border-left:5px solid #e5aa2e;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .notice-date{
     color:#9b5b00;
-    font-size:14px;
     font-weight:bold;
-    margin-bottom:8px;
+    font-size:14px;
+    margin-bottom:12px;
 }
 
-.notice-card h3{
-    color:#29150d;
-    font-size:21px;
-    margin-bottom:10px;
+.notice-text{
+    color:#444;
+    font-size:17px;
+    line-height:1.8;
+    white-space:pre-line;
 }
 
-.notice-card p{
-    color:#555;
-    line-height:1.7;
-    font-size:16px;
-}
+/* LOADING */
 
 .loading{
     text-align:center;
-    padding:40px;
-    font-size:18px;
-    color:#777;
-}
-
-.empty{
     background:white;
     padding:35px;
-    text-align:center;
     border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.07);
     color:#777;
 }
 
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    color:#777;
+}
+
+/* FOOTER */
+
 footer{
-    margin-top:50px;
+    margin-top:40px;
     background:#29150d;
     color:white;
     text-align:center;
@@ -141,160 +147,211 @@ footer strong{
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-    <img src="school-logo.png" alt="School Logo">
+<img src="school-logo.png" alt="School Logo">
 
-    <h1>Kids Academy Public School</h1>
+<h1>Kids Academy Public School</h1>
 
-    <p>Manikpur, Pirpainti Bazar</p>
+<p>Manikpur, Pirpainti Bazar</p>
 
-    <a href="index.html" class="back">← Back to Home</a>
+<a href="index.html" class="back">
+← Back to Home
+</a>
 
 </header>
 
 
+<!-- MAIN -->
+
 <div class="container">
 
-    <div class="title">
-        <h2>📢 School Notices</h2>
-        <span></span>
-    </div>
+<div class="title">
 
-    <div id="noticeList">
+<h2>📢 School Notices</h2>
 
-        <div class="loading">
-            Loading notices...
-        </div>
-
-    </div>
+<div class="line"></div>
 
 </div>
 
 
+<div id="noticeList">
+
+<div class="loading">
+⏳ Loading Notices...
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer>
 
-    © 2026 <strong>Kids Academy Public School</strong><br>
-    Manikpur, Pirpainti Bazar
+© 2026 <strong>Kids Academy Public School</strong><br>
+
+Manikpur, Pirpainti Bazar
 
 </footer>
 
 
-<!-- Firebase -->
+
+<!-- FIREBASE -->
 
 <script type="module">
 
 import { initializeApp }
+
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
+
 import {
-    getDatabase,
-    ref,
-    onValue
+
+getDatabase,
+ref,
+onValue
+
 }
+
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 
+
+/* FIREBASE CONFIG */
+
 const firebaseConfig = {
 
-    apiKey: "AIzaSyDH5Qd0S0gfuCX519aN-K9eLQtZYReyJ4Q",
+apiKey:
+"AIzaSyDH5Qd0S0gfuCX519aN-K9eLQtZYReyJ4Q",
 
-    authDomain:
-    "kids-academy-public-school.firebaseapp.com",
+authDomain:
+"kids-academy-public-school.firebaseapp.com",
 
-    databaseURL:
-    "https://kids-academy-public-school-default-rtdb.asia-southeast1.firebasedatabase.app/",
+databaseURL:
+"https://kids-academy-public-school-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-    projectId:
-    "kids-academy-public-school",
+projectId:
+"kids-academy-public-school",
 
-    storageBucket:
-    "kids-academy-public-school.firebasestorage.app",
+storageBucket:
+"kids-academy-public-school.firebasestorage.app",
 
-    messagingSenderId:
-    "267983271088",
+messagingSenderId:
+"267983271088",
 
-    appId:
-    "1:267983271088:web:b172e2f3077492848bb775",
+appId:
+"1:267983271088:web:b172e2f3077492848bb775"
 
-    measurementId:
-    "G-P0KZKWBQFX"
 };
 
+
+
+/* START FIREBASE */
 
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 
-const noticeRef = ref(db, "notices");
+
+
+/* GET NOTICE */
+
+const noticeRef = ref(db,"notices");
 
 const noticeList =
 document.getElementById("noticeList");
 
 
-onValue(noticeRef, (snapshot) => {
 
-    const data = snapshot.val();
+onValue(noticeRef,(snapshot)=>{
 
-    noticeList.innerHTML = "";
-
-    if(!data){
-
-        noticeList.innerHTML = `
-            <div class="empty">
-                <h3>📢 No Notice Available</h3>
-                <p>School notices will appear here.</p>
-            </div>
-        `;
-
-        return;
-    }
+const data = snapshot.val();
 
 
-    const notices = Object.values(data);
+noticeList.innerHTML = "";
 
 
-    notices.reverse();
+
+/* NO NOTICE */
+
+if(!data){
+
+noticeList.innerHTML = `
+
+<div class="empty">
+
+<h3>📢 अभी कोई Notice नहीं है</h3>
+
+<p>School notices यहाँ दिखाई देंगे।</p>
+
+</div>
+
+`;
+
+return;
+
+}
 
 
-    notices.forEach((notice) => {
 
-        const card =
-        document.createElement("div");
+/* NOTICE LIST */
 
-        card.className = "notice-card";
-
-
-        card.innerHTML = `
-
-            <div class="notice-date">
-                📅 ${notice.date || "School Notice"}
-            </div>
-
-            <h3>
-                ${notice.title || "School Notice"}
-            </h3>
-
-            <p>
-                ${notice.message || ""}
-            </p>
-
-        `;
+const notices =
+Object.entries(data).reverse();
 
 
-        noticeList.appendChild(card);
 
-    });
+notices.forEach(([id,item])=>{
+
+
+const notice =
+document.createElement("div");
+
+
+notice.className="notice";
+
+
+notice.innerHTML = `
+
+<div class="notice-date">
+
+📅 ${item.date || ""}
+
+</div>
+
+
+<div class="notice-text">
+
+${item.text || ""}
+
+</div>
+
+`;
+
+
+noticeList.appendChild(notice);
+
 
 });
 
 
+});
+
 </script>
 
+
 </body>
+
 </html>
 ```
