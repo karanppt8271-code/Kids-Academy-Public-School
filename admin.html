@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>School Management Panel</title>
+<title>Kids Academy - Admin Panel</title>
 
 <style>
 *{
@@ -22,63 +22,30 @@ body{
 header{
     background:#29150d;
     color:white;
-    padding:22px;
+    padding:25px;
     text-align:center;
 }
 
 header h1{
     color:#e5aa2e;
-    margin-bottom:6px;
 }
 
 .container{
-    max-width:1100px;
+    max-width:1000px;
     margin:auto;
     padding:25px;
 }
 
-.welcome{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 4px 15px #00000012;
-}
-
-.menu{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-
-.menu button{
-    border:0;
-    padding:25px 15px;
-    border-radius:15px;
-    background:white;
-    color:#29150d;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 4px 15px #00000012;
-    transition:.2s;
-}
-
-.menu button:hover{
-    transform:translateY(-3px);
-    background:#e5aa2e;
-}
-
-.section{
+.card{
     background:white;
     padding:25px;
-    margin-top:25px;
+    margin-bottom:20px;
     border-radius:15px;
-    box-shadow:0 4px 15px #00000012;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.section h2{
-    margin-bottom:18px;
+h2{
+    margin-bottom:20px;
 }
 
 label{
@@ -97,58 +64,40 @@ input,textarea{
 
 textarea{
     min-height:100px;
-    resize:vertical;
 }
 
-.save{
-    margin-top:18px;
-    padding:12px 25px;
+button{
+    background:#e5aa2e;
+    color:#29150d;
     border:0;
+    padding:12px 20px;
+    margin-top:15px;
     border-radius:8px;
-    background:#29150d;
-    color:white;
     cursor:pointer;
     font-weight:bold;
 }
 
-.message{
+button:hover{
+    opacity:.85;
+}
+
+.notice{
+    background:#fff8e9;
+    padding:15px;
+    margin-top:10px;
+    border-radius:10px;
+    border-left:5px solid #e5aa2e;
+}
+
+.delete{
+    background:#29150d;
+    color:white;
+    padding:8px 14px;
+}
+
+.success{
     margin-top:15px;
     font-weight:bold;
-}
-
-.teacher{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:12px;
-}
-
-.teacher input{
-    margin-bottom:5px;
-}
-
-.notice-box{
-    border:1px solid #ddd;
-    padding:15px;
-    border-radius:10px;
-    margin-top:10px;
-}
-
-.notice-box button{
-    margin-top:10px;
-    padding:8px 15px;
-    border:0;
-    border-radius:6px;
-    background:#29150d;
-    color:white;
-    cursor:pointer;
-}
-
-footer{
-    text-align:center;
-    padding:25px;
-    margin-top:30px;
-    background:#29150d;
-    color:white;
 }
 </style>
 </head>
@@ -157,48 +106,14 @@ footer{
 
 <header>
     <h1>Kids Academy Public School</h1>
-    <p>School Management Panel</p>
+    <p>Online Admin Management</p>
 </header>
 
 <div class="container">
 
-<div class="welcome">
-    <h2>👋 Welcome Admin</h2>
-    <p>यहाँ से आप अपनी वेबसाइट की जानकारी manage कर सकते हैं।</p>
-</div>
+<!-- SCHOOL INFORMATION -->
 
-<div class="menu">
-
-<button onclick="showSection('school')">
-🏫 School Information
-</button>
-
-<button onclick="showSection('teachers')">
-👨‍🏫 Teachers
-</button>
-
-<button onclick="showSection('notice')">
-📢 Notice
-</button>
-
-<button onclick="openPage('result.html')">
-📊 Result
-</button>
-
-<button onclick="openPage('admit-card.html')">
-🎫 Admit Card
-</button>
-
-<button onclick="showSection('contact')">
-📞 Contact
-</button>
-
-</div>
-
-
-<!-- SCHOOL -->
-
-<div id="school" class="section">
+<div class="card">
 
 <h2>🏫 School Information</h2>
 
@@ -218,22 +133,20 @@ value="Md Imtiyaz (Monu)">
 <input id="qualification"
 value="B.Com & B.Ed">
 
-<button class="save" onclick="saveSchool()">
-Save Information
+<button onclick="saveSchool()">
+Save School Information
 </button>
 
-<p id="schoolMsg" class="message"></p>
+<p id="schoolMessage" class="success"></p>
 
 </div>
 
 
 <!-- TEACHERS -->
 
-<div id="teachers" class="section">
+<div class="card">
 
 <h2>👨‍🏫 Teachers</h2>
-
-<div class="teacher">
 
 <input id="teacher1" placeholder="Teacher 1 Name">
 <input id="teacher2" placeholder="Teacher 2 Name">
@@ -244,29 +157,25 @@ Save Information
 <input id="teacher7" placeholder="Teacher 7 Name">
 <input id="teacher8" placeholder="Teacher 8 Name">
 
-</div>
-
-<button class="save" onclick="saveTeachers()">
+<button onclick="saveTeachers()">
 Save Teachers
 </button>
 
-<p id="teacherMsg" class="message"></p>
+<p id="teacherMessage" class="success"></p>
 
 </div>
 
 
 <!-- NOTICE -->
 
-<div id="notice" class="section">
+<div class="card">
 
 <h2>📢 School Notice</h2>
 
-<label>New Notice</label>
-
 <textarea id="noticeText"
-placeholder="यहाँ नया school notice लिखें..."></textarea>
+placeholder="यहाँ नया notice लिखें..."></textarea>
 
-<button class="save" onclick="addNotice()">
+<button onclick="addNotice()">
 Add Notice
 </button>
 
@@ -274,242 +183,290 @@ Add Notice
 
 </div>
 
-
-<!-- CONTACT -->
-
-<div id="contact" class="section">
-
-<h2>📞 Contact Information</h2>
-
-<label>Mobile Number</label>
-<input id="mobile" placeholder="School Mobile Number">
-
-<label>Email</label>
-<input id="email" placeholder="School Email">
-
-<label>WhatsApp Number</label>
-<input id="whatsapp" placeholder="WhatsApp Number">
-
-<button class="save" onclick="saveContact()">
-Save Contact
-</button>
-
-<p id="contactMsg" class="message"></p>
-
-</div>
-
 </div>
 
 
-<footer>
-Kids Academy Public School © 2026
-</footer>
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    set,
+    push,
+    onValue,
+    remove
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 
-<script>
+/* FIREBASE CONFIG */
 
-function showSection(id){
+const firebaseConfig = {
 
-    document.getElementById(id).scrollIntoView({
-        behavior:"smooth"
+    apiKey: "AIzaSyDH5Qd0S0gfuCX519aN-K9eLQtZYReyJ4Q",
+
+    authDomain:
+    "kids-academy-public-school.firebaseapp.com",
+
+    databaseURL:
+    "https://kids-academy-public-school-default-rtdb.asia-southeast1.firebasedatabase.app/",
+
+    projectId:
+    "kids-academy-public-school",
+
+    storageBucket:
+    "kids-academy-public-school.firebasestorage.app",
+
+    messagingSenderId:
+    "267983271088",
+
+    appId:
+    "1:267983271088:web:b172e2f3077492848bb775"
+
+};
+
+
+/* START FIREBASE */
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+
+/* SAVE SCHOOL */
+
+window.saveSchool = function(){
+
+    const school = {
+
+        name:
+        document.getElementById("schoolName").value,
+
+        address:
+        document.getElementById("address").value,
+
+        principal:
+        document.getElementById("principal").value,
+
+        qualification:
+        document.getElementById("qualification").value
+
+    };
+
+    set(ref(db,"school"),school)
+
+    .then(()=>{
+
+        document.getElementById("schoolMessage").innerHTML=
+        "✅ School information online save हो गई।";
+
+    })
+
+    .catch((error)=>{
+
+        alert("Error: "+error.message);
+
     });
 
-}
+};
 
 
-function openPage(page){
+/* SAVE TEACHERS */
 
-    window.location.href=page;
+window.saveTeachers = function(){
 
-}
-
-
-/* SCHOOL */
-
-function saveSchool(){
-
-    localStorage.setItem(
-        "schoolName",
-        document.getElementById("schoolName").value
-    );
-
-    localStorage.setItem(
-        "address",
-        document.getElementById("address").value
-    );
-
-    localStorage.setItem(
-        "principal",
-        document.getElementById("principal").value
-    );
-
-    localStorage.setItem(
-        "qualification",
-        document.getElementById("qualification").value
-    );
-
-    document.getElementById("schoolMsg").innerHTML=
-    "✅ School information save हो गई।";
-
-}
-
-
-/* TEACHERS */
-
-function saveTeachers(){
+    const teachers = {};
 
     for(let i=1;i<=8;i++){
 
-        localStorage.setItem(
-            "teacher"+i,
-            document.getElementById("teacher"+i).value
-        );
+        teachers["teacher"+i] =
+        document.getElementById("teacher"+i).value;
 
     }
 
-    document.getElementById("teacherMsg").innerHTML=
-    "✅ Teachers की information save हो गई।";
+    set(ref(db,"teachers"),teachers)
 
-}
+    .then(()=>{
+
+        document.getElementById("teacherMessage").innerHTML=
+        "✅ Teachers online save हो गए।";
+
+    })
+
+    .catch((error)=>{
+
+        alert("Error: "+error.message);
+
+    });
+
+};
 
 
-/* NOTICE */
+/* ADD NOTICE */
 
-function addNotice(){
+window.addNotice = function(){
 
-    let text=document.getElementById("noticeText").value;
+    const text =
+    document.getElementById("noticeText").value.trim();
 
-    if(text.trim()==""){
+    if(text===""){
+
         alert("पहले notice लिखिए।");
+        return;
+
+    }
+
+    push(ref(db,"notices"),{
+
+        text:text,
+        date:new Date().toLocaleDateString("en-IN")
+
+    })
+
+    .then(()=>{
+
+        document.getElementById("noticeText").value="";
+
+        alert("✅ Notice online add हो गया।");
+
+    })
+
+    .catch((error)=>{
+
+        alert("Error: "+error.message);
+
+    });
+
+};
+
+
+/* SHOW NOTICES */
+
+const noticesRef = ref(db,"notices");
+
+onValue(noticesRef,(snapshot)=>{
+
+    const data = snapshot.val();
+
+    const list =
+    document.getElementById("noticeList");
+
+    list.innerHTML="";
+
+    if(!data){
+
+        list.innerHTML=
+        "<p>अभी कोई notice नहीं है।</p>";
+
+        return;
+
+    }
+
+    Object.entries(data).forEach(([id,notice])=>{
+
+        const div =
+        document.createElement("div");
+
+        div.className="notice";
+
+        div.innerHTML=`
+
+            <strong>📢 ${notice.text}</strong>
+
+            <br>
+
+            <small>${notice.date || ""}</small>
+
+            <br>
+
+            <button class="delete"
+            onclick="deleteNotice('${id}')">
+
+            Delete
+
+            </button>
+
+        `;
+
+        list.appendChild(div);
+
+    });
+
+});
+
+
+/* DELETE NOTICE */
+
+window.deleteNotice = function(id){
+
+    if(!confirm("क्या आप यह notice delete करना चाहते हैं?")){
         return;
     }
 
-    let notices=
-    JSON.parse(localStorage.getItem("notices") || "[]");
+    remove(ref(db,"notices/"+id))
 
-    notices.push(text);
+    .then(()=>{
 
-    localStorage.setItem(
-        "notices",
-        JSON.stringify(notices)
-    );
+        alert("Notice delete हो गया।");
 
-    document.getElementById("noticeText").value="";
+    })
 
-    loadNotices();
+    .catch((error)=>{
 
-}
-
-
-function loadNotices(){
-
-    let notices=
-    JSON.parse(localStorage.getItem("notices") || "[]");
-
-    let html="";
-
-    notices.forEach(function(notice,index){
-
-        html+=`
-        <div class="notice-box">
-            ${notice}
-            <br>
-            <button onclick="deleteNotice(${index})">
-            Delete
-            </button>
-        </div>
-        `;
+        alert("Error: "+error.message);
 
     });
 
-    document.getElementById("noticeList").innerHTML=html;
-
-}
+};
 
 
-function deleteNotice(index){
+/* LOAD SCHOOL DATA */
 
-    let notices=
-    JSON.parse(localStorage.getItem("notices") || "[]");
+onValue(ref(db,"school"),(snapshot)=>{
 
-    notices.splice(index,1);
+    const data=snapshot.val();
 
-    localStorage.setItem(
-        "notices",
-        JSON.stringify(notices)
-    );
+    if(!data) return;
 
-    loadNotices();
+    if(data.name)
+    document.getElementById("schoolName").value=data.name;
 
-}
+    if(data.address)
+    document.getElementById("address").value=data.address;
 
+    if(data.principal)
+    document.getElementById("principal").value=data.principal;
 
-/* CONTACT */
-
-function saveContact(){
-
-    localStorage.setItem(
-        "mobile",
-        document.getElementById("mobile").value
-    );
-
-    localStorage.setItem(
-        "email",
-        document.getElementById("email").value
-    );
-
-    localStorage.setItem(
-        "whatsapp",
-        document.getElementById("whatsapp").value
-    );
-
-    document.getElementById("contactMsg").innerHTML=
-    "✅ Contact information save हो गई।";
-
-}
-
-
-function loadData(){
-
-    document.getElementById("schoolName").value=
-    localStorage.getItem("schoolName")
-    || "Kids Academy Public School";
-
-    document.getElementById("address").value=
-    localStorage.getItem("address")
-    || "Manikpur, Pirpainti Bazar";
-
-    document.getElementById("principal").value=
-    localStorage.getItem("principal")
-    || "Md Imtiyaz (Monu)";
-
+    if(data.qualification)
     document.getElementById("qualification").value=
-    localStorage.getItem("qualification")
-    || "B.Com & B.Ed";
+    data.qualification;
 
+});
+
+
+/* LOAD TEACHERS */
+
+onValue(ref(db,"teachers"),(snapshot)=>{
+
+    const data=snapshot.val();
+
+    if(!data) return;
 
     for(let i=1;i<=8;i++){
 
-        document.getElementById("teacher"+i).value=
-        localStorage.getItem("teacher"+i) || "";
+        if(data["teacher"+i]){
+
+            document.getElementById("teacher"+i).value=
+            data["teacher"+i];
+
+        }
 
     }
 
-
-    document.getElementById("mobile").value=
-    localStorage.getItem("mobile") || "";
-
-    document.getElementById("email").value=
-    localStorage.getItem("email") || "";
-
-    document.getElementById("whatsapp").value=
-    localStorage.getItem("whatsapp") || "";
-
-    loadNotices();
-
-}
-
-loadData();
+});
 
 </script>
 
