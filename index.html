@@ -1,13 +1,12 @@
-
-
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kids Academy Public School</title>
+<title>Kids Academy Public School | Manikpur, Pirpainti Bazar</title>
+<meta name="description" content="Kids Academy Public School, Manikpur, Pirpainti Bazar, Bhagalpur, Bihar. Quality education and bright future.">
 
 <style>
 *{
@@ -17,263 +16,228 @@
     scroll-behavior:smooth;
 }
 
-:root{
-    --chocolate:#29150D;
-    --brown:#4B2918;
-    --gold:#E5AA2E;
-    --gold-light:#FFE09A;
-    --cream:#FFF8E9;
-    --white:#fff;
-    --dark:#21150F;
-    --text:#65574E;
-}
-
 body{
-    font-family:Arial, sans-serif;
-    background:var(--cream);
-    color:var(--dark);
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff8e9;
+    color:#29150d;
+    line-height:1.6;
 }
 
-/* ================= TOP ================= */
+a{
+    text-decoration:none;
+}
 
+/* TOP BAR */
 .topbar{
-    background:#160A06;
-    color:#eee;
-    padding:8px 6%;
+    background:#1b100b;
+    color:#fff;
+    padding:9px 6%;
     display:flex;
     justify-content:space-between;
-    font-size:13px;
+    align-items:center;
+    font-size:14px;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
-    background:var(--chocolate);
+    background:#4b2918;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 5px 20px #0005;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
 
-.navbar{
-    max-width:1300px;
-    margin:auto;
-    min-height:82px;
-    padding:8px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
+.logo-area{
     display:flex;
     align-items:center;
     gap:12px;
+    color:white;
 }
 
-.logo img{
-    width:60px;
-    height:60px;
+.logo-area img{
+    width:55px;
+    height:55px;
     object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:4px;
 }
 
-.logo h1{
+.logo-area h2{
+    font-size:21px;
+    color:#e5aa2e;
+}
+
+.logo-area small{
     color:#fff;
-    font-family:Georgia,serif;
-    font-size:24px;
-}
-
-.logo h1 span{
-    color:var(--gold);
-}
-
-.logo p{
-    color:#d8c8bd;
-    font-size:10px;
-    letter-spacing:2px;
 }
 
 nav{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    gap:22px;
 }
 
 nav a{
     color:white;
-    text-decoration:none;
-    font-size:12px;
-    padding:9px 11px;
-    border-radius:25px;
-    transition:.3s;
+    font-weight:bold;
+    font-size:15px;
 }
 
 nav a:hover{
-    background:var(--gold);
-    color:#21150F;
+    color:#e5aa2e;
 }
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
-    min-height:560px;
+    min-height:600px;
+    background-image:url('school.jpg');
+    background-size:cover;
+    background-position:center;
+    position:relative;
     display:flex;
     align-items:center;
-    position:relative;
-    background:
-    linear-gradient(90deg,#29150df5,#29150dc9,#29150d20),
-    url("school.jpg") center/cover;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(41,21,13,.72),
+        rgba(41,21,13,.45)
+    );
 }
 
 .hero-content{
-    width:1200px;
-    max-width:90%;
-    margin:auto;
+    position:relative;
+    z-index:2;
+    color:white;
+    max-width:900px;
+    padding:30px 20px;
 }
 
 .hero-badge{
-    background:var(--gold);
-    color:#24150d;
-    padding:8px 20px;
+    display:inline-block;
+    background:#e5aa2e;
+    color:#29150d;
+    padding:10px 22px;
     border-radius:30px;
     font-weight:bold;
-    display:inline-block;
+    margin-bottom:20px;
 }
 
-.hero h2{
-    color:white;
-    font-family:Georgia,serif;
-    font-size:60px;
-    line-height:1.05;
-    margin:18px 0;
+.hero h1{
+    font-size:56px;
+    line-height:1.15;
+    margin-bottom:18px;
 }
 
-.hero h2 span{
-    color:var(--gold);
+.hero h1 span{
+    color:#e5aa2e;
 }
 
 .hero p{
-    color:white;
-    max-width:650px;
-    font-size:19px;
+    font-size:20px;
+    margin-bottom:30px;
 }
 
-.hero-buttons{
-    margin-top:28px;
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
     padding:13px 25px;
-    border-radius:30px;
-    text-decoration:none;
+    border-radius:8px;
     font-weight:bold;
-    margin:5px;
-    transition:.3s;
+    display:inline-block;
 }
 
 .btn-gold{
-    background:var(--gold);
-    color:#21150F;
+    background:#e5aa2e;
+    color:#29150d;
 }
 
-.btn-outline{
-    border:2px solid var(--gold);
+.btn-light{
+    border:2px solid white;
     color:white;
 }
 
 .btn:hover{
-    transform:translateY(-4px);
+    transform:translateY(-2px);
 }
 
-/* ================= SERVICE ================= */
-
-.services{
-    max-width:1150px;
-    margin:-40px auto 20px;
+/* QUICK LINKS */
+.quick{
+    margin-top:-55px;
     position:relative;
     z-index:5;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.service{
-    padding:25px;
-    border-radius:18px;
-    color:white;
-    box-shadow:0 12px 30px #0003;
-}
-
-.service:nth-child(1){
-    background:linear-gradient(135deg,#81501A,#D59A25);
-}
-
-.service:nth-child(2){
-    background:linear-gradient(135deg,#402116,#774327);
-}
-
-.service:nth-child(3){
-    background:linear-gradient(135deg,#122E4D,#214F76);
-}
-
-.service h3{
-    font-family:Georgia,serif;
-    font-size:21px;
-}
-
-.service a{
-    color:white;
-    text-decoration:none;
-    font-size:13px;
-}
-
-/* ================= NEW INNER DESIGN ================= */
-
-section{
-    padding:75px 7%;
-}
-
-.title{
+    gap:20px;
+    width:88%;
     max-width:1100px;
-    margin:auto;
-    margin-bottom:42px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.title small{
-    color:#B4770D;
-    font-weight:bold;
-    letter-spacing:3px;
-}
-
-.title h2{
-    font-family:Georgia,serif;
-    font-size:42px;
-    margin-top:5px;
-    color:var(--chocolate);
-}
-
-.title h2 span{
-    color:#C68B18;
-}
-
-.title p{
-    color:#75675D;
-    max-width:650px;
-}
-
-/* ================= ABOUT NEW ================= */
-
-.about-section{
+.quick-card{
     background:white;
+    padding:25px;
+    border-radius:14px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    border-top:5px solid #e5aa2e;
 }
 
-.about-new{
-    max-width:1150px;
-    margin:auto;
+.quick-card h3{
+    margin-bottom:8px;
+}
+
+.quick-card a{
+    color:#9a6410;
+    font-weight:bold;
+}
+
+/* GENERAL */
+section{
+    padding:80px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#b67a12;
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-top:5px;
+}
+
+.section-title p{
+    color:#6d625c;
+    max-width:700px;
+    margin:10px auto;
+}
+
+/* ABOUT */
+.about{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:45px;
+    gap:50px;
     align-items:center;
 }
 
@@ -283,157 +247,102 @@ section{
 
 .about-image img{
     width:100%;
-    height:370px;
+    height:390px;
     object-fit:cover;
-    border-radius:25px;
-    box-shadow:18px 18px 0 var(--gold-light);
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
 }
 
-.about-tag{
+.about-badge{
     position:absolute;
     bottom:-20px;
-    left:25px;
-    background:var(--chocolate);
-    color:white;
-    padding:18px 25px;
-    border-radius:14px;
+    right:25px;
+    background:#e5aa2e;
+    padding:15px 22px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
-.about-tag b{
-    color:var(--gold);
-    font-size:25px;
+.about-text h2{
+    font-size:38px;
+    margin-bottom:15px;
 }
 
-.about-content h3{
-    font-family:Georgia,serif;
-    font-size:31px;
-    color:var(--chocolate);
-    margin-bottom:18px;
+.about-text p{
+    color:#665b54;
+    margin-bottom:20px;
 }
 
-.about-content p{
-    color:var(--text);
-    margin-bottom:14px;
-}
-
-.about-points{
+.points{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:22px;
+    gap:15px;
 }
 
 .point{
-    background:#FFF5DC;
-    padding:14px;
-    border-radius:10px;
-    font-weight:bold;
-    font-size:14px;
+    background:white;
+    padding:18px;
+    border-radius:12px;
+    border-left:4px solid #e5aa2e;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
 }
 
-.point span{
-    color:#C68B18;
-    font-size:20px;
+.point strong{
+    display:block;
+    margin-bottom:4px;
 }
 
-/* ================= PRINCIPAL NEW ================= */
-
+/* PRINCIPAL */
 .principal-section{
-    background:
-    radial-gradient(circle at 10% 20%,#6c3d20 0,transparent 25%),
-    var(--chocolate);
-}
-
-.principal-section .title h2{
+    background:#29150d;
     color:white;
 }
 
-.principal-section .title p{
-    color:#d8c8bd;
-}
-
-.principal-new{
-    max-width:1050px;
+.principal{
+    max-width:1000px;
     margin:auto;
-    background:#fffaf0;
-    border-radius:28px;
-    padding:35px;
     display:grid;
-    grid-template-columns:280px 1fr;
-    gap:40px;
+    grid-template-columns:300px 1fr;
+    gap:45px;
     align-items:center;
 }
 
-.principal-photo{
-    text-align:center;
-}
-
-.principal-photo img{
-    width:220px;
-    height:250px;
+.principal img{
+    width:280px;
+    height:330px;
     object-fit:cover;
-    border-radius:20px;
-    border:6px solid var(--gold);
+    border-radius:18px;
+    border:5px solid #e5aa2e;
 }
 
-.principal-info h3{
-    font-family:Georgia,serif;
-    font-size:34px;
-    color:var(--chocolate);
+.principal h2{
+    color:#e5aa2e;
+    font-size:36px;
+    margin-bottom:8px;
 }
 
-.principal-info .degree{
-    color:#B4770D;
-    font-weight:bold;
-    margin:5px 0 18px;
+.principal h3{
+    margin-bottom:15px;
 }
 
-.principal-message{
-    background:#FFF1CC;
-    border-radius:15px;
-    padding:20px;
-    border-left:5px solid var(--gold);
-    color:#5F4C40;
+.principal p{
+    color:#eadfd8;
 }
 
-/* ================= TEACHERS NEW ================= */
-
-.teacher-section{
-    background:#FFF4DC;
-}
-
-.teacher-grid{
-    max-width:1100px;
-    margin:auto;
+/* TEACHERS */
+.teachers{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:20px;
 }
 
-.teacher{
+.teacher-card{
     background:white;
     padding:28px 15px;
-    border-radius:20px;
     text-align:center;
-    border:1px solid #EAD5AB;
-    transition:.3s;
-    position:relative;
-    overflow:hidden;
-}
-
-.teacher:before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:5px;
-    top:0;
-    left:0;
-    background:var(--gold);
-}
-
-.teacher:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 30px #42200d1c;
+    border-radius:15px;
+    box-shadow:0 7px 20px rgba(0,0,0,.08);
+    border-bottom:4px solid #e5aa2e;
 }
 
 .teacher-icon{
@@ -441,472 +350,323 @@ section{
     height:75px;
     margin:auto;
     border-radius:50%;
-    background:linear-gradient(135deg,var(--chocolate),#9A5E20);
-    color:var(--gold);
+    background:#f3dfb0;
     display:flex;
     justify-content:center;
     align-items:center;
     font-size:32px;
+    margin-bottom:15px;
 }
 
-.teacher h4{
-    margin-top:15px;
-    color:var(--chocolate);
+.teacher-card h3{
+    font-size:18px;
 }
 
-/* ================= FACILITIES NEW ================= */
-
-.facilities-section{
-    background:white;
+.teacher-card p{
+    color:#777;
+    font-size:14px;
 }
 
-.facility-grid{
-    max-width:1150px;
-    margin:auto;
+/* FACILITIES */
+.facilities{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
 
 .facility{
-    padding:28px;
-    border-radius:20px;
-    background:#FFF9EC;
-    border:1px solid #E8D5AD;
-    display:flex;
-    align-items:center;
-    gap:20px;
-    transition:.3s;
-}
-
-.facility:hover{
-    transform:translateX(7px);
-    box-shadow:0 10px 25px #43220d12;
+    background:#4b2918;
+    color:white;
+    padding:30px 20px;
+    border-radius:15px;
+    text-align:center;
 }
 
 .facility-icon{
-    width:70px;
-    height:70px;
-    min-width:70px;
-    border-radius:18px;
-    background:var(--chocolate);
-    color:var(--gold);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:32px;
+    font-size:40px;
+    margin-bottom:10px;
 }
 
 .facility h3{
-    color:var(--chocolate);
-    margin-bottom:5px;
+    color:#e5aa2e;
 }
 
-.facility p{
-    color:#76665B;
-}
-
-/* ================= STATS NEW ================= */
-
-.stats-section{
-    background:var(--chocolate);
-}
-
-.stats-section .title h2{
-    color:white;
-}
-
-.stats-section .title p{
-    color:#d8c8bd;
-}
-
+/* STATS */
 .stats{
-    max-width:1100px;
-    margin:auto;
+    background:#1b100b;
+    color:white;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.stat{
     text-align:center;
-    color:white;
-    padding:30px 10px;
-    border:1px solid #8A5C37;
-    border-radius:20px;
-    background:#382015;
+    padding:60px 7%;
 }
 
-.stat-icon{
-    font-size:30px;
+.stat h2{
+    color:#e5aa2e;
+    font-size:42px;
 }
 
-.stat strong{
-    display:block;
-    font-family:Georgia,serif;
-    font-size:40px;
-    color:var(--gold);
+.stat p{
+    color:#ddd;
 }
 
-.stat span{
-    color:#d9c9bc;
-}
-
-/* ================= GALLERY NEW ================= */
-
-.gallery-section{
-    background:#FFF4DC;
-}
-
+/* GALLERY */
 .gallery{
-    max-width:1150px;
-    margin:auto;
     display:grid;
     grid-template-columns:2fr 1fr 1fr;
-    grid-auto-rows:180px;
-    gap:14px;
+    grid-template-rows:220px 220px;
+    gap:15px;
 }
 
 .gallery img{
     width:100%;
     height:100%;
     object-fit:cover;
-    border-radius:18px;
-    border:4px solid white;
-    box-shadow:0 5px 18px #43220d15;
-    transition:.3s;
+    border-radius:15px;
 }
 
 .gallery img:first-child{
     grid-row:span 2;
 }
 
-.gallery img:hover{
-    transform:scale(1.03);
-}
-
-/* ================= ADMISSION NEW ================= */
-
-.admission-section{
-    background:
-    linear-gradient(135deg,#29150df2,#4B2918e8),
-    url("school.jpg") center/cover;
-}
-
-.admission-box{
-    max-width:1050px;
-    margin:auto;
-    padding:55px;
-    text-align:center;
-    border:1px solid #C99434;
-    border-radius:28px;
+/* ADMISSION */
+.admission{
+    background:linear-gradient(135deg,#4b2918,#29150d);
     color:white;
+    text-align:center;
+    border-radius:25px;
+    margin:70px 7%;
+    padding:65px 25px;
 }
 
-.admission-box small{
-    color:var(--gold);
-    letter-spacing:3px;
-    font-weight:bold;
+.admission h2{
+    font-size:40px;
+    color:#e5aa2e;
+    margin-bottom:10px;
 }
 
-.admission-box h2{
-    font-family:Georgia,serif;
-    font-size:45px;
-    margin:10px 0;
+.admission p{
+    margin-bottom:25px;
 }
 
-.admission-box p{
-    max-width:650px;
-    margin:10px auto;
-    color:#eee;
-}
-
-/* ================= FAQ NEW ================= */
-
-.faq-section{
-    background:white;
-}
-
+/* FAQ */
 .faq{
-    max-width:900px;
+    max-width:850px;
     margin:auto;
 }
 
-.faq-item{
+details{
+    background:white;
     margin-bottom:12px;
-    border:1px solid #E8D5AD;
-    border-radius:14px;
-    overflow:hidden;
-    background:#FFF9EC;
+    padding:18px 20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
 }
 
-.question{
-    padding:19px 22px;
-    cursor:pointer;
+summary{
     font-weight:bold;
-    display:flex;
-    justify-content:space-between;
-    color:var(--chocolate);
+    cursor:pointer;
 }
 
-.answer{
-    display:none;
-    padding:0 22px 20px;
-    color:#706158;
-}
-
-.faq-item.open .answer{
-    display:block;
-}
-
-.faq-item.open .question{
-    color:#B4770D;
-}
-
-/* ================= CONTACT NEW ================= */
-
-.contact-section{
-    background:#FFF4DC;
-}
-
-.contact-grid{
-    max-width:1100px;
-    margin:auto;
+/* CONTACT */
+.contact{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .contact-card{
     background:white;
-    padding:32px;
-    border-radius:22px;
-    border:1px solid #E7D3A8;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 7px 20px rgba(0,0,0,.08);
+}
+
+.contact-card .icon{
+    font-size:35px;
+    margin-bottom:10px;
 }
 
 .contact-card h3{
-    font-family:Georgia,serif;
-    color:var(--chocolate);
-    font-size:27px;
-    margin-bottom:20px;
+    margin-bottom:7px;
 }
 
-.contact-row{
-    display:flex;
-    gap:15px;
-    margin:22px 0;
+.contact-card p{
+    color:#6c625d;
 }
 
-.contact-icon{
-    width:48px;
-    height:48px;
-    min-width:48px;
-    background:var(--gold);
-    border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:21px;
-}
-
-.contact-row b{
-    color:var(--chocolate);
-}
-
-.contact-row p{
-    color:#76665B;
-}
-
-.map{
-    height:240px;
-    background:#EFE3CC;
-    border-radius:16px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:#665448;
-}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
-    background:#160A06;
+    background:#1b100b;
     color:white;
-    padding:45px 7%;
+    padding:45px 7% 20px;
     text-align:center;
-    border-top:4px solid var(--gold);
 }
 
-.footer-logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-}
-
-.footer-logo img{
-    width:60px;
-}
-
-.footer-logo h2{
-    font-family:Georgia,serif;
-}
-
-.footer-logo span{
-    color:var(--gold);
+footer h2{
+    color:#e5aa2e;
+    margin-bottom:8px;
 }
 
 .footer-links{
-    margin:25px 0;
+    margin:20px 0;
 }
 
 .footer-links a{
-    color:#ddd;
-    text-decoration:none;
-    margin:6px 9px;
-    font-size:13px;
+    color:white;
+    margin:0 10px;
 }
 
 .footer-links a:hover{
-    color:var(--gold);
+    color:#e5aa2e;
+}
+
+.copyright{
+    border-top:1px solid #49352c;
+    padding-top:18px;
+    color:#aaa;
 }
 
 /* WHATSAPP */
-
 .whatsapp{
     position:fixed;
-    left:20px;
+    right:20px;
     bottom:20px;
     width:55px;
     height:55px;
     border-radius:50%;
-    background:#25D366;
+    background:#25d366;
     color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-decoration:none;
-    font-size:25px;
+    font-size:27px;
     z-index:2000;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media(max-width:900px){
 
-    .topbar{
-        display:none;
-    }
-
-    .navbar{
-        flex-direction:column;
+    nav{
         gap:10px;
     }
 
     nav a{
-        font-size:10px;
-        padding:7px;
+        font-size:13px;
     }
 
-    .hero h2{
-        font-size:43px;
+    .hero h1{
+        font-size:42px;
     }
 
-    .services{
+    .quick{
         grid-template-columns:1fr;
-        margin:20px;
+        margin-top:25px;
     }
 
-    .about-new{
-        grid-template-columns:1fr;
-    }
-
-    .principal-new{
+    .about,
+    .principal{
         grid-template-columns:1fr;
         text-align:center;
     }
 
-    .teacher-grid{
-        grid-template-columns:1fr 1fr;
+    .about-image{
+        margin-bottom:20px;
     }
 
-    .facility-grid{
-        grid-template-columns:1fr;
+    .points{
+        text-align:left;
+    }
+
+    .teachers{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .facilities{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .stats{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
     }
 
     .gallery{
         grid-template-columns:1fr 1fr;
-        grid-auto-rows:160px;
+        grid-template-rows:200px 200px 200px;
     }
 
     .gallery img:first-child{
         grid-row:span 1;
     }
 
-    .contact-grid{
+    .contact{
         grid-template-columns:1fr;
     }
 }
 
-@media(max-width:500px){
+@media(max-width:600px){
 
-    .logo h1{
-        font-size:18px;
+    .topbar{
+        flex-direction:column;
+        text-align:center;
+        gap:3px;
     }
 
-    .logo img{
-        width:50px;
-        height:50px;
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
     .hero{
-        min-height:500px;
+        min-height:520px;
     }
 
-    .hero h2{
-        font-size:35px;
+    .hero h1{
+        font-size:34px;
     }
 
     .hero p{
-        font-size:15px;
+        font-size:17px;
     }
 
     section{
-        padding:55px 5%;
+        padding:60px 5%;
     }
 
-    .title h2{
+    .section-title h2{
         font-size:30px;
     }
 
-    .about-points{
-        grid-template-columns:1fr;
-    }
-
-    .teacher-grid{
+    .teachers,
+    .facilities,
+    .stats{
         grid-template-columns:1fr 1fr;
     }
 
     .gallery{
-        grid-template-columns:1fr 1fr;
-        gap:8px;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
     }
 
     .gallery img{
-        border-radius:10px;
+        height:220px;
     }
 
-    .admission-box{
-        padding:35px 18px;
+    .admission{
+        margin:50px 5%;
     }
 
-    .admission-box h2{
-        font-size:34px;
+    .admission h2{
+        font-size:30px;
     }
 }
 </style>
@@ -916,20 +676,19 @@ footer{
 
 <!-- TOP BAR -->
 <div class="topbar">
-    <span>📍 Manikpur, Pirpainti Bazar, Bhagalpur, Bihar</span>
-    <span>🎓 Kids Academy Public School</span>
+    <div>📍 Manikpur, Pirpainti Bazar, Bhagalpur, Bihar</div>
+    <div>🎓 Quality Education • Bright Future</div>
 </div>
 
 <!-- HEADER -->
 <header>
-<div class="navbar">
 
-    <div class="logo">
-        <img src="school-logo.png" alt="School Logo">
+    <div class="logo-area">
+        <img src="school-logo.png" alt="Kids Academy Public School Logo">
 
         <div>
-            <h1>Kids Academy <span>Public School</span></h1>
-            <p>EDUCATION • DISCIPLINE • KNOWLEDGE • FUTURE</p>
+            <h2>Kids Academy Public School</h2>
+            <small>Manikpur, Pirpainti Bazar</small>
         </div>
     </div>
 
@@ -938,549 +697,434 @@ footer{
         <a href="#about">About</a>
         <a href="#principal">Principal</a>
         <a href="#teachers">Teachers</a>
-        <a href="#facilities">Facilities</a>
         <a href="#gallery">Gallery</a>
-        <a href="#admission">Admission</a>
-        <a href="result.html">Result</a>
-        <a href="notice.html">Notice</a>
-        <a href="admit-card.html">Admit Card</a>
         <a href="#contact">Contact</a>
     </nav>
 
-</div>
 </header>
 
-<!-- HERO -->
+<!-- HERO / BIG SCHOOL PHOTO -->
 <section class="hero" id="home">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-    <span class="hero-badge">WELCOME TO OUR SCHOOL</span>
+        <span class="hero-badge">WELCOME TO OUR SCHOOL</span>
 
-    <h2>
-        Kids Academy<br>
-        <span>Public School</span>
-    </h2>
+        <h1>
+            Kids Academy <span>Public School</span>
+        </h1>
 
-    <p>
-        A place where learning builds a better tomorrow.
-        Education, discipline, confidence and values for every child.
-    </p>
+        <p>
+            Quality Education • Discipline • Knowledge • Bright Future
+        </p>
 
-    <div class="hero-buttons">
-        <a href="#about" class="btn btn-gold">Explore School →</a>
-        <a href="#services" class="btn btn-outline">Student Services →</a>
+        <div class="buttons">
+            <a href="result.html" class="btn btn-gold">
+                📊 Check Result
+            </a>
+
+            <a href="admit-card.html" class="btn btn-light">
+                🎫 Admit Card
+            </a>
+
+            <a href="notice.html" class="btn btn-light">
+                📢 School Notice
+            </a>
+        </div>
+
     </div>
 
-</div>
 </section>
 
-<!-- SERVICES -->
-<div class="services" id="services">
+<!-- QUICK LINKS -->
+<div class="quick">
 
-    <div class="service">
-        <h3>📄 Check Result</h3>
-        <p>View examination result</p>
-        <br>
-        <a href="result.html">Open Result →</a>
+    <div class="quick-card">
+        <h3>📊 Result</h3>
+        <p>Check student result online.</p>
+        <a href="result.html">View Result →</a>
     </div>
 
-    <div class="service">
-        <h3>🪪 Admit Card</h3>
-        <p>Download / Print admit card</p>
-        <br>
+    <div class="quick-card">
+        <h3>🎫 Admit Card</h3>
+        <p>Download your examination admit card.</p>
         <a href="admit-card.html">Open Admit Card →</a>
     </div>
 
-    <div class="service">
-        <h3>📢 School Notice</h3>
-        <p>Latest school announcements</p>
-        <br>
-        <a href="notice.html">View Notices →</a>
+    <div class="quick-card">
+        <h3>📢 Notice</h3>
+        <p>Read latest school notices.</p>
+        <a href="notice.html">View Notice →</a>
     </div>
 
 </div>
 
 <!-- ABOUT -->
-<section class="about-section" id="about">
+<section id="about">
 
-<div class="title">
-    <small>WHO WE ARE</small>
-    <h2>Welcome to <span>Our School</span></h2>
-    <p>
-        A modern learning environment where education and values
-        come together.
-    </p>
-</div>
-
-<div class="about-new">
-
-    <div class="about-image">
-
-        <img src="school.jpg" alt="Kids Academy Public School">
-
-        <div class="about-tag">
-            <b>2021</b><br>
-            Established
-        </div>
-
+    <div class="section-title">
+        <span>ABOUT OUR SCHOOL</span>
+        <h2>Learning Today, Leading Tomorrow</h2>
+        <p>
+            Kids Academy Public School is focused on education,
+            discipline and the overall development of students.
+        </p>
     </div>
 
-    <div class="about-content">
+    <div class="about">
 
-        <h3>Building Knowledge.<br>Creating Futures.</h3>
+        <div class="about-image">
+            <img src="school.jpg" alt="Kids Academy Public School">
+            <div class="about-badge">Established 2021</div>
+        </div>
 
-        <p>
-            Kids Academy Public School is committed to providing
-            quality education in a positive and disciplined
-            environment.
-        </p>
+        <div class="about-text">
 
-        <p>
-            Our aim is to help students develop knowledge,
-            confidence, discipline, good values and a strong
-            foundation for the future.
-        </p>
+            <h2>Our School</h2>
 
-        <div class="about-points">
+            <p>
+                Welcome to Kids Academy Public School.
+                We aim to provide students with a positive learning
+                environment and help them build a bright future.
+            </p>
 
-            <div class="point">
-                <span>✓</span> Quality Education
-            </div>
+            <div class="points">
 
-            <div class="point">
-                <span>✓</span> Discipline
-            </div>
+                <div class="point">
+                    <strong>📚 Quality Education</strong>
+                    Strong focus on learning.
+                </div>
 
-            <div class="point">
-                <span>✓</span> Good Values
-            </div>
+                <div class="point">
+                    <strong>🎯 Student Focus</strong>
+                    Development of every student.
+                </div>
 
-            <div class="point">
-                <span>✓</span> Bright Future
+                <div class="point">
+                    <strong>🌱 Better Future</strong>
+                    Building confidence and knowledge.
+                </div>
+
+                <div class="point">
+                    <strong>🏫 Safe Environment</strong>
+                    Friendly school environment.
+                </div>
+
             </div>
 
         </div>
 
     </div>
 
-</div>
 </section>
 
 <!-- PRINCIPAL -->
 <section class="principal-section" id="principal">
 
-<div class="title">
-    <small>OUR LEADERSHIP</small>
-    <h2>Meet Our <span>Principal</span></h2>
-    <p>
-        Leadership dedicated to education and student development.
-    </p>
-</div>
-
-<div class="principal-new">
-
-    <div class="principal-photo">
-
-        <img src="principal.jpg" alt="Md Imtiyaz Monu">
-
+    <div class="section-title">
+        <span>OUR PRINCIPAL</span>
+        <h2>School Leadership</h2>
     </div>
 
-    <div class="principal-info">
+    <div class="principal">
 
-        <h3>Md Imtiyaz (Monu)</h3>
+        <div>
+            <img src="principal.jpg" alt="Principal Md Imtiyaz Monu">
+        </div>
 
-        <p class="degree">B.Com & B.Ed • Principal</p>
+        <div>
 
-        <p>
-            The school works towards creating a positive,
-            disciplined and supportive environment where
-            every student can learn and grow.
-        </p>
+            <h2>Md Imtiyaz (Monu)</h2>
 
-        <div class="principal-message">
-            “Our goal is to provide students with knowledge,
-            confidence, discipline and values for a bright future.”
+            <h3>B.Com & B.Ed • Principal</h3>
+
+            <p>
+                The school leadership focuses on creating a disciplined,
+                supportive and effective learning environment for students.
+            </p>
+
         </div>
 
     </div>
 
-</div>
 </section>
 
 <!-- TEACHERS -->
-<section class="teacher-section" id="teachers">
+<section id="teachers">
 
-<div class="title">
-    <small>OUR TEAM</small>
-    <h2>Our <span>Teachers</span></h2>
-    <p>Dedicated teachers supporting students every day.</p>
-</div>
-
-<div class="teacher-grid">
-
-    <div class="teacher">
-        <div class="teacher-icon">👨‍🏫</div>
-        <h4>Teacher 01</h4>
-        <p>Teacher</p>
+    <div class="section-title">
+        <span>OUR TEACHERS</span>
+        <h2>Meet Our Teaching Team</h2>
+        <p>
+            Our teachers support students in their learning and development.
+        </p>
     </div>
 
-    <div class="teacher">
-        <div class="teacher-icon">👩‍🏫</div>
-        <h4>Teacher 02</h4>
-        <p>Teacher</p>
+    <div class="teachers">
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👨‍🏫</div>
+            <h3>Teacher 01</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👩‍🏫</div>
+            <h3>Teacher 02</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👨‍🏫</div>
+            <h3>Teacher 03</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👩‍🏫</div>
+            <h3>Teacher 04</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👨‍🏫</div>
+            <h3>Teacher 05</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👩‍🏫</div>
+            <h3>Teacher 06</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👨‍🏫</div>
+            <h3>Teacher 07</h3>
+            <p>Teaching Staff</p>
+        </div>
+
+        <div class="teacher-card">
+            <div class="teacher-icon">👩‍🏫</div>
+            <h3>Teacher 08</h3>
+            <p>Teaching Staff</p>
+        </div>
+
     </div>
 
-    <div class="teacher">
-        <div class="teacher-icon">👨‍🏫</div>
-        <h4>Teacher 03</h4>
-        <p>Teacher</p>
-    </div>
-
-    <div class="teacher">
-        <div class="teacher-icon">👩‍🏫</div>
-        <h4>Teacher 04</h4>
-        <p>Teacher</p>
-    </div>
-
-    <div class="teacher">
-        <div class="teacher-icon">👨‍🏫</div>
-        <h4>Teacher 05</h4>
-        <p>Teacher</p>
-    </div>
-
-    <div class="teacher">
-        <div class="teacher-icon">👩‍🏫</div>
-        <h4>Teacher 06</h4>
-        <p>Teacher</p>
-    </div>
-
-    <div class="teacher">
-        <div class="teacher-icon">👨‍🏫</div>
-        <h4>Teacher 07</h4>
-        <p>Teacher</p>
-    </div>
-
-    <div class="teacher">
-        <div class="teacher-icon">👩‍🏫</div>
-        <h4>Teacher 08</h4>
-        <p>Teacher</p>
-    </div>
-
-</div>
 </section>
 
 <!-- FACILITIES -->
-<section class="facilities-section" id="facilities">
+<section>
 
-<div class="title">
-    <small>WHAT WE OFFER</small>
-    <h2>School <span>Facilities</span></h2>
-    <p>Resources and activities for a better learning experience.</p>
-</div>
-
-<div class="facility-grid">
-
-    <div class="facility">
-        <div class="facility-icon">📚</div>
-        <div>
-            <h3>Library</h3>
-            <p>Reading and learning resources.</p>
-        </div>
+    <div class="section-title">
+        <span>OUR FACILITIES</span>
+        <h2>School Facilities</h2>
     </div>
 
-    <div class="facility">
-        <div class="facility-icon">💻</div>
-        <div>
-            <h3>Computer Lab</h3>
-            <p>Digital learning and computer education.</p>
+    <div class="facilities">
+
+        <div class="facility">
+            <div class="facility-icon">📚</div>
+            <h3>Learning</h3>
+            <p>Focused learning environment.</p>
         </div>
+
+        <div class="facility">
+            <div class="facility-icon">🧑‍🏫</div>
+            <h3>Teachers</h3>
+            <p>Dedicated teaching staff.</p>
+        </div>
+
+        <div class="facility">
+            <div class="facility-icon">🏫</div>
+            <h3>Campus</h3>
+            <p>Positive school environment.</p>
+        </div>
+
+        <div class="facility">
+            <div class="facility-icon">🎯</div>
+            <h3>Activities</h3>
+            <p>Student development activities.</p>
+        </div>
+
     </div>
 
-    <div class="facility">
-        <div class="facility-icon">🏃</div>
-        <div>
-            <h3>Playground</h3>
-            <p>Sports, fitness and outdoor activities.</p>
-        </div>
-    </div>
-
-    <div class="facility">
-        <div class="facility-icon">🎨</div>
-        <div>
-            <h3>Creative Activities</h3>
-            <p>Activities for creativity and confidence.</p>
-        </div>
-    </div>
-
-</div>
 </section>
 
 <!-- STATS -->
-<section class="stats-section">
-
-<div class="title">
-    <small>SCHOOL AT A GLANCE</small>
-    <h2>Our <span>Numbers</span></h2>
-    <p>Some key information about our school.</p>
-</div>
-
 <div class="stats">
 
     <div class="stat">
-        <div class="stat-icon">📅</div>
-        <strong>2021</strong>
-        <span>Established</span>
+        <h2>2021</h2>
+        <p>Established</p>
     </div>
 
     <div class="stat">
-        <div class="stat-icon">👨‍🏫</div>
-        <strong>8</strong>
-        <span>Teachers</span>
+        <h2>8</h2>
+        <p>Teachers</p>
     </div>
 
     <div class="stat">
-        <div class="stat-icon">📚</div>
-        <strong>100%</strong>
-        <span>Learning Focus</span>
+        <h2>100%</h2>
+        <p>Learning Focus</p>
     </div>
 
     <div class="stat">
-        <div class="stat-icon">🏫</div>
-        <strong>1</strong>
-        <span>School</span>
+        <h2>1</h2>
+        <p>School</p>
     </div>
 
 </div>
-</section>
 
 <!-- GALLERY -->
-<section class="gallery-section" id="gallery">
+<section id="gallery">
 
-<div class="title">
-    <small>OUR MEMORIES</small>
-    <h2>School <span>Gallery</span></h2>
-    <p>Beautiful moments and memories from our school.</p>
-</div>
+    <div class="section-title">
+        <span>SCHOOL GALLERY</span>
+        <h2>Our Beautiful Memories</h2>
+        <p>Some moments from our school.</p>
+    </div>
 
-<div class="gallery">
+    <div class="gallery">
 
-    <img src="gallery1.jpg" alt="School Gallery 1">
-    <img src="gallery2.jpg" alt="School Gallery 2">
-    <img src="gallery3.jpg" alt="School Gallery 3">
-    <img src="gallery4.jpg" alt="School Gallery 4">
-    <img src="gallery5.jpg" alt="School Gallery 5">
-    <img src="gallery6.jpg" alt="School Gallery 6">
+        <img src="school.jpg" alt="School">
+        <img src="gallery1.jpg" alt="School Gallery">
+        <img src="gallery2.jpg" alt="School Gallery">
+        <img src="gallery3.jpg" alt="School Gallery">
+        <img src="gallery4.jpg" alt="School Gallery">
 
-</div>
+    </div>
+
 </section>
 
 <!-- ADMISSION -->
-<section class="admission-section" id="admission">
-
-<div class="admission-box">
-
-    <small>GIVE YOUR CHILD A BRIGHT FUTURE</small>
+<div class="admission">
 
     <h2>Admission Open</h2>
 
     <p>
-        Build your child's future with education,
-        discipline, knowledge and strong values.
+        Give your child a strong foundation for a bright future.
     </p>
 
     <a href="#contact" class="btn btn-gold">
-        Contact School →
+        Contact School
     </a>
 
 </div>
-</section>
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
+<section>
 
-<div class="title">
-    <small>HELP CENTER</small>
-    <h2>Frequently Asked <span>Questions</span></h2>
-</div>
-
-<div class="faq">
-
-    <div class="faq-item">
-        <div class="question">
-            📍 Where is the school located?
-            <span>＋</span>
-        </div>
-        <div class="answer">
-            Kids Academy Public School is located at
-            Manikpur, Pirpainti Bazar, Bhagalpur, Bihar.
-        </div>
+    <div class="section-title">
+        <span>FAQ</span>
+        <h2>Frequently Asked Questions</h2>
     </div>
 
-    <div class="faq-item">
-        <div class="question">
-            📅 When was the school established?
-            <span>＋</span>
-        </div>
-        <div class="answer">
-            The school was established in 2021.
-        </div>
+    <div class="faq">
+
+        <details>
+            <summary>Where is Kids Academy Public School located?</summary>
+            <p>
+                The school is located at Manikpur, Pirpainti Bazar,
+                Bhagalpur, Bihar.
+            </p>
+        </details>
+
+        <details>
+            <summary>How can I check the student result?</summary>
+            <p>
+                Click the Result option on the website and enter
+                the required student details.
+            </p>
+        </details>
+
+        <details>
+            <summary>How can I get the admit card?</summary>
+            <p>
+                Open the Admit Card page from the website menu.
+            </p>
+        </details>
+
+        <details>
+            <summary>Where can I see school notices?</summary>
+            <p>
+                Open the School Notice page from the Notice option.
+            </p>
+        </details>
+
     </div>
 
-    <div class="faq-item">
-        <div class="question">
-            👨‍🏫 How many teachers are there?
-            <span>＋</span>
-        </div>
-        <div class="answer">
-            There are 8 teachers.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="question">
-            📄 Where can I check the result?
-            <span>＋</span>
-        </div>
-        <div class="answer">
-            You can check the result from the Result page.
-        </div>
-    </div>
-
-</div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact-section" id="contact">
+<section id="contact">
 
-<div class="title">
-    <small>GET IN TOUCH</small>
-    <h2>Contact <span>Our School</span></h2>
-    <p>We are happy to connect with parents and students.</p>
-</div>
+    <div class="section-title">
+        <span>CONTACT US</span>
+        <h2>Get In Touch</h2>
+    </div>
 
-<div class="contact-grid">
+    <div class="contact">
 
-    <div class="contact-card">
-
-        <h3>School Information</h3>
-
-        <div class="contact-row">
-
-            <div class="contact-icon">📍</div>
-
-            <div>
-                <b>Address</b>
-                <p>
-                    Manikpur, Pirpainti Bazar,<br>
-                    Bhagalpur, Bihar
-                </p>
-            </div>
-
+        <div class="contact-card">
+            <div class="icon">📍</div>
+            <h3>School Address</h3>
+            <p>
+                Manikpur, Pirpainti Bazar,<br>
+                Bhagalpur, Bihar
+            </p>
         </div>
 
-        <div class="contact-row">
-
-            <div class="contact-icon">📞</div>
-
-            <div>
-                <b>Phone</b>
-                <p>School Contact Number</p>
-            </div>
-
+        <div class="contact-card">
+            <div class="icon">📚</div>
+            <h3>School</h3>
+            <p>
+                Kids Academy Public School
+            </p>
         </div>
 
-        <div class="contact-row">
-
-            <div class="contact-icon">✉️</div>
-
-            <div>
-                <b>Email</b>
-                <p>School Email Address</p>
-            </div>
-
+        <div class="contact-card">
+            <div class="icon">🎓</div>
+            <h3>Principal</h3>
+            <p>
+                Md Imtiyaz (Monu)<br>
+                B.Com & B.Ed
+            </p>
         </div>
 
     </div>
 
-    <div class="contact-card">
-
-        <h3>School Location</h3>
-
-        <div class="map">
-            📍<br><br>
-            <b>Kids Academy Public School</b><br>
-            Manikpur, Pirpainti Bazar<br>
-            Bhagalpur, Bihar
-        </div>
-
-    </div>
-
-</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
 
-<div class="footer-logo">
+    <h2>Kids Academy Public School</h2>
 
-    <img src="school-logo.png" alt="School Logo">
+    <p>
+        Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
+    </p>
 
-    <div>
-        <h2>Kids Academy <span>Public School</span></h2>
-        <p>Education • Discipline • Knowledge • Future</p>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#teachers">Teachers</a>
+        <a href="result.html">Result</a>
+        <a href="notice.html">Notice</a>
+        <a href="admit-card.html">Admit Card</a>
     </div>
 
-</div>
-
-<div class="footer-links">
-
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#principal">Principal</a>
-    <a href="#teachers">Teachers</a>
-    <a href="#facilities">Facilities</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#admission">Admission</a>
-    <a href="result.html">Result</a>
-    <a href="notice.html">Notice</a>
-    <a href="admit-card.html">Admit Card</a>
-    <a href="#contact">Contact</a>
-
-</div>
-
-<p>
-    © 2021 - 2026 Kids Academy Public School. All Rights Reserved.
-</p>
+    <div class="copyright">
+        © 2026 Kids Academy Public School. All Rights Reserved.
+    </div>
 
 </footer>
 
-<!-- WHATSAPP -->
-<a href="#" class="whatsapp">☎</a>
-
-<script>
-
-document.querySelectorAll(".question").forEach(question => {
-
-    question.addEventListener("click", function(){
-
-        const item = this.parentElement;
-
-        document.querySelectorAll(".faq-item").forEach(other => {
-
-            if(other !== item){
-                other.classList.remove("open");
-            }
-
-        });
-
-        item.classList.toggle("open");
-
-    });
-
-});
-
-</script>
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="#" title="WhatsApp">
+    💬
+</a>
 
 </body>
 </html>
