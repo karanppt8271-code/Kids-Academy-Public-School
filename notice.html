@@ -1,201 +1,143 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>School Notice | Kid's Academy Public School</title>
+<title>School Notice | Kids Academy Public School</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f7f8f5;
-    color:#26352d;
+    background:#fff8e9;
+    color:#29150d;
 }
 
-/* HEADER */
-
 header{
-    background:#12372a;
+    background:#29150d;
     color:white;
     padding:18px 20px;
     text-align:center;
-    box-shadow:0 5px 20px #12372a33;
+    border-bottom:4px solid #e5aa2e;
+}
+
+header img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:5px;
 }
 
 header h1{
+    margin-top:8px;
+    color:#e5aa2e;
     font-size:28px;
 }
 
 header p{
-    margin-top:6px;
-    color:#e5c76b;
+    margin-top:5px;
+    color:#fff8e9;
 }
-
-/* BACK BUTTON */
 
 .back{
-    max-width:1000px;
-    margin:25px auto 0;
-    padding:0 15px;
-}
-
-.back a{
     display:inline-block;
-    background:#12372a;
-    color:white;
-    padding:11px 18px;
-    border-radius:10px;
+    margin-top:12px;
+    padding:10px 18px;
+    background:#e5aa2e;
+    color:#29150d;
     text-decoration:none;
+    border-radius:25px;
     font-weight:bold;
 }
 
-.back a:hover{
-    background:#c99a2e;
+.container{
+    max-width:900px;
+    margin:35px auto;
+    padding:0 18px;
 }
-
-/* TITLE */
 
 .title{
     text-align:center;
-    padding:35px 15px 25px;
-}
-
-.title small{
-    color:#c99a2e;
-    font-weight:bold;
-    letter-spacing:2px;
+    margin-bottom:25px;
 }
 
 .title h2{
-    color:#12372a;
-    font-size:38px;
-    margin:8px 0;
+    font-size:30px;
+    color:#29150d;
 }
 
-.title p{
-    color:#68756e;
+.title span{
+    display:block;
+    width:70px;
+    height:4px;
+    background:#e5aa2e;
+    margin:10px auto;
+    border-radius:5px;
 }
 
-/* NOTICE LIST */
-
-.notice-container{
-    max-width:1000px;
-    margin:auto;
-    padding:0 15px 60px;
-}
-
-.notice{
+.notice-card{
     background:white;
-    margin:18px 0;
-    padding:24px;
-
-    border-radius:18px;
-
-    border-left:6px solid #c99a2e;
-
-    box-shadow:0 8px 25px #12372a12;
-
-    transition:.3s;
+    border-radius:15px;
+    padding:22px;
+    margin-bottom:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    border-left:5px solid #e5aa2e;
 }
 
-.notice:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px #12372a20;
+.notice-date{
+    color:#9b5b00;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:8px;
 }
 
-.notice-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:12px;
-}
-
-.notice h3{
-    color:#12372a;
+.notice-card h3{
+    color:#29150d;
     font-size:21px;
+    margin-bottom:10px;
 }
 
-.date{
-    background:#f8f3e7;
-    color:#9a7318;
-    padding:7px 12px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-.notice p{
-    color:#59675f;
+.notice-card p{
+    color:#555;
     line-height:1.7;
+    font-size:16px;
 }
 
-.badge{
-    display:inline-block;
-    margin-top:12px;
-    background:#e8f3eb;
-    color:#1f6f4a;
-    padding:6px 11px;
-    border-radius:20px;
-    font-size:12px;
-    font-weight:bold;
+.loading{
+    text-align:center;
+    padding:40px;
+    font-size:18px;
+    color:#777;
 }
 
-/* IMPORTANT NOTICE */
-
-.important{
-    border-left-color:#b3261e;
+.empty{
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.07);
+    color:#777;
 }
-
-.important .badge{
-    background:#fde8e7;
-    color:#b3261e;
-}
-
-/* FOOTER */
 
 footer{
-    background:#061a12;
-    color:#d2ded7;
+    margin-top:50px;
+    background:#29150d;
+    color:white;
     text-align:center;
-    padding:25px;
-    line-height:1.7;
+    padding:22px;
 }
 
 footer strong{
-    color:#e5c76b;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-    header h1{
-        font-size:21px;
-    }
-
-    .title h2{
-        font-size:30px;
-    }
-
-    .notice-top{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .date{
-        order:-1;
-    }
-
+    color:#e5aa2e;
 }
 
 </style>
@@ -203,209 +145,156 @@ footer strong{
 
 <body>
 
-
 <header>
 
-<h1>
-🏫 Kid's Academy Public School
-</h1>
+    <img src="school-logo.png" alt="School Logo">
 
-<p>
-Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
-</p>
+    <h1>Kids Academy Public School</h1>
+
+    <p>Manikpur, Pirpainti Bazar</p>
+
+    <a href="index.html" class="back">← Back to Home</a>
 
 </header>
 
 
-<div class="back">
+<div class="container">
 
-<a href="index.html">
-← Back to Home
-</a>
+    <div class="title">
+        <h2>📢 School Notices</h2>
+        <span></span>
+    </div>
 
-</div>
+    <div id="noticeList">
 
+        <div class="loading">
+            Loading notices...
+        </div>
 
-<div class="title">
-
-<small>
-SCHOOL INFORMATION
-</small>
-
-<h2>
-📢 Latest Notices
-</h2>
-
-<p>
-Important announcements for students and parents
-</p>
-
-</div>
-
-
-<div class="notice-container">
-
-
-<!-- NOTICE 1 -->
-
-<div class="notice important">
-
-<div class="notice-top">
-
-<h3>
-📌 Important School Notice
-</h3>
-
-<span class="date">
-27 Aug 2026
-</span>
-
-</div>
-
-<p>
-Students and parents are requested to regularly check
-the school website for important announcements,
-examination updates and school activities.
-</p>
-
-<span class="badge">
-IMPORTANT
-</span>
-
-</div>
-
-
-<!-- NOTICE 2 -->
-
-<div class="notice">
-
-<div class="notice-top">
-
-<h3>
-📝 Examination Notice
-</h3>
-
-<span class="date">
-26 Aug 2026
-</span>
-
-</div>
-
-<p>
-Students should keep their Admit Card ready before
-appearing in the examination. Please check the
-Admit Card section of the website.
-</p>
-
-<span class="badge">
-EXAMINATION
-</span>
-
-</div>
-
-
-<!-- NOTICE 3 -->
-
-<div class="notice">
-
-<div class="notice-top">
-
-<h3>
-📊 Result Update
-</h3>
-
-<span class="date">
-25 Aug 2026
-</span>
-
-</div>
-
-<p>
-Students can check their examination result by using
-their Class and Roll Number on the Result page.
-</p>
-
-<span class="badge">
-RESULT
-</span>
-
-</div>
-
-
-<!-- NOTICE 4 -->
-
-<div class="notice">
-
-<div class="notice-top">
-
-<h3>
-🎓 Academic Notice
-</h3>
-
-<span class="date">
-24 Aug 2026
-</span>
-
-</div>
-
-<p>
-Students are advised to attend classes regularly and
-complete their classwork and homework on time.
-</p>
-
-<span class="badge">
-ACADEMIC
-</span>
-
-</div>
-
-
-<!-- NOTICE 5 -->
-
-<div class="notice">
-
-<div class="notice-top">
-
-<h3>
-🏆 School Activity</h3>
-
-<span class="date">
-23 Aug 2026
-</span>
-
-</div>
-
-<p>
-Students are encouraged to participate actively in
-school activities, competitions and creative programs.
-</p>
-
-<span class="badge">
-ACTIVITY
-</span>
-
-</div>
-
+    </div>
 
 </div>
 
 
 <footer>
 
-<strong>
-Kid's Academy Public School
-</strong>
-
-<br>
-
-Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
-
-<br>
-
-© 2026 All Rights Reserved
+    © 2026 <strong>Kids Academy Public School</strong><br>
+    Manikpur, Pirpainti Bazar
 
 </footer>
 
 
+<!-- Firebase -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyDH5Qd0S0gfuCX519aN-K9eLQtZYReyJ4Q",
+
+    authDomain:
+    "kids-academy-public-school.firebaseapp.com",
+
+    databaseURL:
+    "https://kids-academy-public-school-default-rtdb.asia-southeast1.firebasedatabase.app/",
+
+    projectId:
+    "kids-academy-public-school",
+
+    storageBucket:
+    "kids-academy-public-school.firebasestorage.app",
+
+    messagingSenderId:
+    "267983271088",
+
+    appId:
+    "1:267983271088:web:b172e2f3077492848bb775",
+
+    measurementId:
+    "G-P0KZKWBQFX"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+const noticeRef = ref(db, "notices");
+
+const noticeList =
+document.getElementById("noticeList");
+
+
+onValue(noticeRef, (snapshot) => {
+
+    const data = snapshot.val();
+
+    noticeList.innerHTML = "";
+
+    if(!data){
+
+        noticeList.innerHTML = `
+            <div class="empty">
+                <h3>📢 No Notice Available</h3>
+                <p>School notices will appear here.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    const notices = Object.values(data);
+
+
+    notices.reverse();
+
+
+    notices.forEach((notice) => {
+
+        const card =
+        document.createElement("div");
+
+        card.className = "notice-card";
+
+
+        card.innerHTML = `
+
+            <div class="notice-date">
+                📅 ${notice.date || "School Notice"}
+            </div>
+
+            <h3>
+                ${notice.title || "School Notice"}
+            </h3>
+
+            <p>
+                ${notice.message || ""}
+            </p>
+
+        `;
+
+
+        noticeList.appendChild(card);
+
+    });
+
+});
+
+
+</script>
+
 </body>
 </html>
+```
