@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>School Admin Panel</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8e9;
+    color:#29150d;
+}
+
+.header{
+    background:#29150d;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.header h1{
+    color:#e5aa2e;
+    margin-bottom:5px;
+}
+
+.container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h2{
+    color:#29150d;
+    margin-bottom:15px;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:12px;
+    margin:8px 0 15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    background:#e5aa2e;
+    color:#29150d;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.menu button{
+    padding:20px;
+    font-size:16px;
+}
+
+#message{
+    margin-top:15px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Kids Academy Public School</h1>
+    <p>Admin Management Panel</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🏫 School Information</h2>
+
+        <label>School Name</label>
+        <input type="text" id="schoolName"
+        value="Kids Academy Public School">
+
+        <label>Address</label>
+        <input type="text" id="address"
+        value="Manikpur, Pirpainti Bazar">
+
+        <label>Principal Name</label>
+        <input type="text" id="principal"
+        value="Md Imtiyaz (Monu)">
+
+        <label>Principal Qualification</label>
+        <input type="text" id="qualification"
+        value="B.Com & B.Ed">
+
+        <button onclick="saveInfo()">Save Information</button>
+
+        <p id="message"></p>
+    </div>
+
+    <div class="card">
+        <h2>⚙️ Website Management</h2>
+
+        <div class="menu">
+
+            <button onclick="openPage('notice.html')">
+                📢 Notice
+            </button>
+
+            <button onclick="openPage('result.html')">
+                📊 Result
+            </button>
+
+            <button onclick="openPage('admit-card.html')">
+                🎫 Admit Card
+            </button>
+
+            <button onclick="manageTeachers()">
+                👨‍🏫 Teachers
+            </button>
+
+            <button onclick="manageGallery()">
+                🖼️ Gallery
+            </button>
+
+            <button onclick="manageContact()">
+                📞 Contact
+            </button>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📋 Saved Information</h2>
+        <p id="savedInfo">
+            अभी कोई जानकारी save नहीं हुई है।
+        </p>
+    </div>
+
+</div>
+
+<script>
+
+function saveInfo(){
+
+    let schoolName =
+    document.getElementById("schoolName").value;
+
+    let address =
+    document.getElementById("address").value;
+
+    let principal =
+    document.getElementById("principal").value;
+
+    let qualification =
+    document.getElementById("qualification").value;
+
+    localStorage.setItem("schoolName",schoolName);
+    localStorage.setItem("address",address);
+    localStorage.setItem("principal",principal);
+    localStorage.setItem("qualification",qualification);
+
+    document.getElementById("message").innerHTML =
+    "✅ Information Save हो गई!";
+
+    showSavedInfo();
+}
+
+function showSavedInfo(){
+
+    let schoolName =
+    localStorage.getItem("schoolName");
+
+    let address =
+    localStorage.getItem("address");
+
+    let principal =
+    localStorage.getItem("principal");
+
+    let qualification =
+    localStorage.getItem("qualification");
+
+    if(schoolName){
+
+        document.getElementById("savedInfo").innerHTML =
+        "<b>School:</b> " + schoolName +
+        "<br><b>Address:</b> " + address +
+        "<br><b>Principal:</b> " + principal +
+        "<br><b>Qualification:</b> " + qualification;
+    }
+}
+
+function openPage(page){
+    window.location.href = page;
+}
+
+function manageTeachers(){
+    alert("Teacher Management अगले Step में बनाया जाएगा।");
+}
+
+function manageGallery(){
+    alert("Gallery Management अगले Step में बनाया जाएगा।");
+}
+
+function manageContact(){
+    alert("Contact Management अगले Step में बनाया जाएगा।");
+}
+
+showSavedInfo();
+
+</script>
+
+</body>
+</html>
