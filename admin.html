@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>School Admin Panel</title>
+<title>School Management Panel</title>
 
 <style>
 *{
@@ -19,220 +19,497 @@ body{
     color:#29150d;
 }
 
-.header{
+header{
     background:#29150d;
     color:white;
-    padding:20px;
+    padding:22px;
     text-align:center;
 }
 
-.header h1{
+header h1{
     color:#e5aa2e;
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .container{
-    max-width:1000px;
-    margin:30px auto;
-    padding:20px;
-}
-
-.card{
-    background:white;
+    max-width:1100px;
+    margin:auto;
     padding:25px;
-    margin-bottom:20px;
+}
+
+.welcome{
+    background:white;
+    padding:20px;
     border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.card h2{
-    color:#29150d;
-    margin-bottom:15px;
-}
-
-input, textarea, select{
-    width:100%;
-    padding:12px;
-    margin:8px 0 15px;
-    border:1px solid #ddd;
-    border-radius:8px;
-}
-
-button{
-    background:#e5aa2e;
-    color:#29150d;
-    border:none;
-    padding:12px 20px;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-button:hover{
-    opacity:.9;
+    margin-bottom:20px;
+    box-shadow:0 4px 15px #00000012;
 }
 
 .menu{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:15px;
-    margin-bottom:20px;
 }
 
 .menu button{
-    padding:20px;
-    font-size:16px;
+    border:0;
+    padding:25px 15px;
+    border-radius:15px;
+    background:white;
+    color:#29150d;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 4px 15px #00000012;
+    transition:.2s;
 }
 
-#message{
+.menu button:hover{
+    transform:translateY(-3px);
+    background:#e5aa2e;
+}
+
+.section{
+    background:white;
+    padding:25px;
+    margin-top:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px #00000012;
+}
+
+.section h2{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+input,textarea{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.save{
+    margin-top:18px;
+    padding:12px 25px;
+    border:0;
+    border-radius:8px;
+    background:#29150d;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.message{
     margin-top:15px;
     font-weight:bold;
+}
+
+.teacher{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:12px;
+}
+
+.teacher input{
+    margin-bottom:5px;
+}
+
+.notice-box{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.notice-box button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:0;
+    border-radius:6px;
+    background:#29150d;
+    color:white;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
+    background:#29150d;
+    color:white;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<header>
     <h1>Kids Academy Public School</h1>
-    <p>Admin Management Panel</p>
-</div>
+    <p>School Management Panel</p>
+</header>
 
 <div class="container">
 
-    <div class="card">
-        <h2>🏫 School Information</h2>
+<div class="welcome">
+    <h2>👋 Welcome Admin</h2>
+    <p>यहाँ से आप अपनी वेबसाइट की जानकारी manage कर सकते हैं।</p>
+</div>
 
-        <label>School Name</label>
-        <input type="text" id="schoolName"
-        value="Kids Academy Public School">
+<div class="menu">
 
-        <label>Address</label>
-        <input type="text" id="address"
-        value="Manikpur, Pirpainti Bazar">
+<button onclick="showSection('school')">
+🏫 School Information
+</button>
 
-        <label>Principal Name</label>
-        <input type="text" id="principal"
-        value="Md Imtiyaz (Monu)">
+<button onclick="showSection('teachers')">
+👨‍🏫 Teachers
+</button>
 
-        <label>Principal Qualification</label>
-        <input type="text" id="qualification"
-        value="B.Com & B.Ed">
+<button onclick="showSection('notice')">
+📢 Notice
+</button>
 
-        <button onclick="saveInfo()">Save Information</button>
+<button onclick="openPage('result.html')">
+📊 Result
+</button>
 
-        <p id="message"></p>
-    </div>
+<button onclick="openPage('admit-card.html')">
+🎫 Admit Card
+</button>
 
-    <div class="card">
-        <h2>⚙️ Website Management</h2>
-
-        <div class="menu">
-
-            <button onclick="openPage('notice.html')">
-                📢 Notice
-            </button>
-
-            <button onclick="openPage('result.html')">
-                📊 Result
-            </button>
-
-            <button onclick="openPage('admit-card.html')">
-                🎫 Admit Card
-            </button>
-
-            <button onclick="manageTeachers()">
-                👨‍🏫 Teachers
-            </button>
-
-            <button onclick="manageGallery()">
-                🖼️ Gallery
-            </button>
-
-            <button onclick="manageContact()">
-                📞 Contact
-            </button>
-
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>📋 Saved Information</h2>
-        <p id="savedInfo">
-            अभी कोई जानकारी save नहीं हुई है।
-        </p>
-    </div>
+<button onclick="showSection('contact')">
+📞 Contact
+</button>
 
 </div>
 
+
+<!-- SCHOOL -->
+
+<div id="school" class="section">
+
+<h2>🏫 School Information</h2>
+
+<label>School Name</label>
+<input id="schoolName"
+value="Kids Academy Public School">
+
+<label>Address</label>
+<input id="address"
+value="Manikpur, Pirpainti Bazar">
+
+<label>Principal Name</label>
+<input id="principal"
+value="Md Imtiyaz (Monu)">
+
+<label>Qualification</label>
+<input id="qualification"
+value="B.Com & B.Ed">
+
+<button class="save" onclick="saveSchool()">
+Save Information
+</button>
+
+<p id="schoolMsg" class="message"></p>
+
+</div>
+
+
+<!-- TEACHERS -->
+
+<div id="teachers" class="section">
+
+<h2>👨‍🏫 Teachers</h2>
+
+<div class="teacher">
+
+<input id="teacher1" placeholder="Teacher 1 Name">
+<input id="teacher2" placeholder="Teacher 2 Name">
+<input id="teacher3" placeholder="Teacher 3 Name">
+<input id="teacher4" placeholder="Teacher 4 Name">
+<input id="teacher5" placeholder="Teacher 5 Name">
+<input id="teacher6" placeholder="Teacher 6 Name">
+<input id="teacher7" placeholder="Teacher 7 Name">
+<input id="teacher8" placeholder="Teacher 8 Name">
+
+</div>
+
+<button class="save" onclick="saveTeachers()">
+Save Teachers
+</button>
+
+<p id="teacherMsg" class="message"></p>
+
+</div>
+
+
+<!-- NOTICE -->
+
+<div id="notice" class="section">
+
+<h2>📢 School Notice</h2>
+
+<label>New Notice</label>
+
+<textarea id="noticeText"
+placeholder="यहाँ नया school notice लिखें..."></textarea>
+
+<button class="save" onclick="addNotice()">
+Add Notice
+</button>
+
+<div id="noticeList"></div>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div id="contact" class="section">
+
+<h2>📞 Contact Information</h2>
+
+<label>Mobile Number</label>
+<input id="mobile" placeholder="School Mobile Number">
+
+<label>Email</label>
+<input id="email" placeholder="School Email">
+
+<label>WhatsApp Number</label>
+<input id="whatsapp" placeholder="WhatsApp Number">
+
+<button class="save" onclick="saveContact()">
+Save Contact
+</button>
+
+<p id="contactMsg" class="message"></p>
+
+</div>
+
+</div>
+
+
+<footer>
+Kids Academy Public School © 2026
+</footer>
+
+
 <script>
 
-function saveInfo(){
+function showSection(id){
 
-    let schoolName =
-    document.getElementById("schoolName").value;
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
 
-    let address =
-    document.getElementById("address").value;
-
-    let principal =
-    document.getElementById("principal").value;
-
-    let qualification =
-    document.getElementById("qualification").value;
-
-    localStorage.setItem("schoolName",schoolName);
-    localStorage.setItem("address",address);
-    localStorage.setItem("principal",principal);
-    localStorage.setItem("qualification",qualification);
-
-    document.getElementById("message").innerHTML =
-    "✅ Information Save हो गई!";
-
-    showSavedInfo();
 }
 
-function showSavedInfo(){
-
-    let schoolName =
-    localStorage.getItem("schoolName");
-
-    let address =
-    localStorage.getItem("address");
-
-    let principal =
-    localStorage.getItem("principal");
-
-    let qualification =
-    localStorage.getItem("qualification");
-
-    if(schoolName){
-
-        document.getElementById("savedInfo").innerHTML =
-        "<b>School:</b> " + schoolName +
-        "<br><b>Address:</b> " + address +
-        "<br><b>Principal:</b> " + principal +
-        "<br><b>Qualification:</b> " + qualification;
-    }
-}
 
 function openPage(page){
-    window.location.href = page;
+
+    window.location.href=page;
+
 }
 
-function manageTeachers(){
-    alert("Teacher Management अगले Step में बनाया जाएगा।");
+
+/* SCHOOL */
+
+function saveSchool(){
+
+    localStorage.setItem(
+        "schoolName",
+        document.getElementById("schoolName").value
+    );
+
+    localStorage.setItem(
+        "address",
+        document.getElementById("address").value
+    );
+
+    localStorage.setItem(
+        "principal",
+        document.getElementById("principal").value
+    );
+
+    localStorage.setItem(
+        "qualification",
+        document.getElementById("qualification").value
+    );
+
+    document.getElementById("schoolMsg").innerHTML=
+    "✅ School information save हो गई।";
+
 }
 
-function manageGallery(){
-    alert("Gallery Management अगले Step में बनाया जाएगा।");
+
+/* TEACHERS */
+
+function saveTeachers(){
+
+    for(let i=1;i<=8;i++){
+
+        localStorage.setItem(
+            "teacher"+i,
+            document.getElementById("teacher"+i).value
+        );
+
+    }
+
+    document.getElementById("teacherMsg").innerHTML=
+    "✅ Teachers की information save हो गई।";
+
 }
 
-function manageContact(){
-    alert("Contact Management अगले Step में बनाया जाएगा।");
+
+/* NOTICE */
+
+function addNotice(){
+
+    let text=document.getElementById("noticeText").value;
+
+    if(text.trim()==""){
+        alert("पहले notice लिखिए।");
+        return;
+    }
+
+    let notices=
+    JSON.parse(localStorage.getItem("notices") || "[]");
+
+    notices.push(text);
+
+    localStorage.setItem(
+        "notices",
+        JSON.stringify(notices)
+    );
+
+    document.getElementById("noticeText").value="";
+
+    loadNotices();
+
 }
 
-showSavedInfo();
+
+function loadNotices(){
+
+    let notices=
+    JSON.parse(localStorage.getItem("notices") || "[]");
+
+    let html="";
+
+    notices.forEach(function(notice,index){
+
+        html+=`
+        <div class="notice-box">
+            ${notice}
+            <br>
+            <button onclick="deleteNotice(${index})">
+            Delete
+            </button>
+        </div>
+        `;
+
+    });
+
+    document.getElementById("noticeList").innerHTML=html;
+
+}
+
+
+function deleteNotice(index){
+
+    let notices=
+    JSON.parse(localStorage.getItem("notices") || "[]");
+
+    notices.splice(index,1);
+
+    localStorage.setItem(
+        "notices",
+        JSON.stringify(notices)
+    );
+
+    loadNotices();
+
+}
+
+
+/* CONTACT */
+
+function saveContact(){
+
+    localStorage.setItem(
+        "mobile",
+        document.getElementById("mobile").value
+    );
+
+    localStorage.setItem(
+        "email",
+        document.getElementById("email").value
+    );
+
+    localStorage.setItem(
+        "whatsapp",
+        document.getElementById("whatsapp").value
+    );
+
+    document.getElementById("contactMsg").innerHTML=
+    "✅ Contact information save हो गई।";
+
+}
+
+
+function loadData(){
+
+    document.getElementById("schoolName").value=
+    localStorage.getItem("schoolName")
+    || "Kids Academy Public School";
+
+    document.getElementById("address").value=
+    localStorage.getItem("address")
+    || "Manikpur, Pirpainti Bazar";
+
+    document.getElementById("principal").value=
+    localStorage.getItem("principal")
+    || "Md Imtiyaz (Monu)";
+
+    document.getElementById("qualification").value=
+    localStorage.getItem("qualification")
+    || "B.Com & B.Ed";
+
+
+    for(let i=1;i<=8;i++){
+
+        document.getElementById("teacher"+i).value=
+        localStorage.getItem("teacher"+i) || "";
+
+    }
+
+
+    document.getElementById("mobile").value=
+    localStorage.getItem("mobile") || "";
+
+    document.getElementById("email").value=
+    localStorage.getItem("email") || "";
+
+    document.getElementById("whatsapp").value=
+    localStorage.getItem("whatsapp") || "";
+
+    loadNotices();
+
+}
+
+loadData();
 
 </script>
 
