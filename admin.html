@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kids Academy - Admin Panel</title>
+<title>Kids Academy Public School - Admin</title>
 
 <style>
 *{
@@ -22,16 +22,17 @@ body{
 header{
     background:#29150d;
     color:white;
-    padding:25px;
     text-align:center;
+    padding:25px;
 }
 
 header h1{
     color:#e5aa2e;
+    margin-bottom:6px;
 }
 
 .container{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
     padding:25px;
 }
@@ -41,11 +42,11 @@ header h1{
     padding:25px;
     margin-bottom:20px;
     border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
 }
 
 h2{
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 label{
@@ -54,24 +55,22 @@ label{
     margin-top:12px;
 }
 
-input,textarea{
+input,
+textarea{
     width:100%;
     padding:12px;
     margin-top:6px;
-    border:1px solid #ddd;
+    border:1px solid #ccc;
     border-radius:8px;
-}
-
-textarea{
-    min-height:100px;
+    font-size:15px;
 }
 
 button{
     background:#e5aa2e;
     color:#29150d;
     border:0;
-    padding:12px 20px;
-    margin-top:15px;
+    padding:12px 22px;
+    margin-top:18px;
     border-radius:8px;
     cursor:pointer;
     font-weight:bold;
@@ -81,22 +80,14 @@ button:hover{
     opacity:.85;
 }
 
-.notice{
-    background:#fff8e9;
-    padding:15px;
-    margin-top:10px;
-    border-radius:10px;
-    border-left:5px solid #e5aa2e;
-}
-
-.delete{
-    background:#29150d;
-    color:white;
-    padding:8px 14px;
-}
-
 .success{
     margin-top:15px;
+    font-weight:bold;
+}
+
+.error{
+    margin-top:15px;
+    color:#b00020;
     font-weight:bold;
 }
 </style>
@@ -106,7 +97,7 @@ button:hover{
 
 <header>
     <h1>Kids Academy Public School</h1>
-    <p>Online Admin Management</p>
+    <p>Admin Management Panel</p>
 </header>
 
 <div class="container">
@@ -118,26 +109,22 @@ button:hover{
 <h2>🏫 School Information</h2>
 
 <label>School Name</label>
-<input id="schoolName"
-value="Kids Academy Public School">
+<input id="schoolName">
 
 <label>Address</label>
-<input id="address"
-value="Manikpur, Pirpainti Bazar">
+<input id="address">
 
 <label>Principal Name</label>
-<input id="principal"
-value="Md Imtiyaz (Monu)">
+<input id="principal">
 
 <label>Qualification</label>
-<input id="qualification"
-value="B.Com & B.Ed">
+<input id="qualification">
 
-<button onclick="saveSchool()">
+<button id="saveSchoolBtn">
 Save School Information
 </button>
 
-<p id="schoolMessage" class="success"></p>
+<p id="schoolMessage"></p>
 
 </div>
 
@@ -157,11 +144,11 @@ Save School Information
 <input id="teacher7" placeholder="Teacher 7 Name">
 <input id="teacher8" placeholder="Teacher 8 Name">
 
-<button onclick="saveTeachers()">
+<button id="saveTeachersBtn">
 Save Teachers
 </button>
 
-<p id="teacherMessage" class="success"></p>
+<p id="teacherMessage"></p>
 
 </div>
 
@@ -170,14 +157,16 @@ Save Teachers
 
 <div class="card">
 
-<h2>📢 School Notice</h2>
+<h2>📢 Add School Notice</h2>
 
 <textarea id="noticeText"
-placeholder="यहाँ नया notice लिखें..."></textarea>
+placeholder="यहाँ notice लिखें..."></textarea>
 
-<button onclick="addNotice()">
+<button id="addNoticeBtn">
 Add Notice
 </button>
+
+<p id="noticeMessage"></p>
 
 <div id="noticeList"></div>
 
@@ -202,7 +191,7 @@ import {
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
 
-/* FIREBASE CONFIG */
+/* FIREBASE */
 
 const firebaseConfig = {
 
@@ -212,7 +201,7 @@ const firebaseConfig = {
     "kids-academy-public-school.firebaseapp.com",
 
     databaseURL:
-    "https://kids-academy-public-school-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "https://kids-academy-public-school-default-rtdb.asia-southeast1.firebasedatabase.app",
 
     projectId:
     "kids-academy-public-school",
@@ -229,242 +218,230 @@ const firebaseConfig = {
 };
 
 
-/* START FIREBASE */
-
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 
 
+/* LOAD SCHOOL */
+
+onValue(ref(db,"school"), (snapshot) => {
+
+    const data = snapshot.val();
+
+    if(!data) return;
+
+    document.getElementById("schoolName").value =
+    data.name || "";
+
+    document.getElementById("address").value =
+    data.address || "";
+
+    document.getElementById("principal").value =
+    data.principal || "";
+
+    document.getElementById("qualification").value =
+    data.qualification || "";
+
+});
+
+
 /* SAVE SCHOOL */
 
-window.saveSchool = function(){
+document.getElementById("saveSchoolBtn").onclick = async function(){
 
-    const school = {
+    const schoolData = {
 
         name:
-        document.getElementById("schoolName").value,
+        document.getElementById("schoolName").value.trim(),
 
         address:
-        document.getElementById("address").value,
+        document.getElementById("address").value.trim(),
 
         principal:
-        document.getElementById("principal").value,
+        document.getElementById("principal").value.trim(),
 
         qualification:
-        document.getElementById("qualification").value
+        document.getElementById("qualification").value.trim()
 
     };
 
-    set(ref(db,"school"),school)
+    try{
 
-    .then(()=>{
+        await set(ref(db,"school"),schoolData);
 
-        document.getElementById("schoolMessage").innerHTML=
-        "✅ School information online save हो गई।";
+        document.getElementById("schoolMessage").className =
+        "success";
 
-    })
+        document.getElementById("schoolMessage").innerText =
+        "✅ Firebase में School Information Save हो गई।";
 
-    .catch((error)=>{
+    }
+    catch(error){
 
-        alert("Error: "+error.message);
+        document.getElementById("schoolMessage").className =
+        "error";
 
-    });
+        document.getElementById("schoolMessage").innerText =
+        "❌ Error: " + error.message;
+
+    }
 
 };
 
 
+/* LOAD TEACHERS */
+
+onValue(ref(db,"teachers"), (snapshot) => {
+
+    const data = snapshot.val();
+
+    if(!data) return;
+
+    for(let i=1;i<=8;i++){
+
+        document.getElementById("teacher"+i).value =
+        data["teacher"+i] || "";
+
+    }
+
+});
+
+
 /* SAVE TEACHERS */
 
-window.saveTeachers = function(){
+document.getElementById("saveTeachersBtn").onclick = async function(){
 
     const teachers = {};
 
     for(let i=1;i<=8;i++){
 
         teachers["teacher"+i] =
-        document.getElementById("teacher"+i).value;
+        document.getElementById("teacher"+i).value.trim();
 
     }
 
-    set(ref(db,"teachers"),teachers)
+    try{
 
-    .then(()=>{
+        await set(ref(db,"teachers"),teachers);
 
-        document.getElementById("teacherMessage").innerHTML=
-        "✅ Teachers online save हो गए।";
+        document.getElementById("teacherMessage").className =
+        "success";
 
-    })
+        document.getElementById("teacherMessage").innerText =
+        "✅ Teachers Firebase में Save हो गए।";
 
-    .catch((error)=>{
+    }
+    catch(error){
 
-        alert("Error: "+error.message);
+        document.getElementById("teacherMessage").className =
+        "error";
 
-    });
+        document.getElementById("teacherMessage").innerText =
+        "❌ Error: " + error.message;
+
+    }
 
 };
 
 
 /* ADD NOTICE */
 
-window.addNotice = function(){
+document.getElementById("addNoticeBtn").onclick = async function(){
 
     const text =
     document.getElementById("noticeText").value.trim();
 
-    if(text===""){
+    if(text === ""){
 
-        alert("पहले notice लिखिए।");
+        alert("पहले Notice लिखिए।");
+
         return;
-
     }
 
-    push(ref(db,"notices"),{
+    try{
 
-        text:text,
-        date:new Date().toLocaleDateString("en-IN")
+        await push(ref(db,"notices"),{
 
-    })
+            text:text,
 
-    .then(()=>{
+            date:new Date().toLocaleDateString("hi-IN")
 
-        document.getElementById("noticeText").value="";
+        });
 
-        alert("✅ Notice online add हो गया।");
+        document.getElementById("noticeText").value = "";
 
-    })
+        document.getElementById("noticeMessage").className =
+        "success";
 
-    .catch((error)=>{
+        document.getElementById("noticeMessage").innerText =
+        "✅ Notice Firebase में Save हो गया।";
 
-        alert("Error: "+error.message);
+    }
+    catch(error){
 
-    });
+        document.getElementById("noticeMessage").className =
+        "error";
+
+        document.getElementById("noticeMessage").innerText =
+        "❌ Error: " + error.message;
+
+    }
 
 };
 
 
-/* SHOW NOTICES */
+/* SHOW NOTICE */
 
-const noticesRef = ref(db,"notices");
-
-onValue(noticesRef,(snapshot)=>{
+onValue(ref(db,"notices"), (snapshot) => {
 
     const data = snapshot.val();
 
     const list =
     document.getElementById("noticeList");
 
-    list.innerHTML="";
+    list.innerHTML = "";
 
     if(!data){
 
-        list.innerHTML=
-        "<p>अभी कोई notice नहीं है।</p>";
+        list.innerHTML =
+        "<p>अभी कोई Notice नहीं है।</p>";
 
         return;
-
     }
 
-    Object.entries(data).forEach(([id,notice])=>{
+    Object.entries(data).forEach(([id,item]) => {
 
-        const div =
+        const box =
         document.createElement("div");
 
-        div.className="notice";
+        box.style.padding = "15px";
+        box.style.marginTop = "12px";
+        box.style.background = "#fff8e9";
+        box.style.borderRadius = "10px";
 
-        div.innerHTML=`
-
-            <strong>📢 ${notice.text}</strong>
-
+        box.innerHTML = `
+            <b>📢 ${item.text}</b>
             <br>
-
-            <small>${notice.date || ""}</small>
-
+            <small>${item.date || ""}</small>
             <br>
-
-            <button class="delete"
-            onclick="deleteNotice('${id}')">
-
-            Delete
-
-            </button>
-
+            <button>Delete</button>
         `;
 
-        list.appendChild(div);
+        box.querySelector("button").onclick =
+        async function(){
+
+            if(confirm("यह Notice Delete करें?")){
+
+                await remove(ref(db,"notices/"+id));
+
+            }
+
+        };
+
+        list.appendChild(box);
 
     });
-
-});
-
-
-/* DELETE NOTICE */
-
-window.deleteNotice = function(id){
-
-    if(!confirm("क्या आप यह notice delete करना चाहते हैं?")){
-        return;
-    }
-
-    remove(ref(db,"notices/"+id))
-
-    .then(()=>{
-
-        alert("Notice delete हो गया।");
-
-    })
-
-    .catch((error)=>{
-
-        alert("Error: "+error.message);
-
-    });
-
-};
-
-
-/* LOAD SCHOOL DATA */
-
-onValue(ref(db,"school"),(snapshot)=>{
-
-    const data=snapshot.val();
-
-    if(!data) return;
-
-    if(data.name)
-    document.getElementById("schoolName").value=data.name;
-
-    if(data.address)
-    document.getElementById("address").value=data.address;
-
-    if(data.principal)
-    document.getElementById("principal").value=data.principal;
-
-    if(data.qualification)
-    document.getElementById("qualification").value=
-    data.qualification;
-
-});
-
-
-/* LOAD TEACHERS */
-
-onValue(ref(db,"teachers"),(snapshot)=>{
-
-    const data=snapshot.val();
-
-    if(!data) return;
-
-    for(let i=1;i<=8;i++){
-
-        if(data["teacher"+i]){
-
-            document.getElementById("teacher"+i).value=
-            data["teacher"+i];
-
-        }
-
-    }
 
 });
 
