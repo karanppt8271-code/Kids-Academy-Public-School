@@ -1,12 +1,15 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Result - Kid's Academy Public School</title>
+<title>Result | Kids Academy Public School</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -14,1490 +17,939 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:linear-gradient(135deg,#dbeafe,#f5f3ff);
-    color:#172033;
-    min-height:100vh;
+    font-family:Arial,sans-serif;
+    background:#fff8e9;
+    color:#29150d;
 }
 
-/* ================= SEARCH ================= */
+/* MAIN CONTAINER */
 
-.search-area{
-    max-width:650px;
+.container{
+    max-width:900px;
     margin:30px auto;
-    padding:25px;
-    background:#fff;
-    border-radius:18px;
-    box-shadow:0 10px 35px rgba(0,0,0,.12);
+    padding:15px;
 }
 
-.search-area h2{
+/* PAGE TITLE */
+
+.page-title{
     text-align:center;
-    color:#173f8f;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-.search-area label{
-    display:block;
-    font-weight:bold;
-    margin:12px 0 7px;
+.page-title h1{
+    font-size:32px;
+    color:#29150d;
 }
 
-.search-area select,
-.search-area input{
-    width:100%;
-    padding:13px;
-    border:1px solid #b9c4d6;
-    border-radius:8px;
+.page-title h1 span{
+    color:#e5aa2e;
+}
+
+.page-title p{
+    margin-top:7px;
+    color:#777;
+}
+
+/* SEARCH */
+
+.search-box{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.10);
+    border-top:5px solid #e5aa2e;
+    margin-bottom:25px;
+}
+
+.search-box h3{
+    margin-bottom:15px;
+}
+
+.search-box input{
+    width:60%;
+    padding:14px;
+    border:2px solid #eadfce;
+    border-radius:10px;
     font-size:16px;
     outline:none;
 }
 
-.search-area select:focus,
-.search-area input:focus{
-    border-color:#173f8f;
+.search-box input:focus{
+    border-color:#e5aa2e;
 }
 
-.search-btn{
-    width:100%;
-    padding:14px;
-    margin-top:20px;
+.search-box button{
+    padding:14px 25px;
+    margin-left:7px;
     border:0;
-    border-radius:8px;
-    background:#173f8f;
+    border-radius:10px;
+    background:#29150d;
     color:white;
-    font-size:17px;
     font-weight:bold;
     cursor:pointer;
 }
 
-.search-btn:hover{
-    background:#0d2d70;
+.search-box button:hover{
+    background:#4b2918;
 }
 
-.error{
+#error{
     display:none;
-    margin-top:15px;
-    padding:12px;
-    text-align:center;
-    border-radius:8px;
-    background:#fee2e2;
-    color:#b91c1c;
+    color:#b00020;
+    margin-top:12px;
     font-weight:bold;
 }
 
-/* ================= MARKSHEET ================= */
+/* RESULT */
 
-.marksheet{
+#resultCard{
     display:none;
-    width:210mm;
-    min-height:297mm;
-    margin:30px auto;
-    padding:9mm;
     background:white;
-    position:relative;
-    border:8px double #173f8f;
-    box-shadow:0 12px 40px rgba(0,0,0,.18);
+    border:3px solid #29150d;
+    border-radius:18px;
     overflow:hidden;
-}
-
-.marksheet.show{
-    display:block;
-}
-
-.marksheet-inner{
-    min-height:278mm;
-    border:1px solid #8fa3c7;
-    padding:8mm;
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
     position:relative;
 }
 
-.watermark{
+#resultCard::before{
+    content:"";
     position:absolute;
-    top:45%;
-    left:50%;
-    transform:translate(-50%,-50%) rotate(-30deg);
-    font-size:42px;
-    font-weight:bold;
-    color:rgba(23,63,143,.055);
-    white-space:nowrap;
+    inset:8px;
+    border:1px solid #e5aa2e;
+    border-radius:12px;
     pointer-events:none;
-    z-index:0;
 }
 
-.content{
-    position:relative;
-    z-index:1;
-}
-
-/* ================= SCHOOL HEADER ================= */
+/* SCHOOL HEADER */
 
 .school-header{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:18px;
+    background:#29150d;
+    color:white;
     text-align:center;
-    padding-bottom:15px;
-    border-bottom:2px solid #173f8f;
+    padding:25px 15px;
 }
 
 .logo{
-    width:75px;
-    height:75px;
+    width:80px;
+    height:80px;
     object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:5px;
+    border:3px solid #e5aa2e;
 }
 
-.school-name{
-    color:#173f8f;
-    font-size:28px;
-    font-weight:800;
-    text-transform:uppercase;
+.school-header h2{
+    color:#e5aa2e;
+    margin-top:10px;
+    font-size:27px;
 }
 
-.school-address{
-    margin-top:5px;
-    font-size:13px;
-    color:#475569;
+.school-header p{
+    margin-top:6px;
+    font-size:14px;
 }
 
-.school-contact{
-    margin-top:3px;
-    font-size:12px;
-    color:#64748b;
-}
+/* RESULT TITLE */
 
-/* ================= EXAM TITLE ================= */
-
-.exam-title{
+.result-title{
     text-align:center;
-    margin:17px 0;
+    background:#fff3d2;
+    padding:18px;
+    border-bottom:2px solid #e5aa2e;
 }
 
-.exam-title h2{
-    display:inline-block;
-    padding:9px 25px;
-    border:2px solid #173f8f;
-    color:#173f8f;
-    border-radius:5px;
-    font-size:19px;
+.result-title h3{
+    font-size:22px;
+    letter-spacing:1px;
 }
 
-.exam-title p{
-    margin-top:7px;
-    font-size:13px;
-    font-weight:bold;
-    color:#475569;
+.result-title p{
+    color:#777;
+    margin-top:6px;
 }
 
-/* ================= STUDENT DETAILS ================= */
+/* STUDENT INFO */
 
-.details-title{
-    text-align:center;
-    font-size:15px;
-    color:#173f8f;
-    margin:12px 0 8px;
-    text-transform:uppercase;
-    font-weight:bold;
-}
-
-.student-details{
+.student-info{
+    padding:25px;
     display:grid;
     grid-template-columns:1fr 1fr;
-    border:1px solid #9aaac2;
-    border-radius:5px;
-    overflow:hidden;
+    gap:14px;
 }
 
-.detail{
-    padding:9px 12px;
-    border-bottom:1px solid #cbd5e1;
+.info{
+    padding:14px;
+    border:1px solid #eadfce;
+    background:#fffdf8;
+    border-radius:11px;
 }
 
-.detail:nth-child(odd){
-    border-right:1px solid #cbd5e1;
-}
-
-.detail span{
-    color:#64748b;
-    font-size:10px;
+.info small{
     display:block;
-    text-transform:uppercase;
-    margin-bottom:3px;
-}
-
-.detail strong{
-    font-size:14px;
-    color:#172033;
-}
-
-/* ================= TOPPER BADGE ================= */
-
-.topper-badge{
-    display:none;
-    text-align:center;
-    margin:12px auto;
-    padding:10px 20px;
-    width:max-content;
-    max-width:100%;
-    background:#fff7cc;
-    border:2px solid #d4a600;
-    border-radius:30px;
-    color:#8a6500;
+    color:#9b6a16;
     font-weight:bold;
-    font-size:15px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    margin-bottom:6px;
 }
 
-/* ================= MARKS TABLE ================= */
-
-.section-heading{
-    margin:17px 0 8px;
-    text-align:center;
-    color:#173f8f;
-    font-size:15px;
+.info strong{
+    font-size:16px;
 }
 
-.table-wrap{
-    overflow-x:auto;
+/* MARKS TABLE */
+
+.table-area{
+    padding:0 25px 25px;
 }
 
-.marks-table{
+.table-area h3{
+    margin-bottom:12px;
+}
+
+table{
     width:100%;
     border-collapse:collapse;
+    overflow:hidden;
+    border-radius:10px;
 }
 
-.marks-table th{
-    background:#173f8f;
+th{
+    background:#29150d;
     color:white;
-    padding:10px 7px;
-    border:1px solid #173f8f;
-    font-size:12px;
-}
-
-.marks-table td{
-    padding:9px 7px;
-    border:1px solid #9aaac2;
-    text-align:center;
-    font-size:13px;
-}
-
-.marks-table td:nth-child(2){
+    padding:13px;
     text-align:left;
+}
+
+td{
+    padding:13px;
+    border-bottom:1px solid #eadfce;
+}
+
+tr:nth-child(even){
+    background:#fff8e9;
+}
+
+.pass{
     font-weight:bold;
 }
 
-.marks-table tr:nth-child(even){
-    background:#f8fafc;
-}
-
-.total-row{
-    background:#e7efff !important;
-    font-weight:bold;
-}
-
-.total-row td{
-    color:#173f8f;
-    font-size:14px;
-}
-
-/* ================= SUMMARY ================= */
+/* SUMMARY */
 
 .summary{
+    padding:0 25px 25px;
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:7px;
-    margin-top:14px;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
 .summary-box{
     text-align:center;
-    padding:10px 4px;
-    border:1px solid #9aaac2;
-    border-radius:5px;
-    background:#f8fafc;
+    padding:17px 10px;
+    background:#fff3d2;
+    border:1px solid #e5aa2e;
+    border-radius:12px;
 }
 
-.summary-box span{
+.summary-box small{
     display:block;
-    font-size:9px;
-    color:#64748b;
-    text-transform:uppercase;
+    color:#777;
+    margin-bottom:7px;
 }
 
 .summary-box strong{
-    display:block;
-    margin-top:4px;
-    color:#173f8f;
-    font-size:16px;
+    font-size:20px;
+    color:#29150d;
 }
 
-.pass{
-    color:#15803d !important;
+/* TOPPER */
+
+.topper{
+    margin:0 25px 25px;
+    background:#29150d;
+    color:white;
+    padding:18px;
+    text-align:center;
+    border-radius:12px;
 }
 
-.fail{
-    color:#dc2626 !important;
+.topper span{
+    color:#e5aa2e;
+    font-weight:bold;
 }
 
-.rank-one{
-    color:#b77900 !important;
-}
-
-/* ================= REMARK ================= */
-
-.remark{
-    margin-top:14px;
-    padding:9px;
-    border:1px solid #9aaac2;
-    border-radius:5px;
-    font-size:12px;
-}
-
-.remark b{
-    color:#173f8f;
-}
-
-/* ================= SIGNATURE ================= */
-
-.signatures{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    margin-top:55px;
-}
+/* SIGNATURE */
 
 .signature{
+    display:flex;
+    justify-content:space-between;
+    padding:30px 35px 20px;
     text-align:center;
-    border-top:1px solid #475569;
-    padding-top:7px;
-    font-size:12px;
-    font-weight:bold;
+    font-size:13px;
 }
 
-/* ================= FOOTER ================= */
-
-.marksheet-footer{
-    text-align:center;
-    margin-top:18px;
-    padding-top:8px;
-    border-top:1px solid #cbd5e1;
-    font-size:10px;
-    color:#64748b;
+.signature-box{
+    width:180px;
 }
 
-/* ================= PRINT ================= */
+.line{
+    border-top:1px solid #29150d;
+    margin-bottom:7px;
+}
+
+/* BUTTON */
+
+.print-area{
+    text-align:center;
+    padding:10px 20px 30px;
+}
 
 .print-btn{
-    display:none;
-    margin:20px auto 50px;
-    padding:13px 30px;
+    background:#e5aa2e;
+    color:#29150d;
     border:0;
-    border-radius:8px;
-    background:#15803d;
-    color:white;
-    font-size:16px;
+    padding:14px 30px;
+    border-radius:10px;
     font-weight:bold;
+    font-size:15px;
     cursor:pointer;
 }
 
-@media(max-width:750px){
+.print-btn:hover{
+    background:#d59b20;
+}
 
-    .marksheet{
-        width:96%;
-        min-height:auto;
-        padding:5px;
+/* BACK */
+
+.back{
+    text-align:center;
+    margin-top:20px;
+}
+
+.back a{
+    color:#29150d;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    .container{
+        margin:15px auto;
+        padding:10px;
     }
 
-    .marksheet-inner{
-        padding:15px;
+    .page-title h1{
+        font-size:27px;
     }
 
-    .school-header{
-        flex-direction:column;
-        gap:8px;
+    .search-box input{
+        width:100%;
+        margin-bottom:10px;
     }
 
-    .school-name{
-        font-size:20px;
+    .search-box button{
+        width:100%;
+        margin-left:0;
     }
 
-    .student-details{
+    .student-info{
         grid-template-columns:1fr;
+        padding:20px;
     }
 
-    .detail:nth-child(odd){
-        border-right:0;
+    .table-area{
+        padding:0 20px 20px;
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:550px;
     }
 
     .summary{
         grid-template-columns:1fr 1fr;
+        padding:0 20px 20px;
     }
 
-    .watermark{
-        font-size:25px;
+    .topper{
+        margin:0 20px 20px;
     }
+
+    .signature{
+        padding:30px 20px 15px;
+    }
+
+    .signature-box{
+        width:130px;
+    }
+
+    .school-header h2{
+        font-size:21px;
+    }
+
 }
 
-@media print{
+/* PRINT */
 
-    @page{
-        size:A4;
-        margin:0;
-    }
+@media print{
 
     body{
         background:white;
     }
 
-    .search-area,
-    .print-btn{
+    .page-title,
+    .search-box,
+    .back,
+    .print-area{
         display:none !important;
     }
 
-    .marksheet{
-        display:block !important;
-        width:210mm;
-        min-height:297mm;
+    .container{
+        max-width:100%;
         margin:0;
+        padding:0;
+    }
+
+    #resultCard{
+        display:block !important;
         box-shadow:none;
+        border:3px solid #29150d;
+    }
+
+    .summary{
+        grid-template-columns:repeat(4,1fr);
     }
 
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= SEARCH ================= -->
 
-<div class="search-area">
+<div class="container">
 
-    <h2>🔎 Student Result Search</h2>
 
-    <label>📚 Select Class</label>
+<!-- PAGE TITLE -->
 
-    <select id="className">
-        <option value="">-- अपनी Class चुनें --</option>
-        <option value="STD 1">STD 1</option>
-        <option value="STD 2">STD 2</option>
-        <option value="STD 3">STD 3</option>
-        <option value="STD 4">STD 4</option>
-        <option value="STD 5">STD 5</option>
-        <option value="STD 6">STD 6</option>
-        <option value="STD 7">STD 7</option>
-        <option value="STD 8">STD 8</option>
-    </select>
+<div class="page-title">
 
-    <label>🔢 Roll Number</label>
+<h1>📊 <span>Student Result</span></h1>
 
-    <input
-        type="number"
-        id="rollNo"
-        placeholder="अपना Roll Number डालें"
-    >
-
-    <button class="search-btn" onclick="searchResult()">
-        🔍 CHECK RESULT
-    </button>
-
-    <div class="error" id="error">
-        Result नहीं मिला।
-    </div>
+<p>Kids Academy Public School</p>
 
 </div>
 
 
-<!-- ================= MARKSHEET ================= -->
+<!-- SEARCH -->
 
-<div class="marksheet" id="resultBox">
+<div class="search-box">
 
-    <div class="marksheet-inner">
+<h3>🔍 Enter Student Roll Number</h3>
 
-        <div class="watermark">
-            KID'S ACADEMY PUBLIC SCHOOL
-        </div>
+<input
+type="text"
+id="rollInput"
+placeholder="Example: 1001"
+>
 
-        <div class="content">
+<button onclick="searchResult()">
+Search Result
+</button>
 
-            <!-- SCHOOL HEADER -->
-
-            <div class="school-header">
-
-                <img
-                    src="school-logo.png"
-                    class="logo"
-                    alt="School Logo"
-                >
-
-                <div>
-
-                    <div class="school-name">
-                        Kid's Academy Public School
-                    </div>
-
-                    <div class="school-address">
-                        Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
-                    </div>
-
-                    <div class="school-contact">
-                        Academic Session 2026
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- EXAM -->
-
-            <div class="exam-title">
-
-                <h2>STUDENT PROGRESS REPORT</h2>
-
-                <p>
-                    FIRST TERMINAL EXAMINATION - 2026
-                </p>
-
-            </div>
-
-
-            <!-- STUDENT INFORMATION -->
-
-            <div class="details-title">
-                Student Information
-            </div>
-
-            <div class="student-details">
-
-                <div class="detail">
-                    <span>Student Name</span>
-                    <strong id="studentName">-</strong>
-                </div>
-
-                <div class="detail">
-                    <span>Roll Number</span>
-                    <strong id="studentRoll">-</strong>
-                </div>
-
-                <div class="detail">
-                    <span>Class</span>
-                    <strong id="studentClass">-</strong>
-                </div>
-
-                <div class="detail">
-                    <span>Academic Session</span>
-                    <strong>2026</strong>
-                </div>
-
-                <div class="detail">
-                    <span>Class Rank</span>
-                    <strong id="studentRank">-</strong>
-                </div>
-
-                <div class="detail">
-                    <span>Position</span>
-                    <strong id="studentPosition">-</strong>
-                </div>
-
-            </div>
-
-
-            <!-- TOPPER -->
-
-            <div
-                class="topper-badge"
-                id="topperBadge"
-            >
-                🏆 CLASS TOPPER 🏆
-            </div>
-
-
-            <!-- MARKS -->
-
-            <div class="section-heading">
-                Academic Performance
-            </div>
-
-            <div class="table-wrap">
-
-                <table class="marks-table">
-
-                    <thead>
-
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Subject</th>
-                            <th>Maximum Marks</th>
-                            <th>Obtained Marks</th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="marksTable">
-                    </tbody>
-
-                </table>
-
-            </div>
-
-
-            <!-- SUMMARY -->
-
-            <div class="summary">
-
-                <div class="summary-box">
-                    <span>Total</span>
-                    <strong id="totalMarks">-</strong>
-                </div>
-
-                <div class="summary-box">
-                    <span>Percentage</span>
-                    <strong id="percentage">-</strong>
-                </div>
-
-                <div class="summary-box">
-                    <span>Grade</span>
-                    <strong id="grade">-</strong>
-                </div>
-
-                <div class="summary-box">
-                    <span>Rank</span>
-                    <strong id="rankSummary">-</strong>
-                </div>
-
-                <div class="summary-box">
-                    <span>Result</span>
-                    <strong id="finalResult">-</strong>
-                </div>
-
-            </div>
-
-
-            <!-- TOPPER NAME -->
-
-            <div class="remark">
-
-                <b>🏆 Class Topper:</b>
-
-                <span id="topperName">
-                    -
-                </span>
-
-            </div>
-
-
-            <!-- REMARK -->
-
-            <div class="remark">
-
-                <b>Teacher's Remark:</b>
-
-                <span id="remark">
-                    -
-                </span>
-
-            </div>
-
-
-            <!-- SIGNATURE -->
-
-            <div class="signatures">
-
-                <div class="signature">
-                    Class Teacher
-                </div>
-
-                <div class="signature">
-                    Principal
-                </div>
-
-            </div>
-
-
-            <div class="marksheet-footer">
-
-                This is a computer generated progress report.
-                <br>
-                KID'S ACADEMY PUBLIC SCHOOL © 2026
-
-            </div>
-
-        </div>
-
-    </div>
+<div id="error">
+❌ Roll Number नहीं मिला।
+</div>
 
 </div>
 
+
+<!-- RESULT CARD -->
+
+<div id="resultCard">
+
+
+<!-- SCHOOL -->
+
+<div class="school-header">
+
+<img
+src="school-logo.png"
+class="logo"
+alt="School Logo"
+>
+
+<h2>Kid's Academy Public School</h2>
+
+<p>📍 Manikpur, Pirpainti Bazar</p>
+
+</div>
+
+
+<!-- RESULT TITLE -->
+
+<div class="result-title">
+
+<h3>ANNUAL EXAMINATION RESULT</h3>
+
+<p>Academic Session 2026–27</p>
+
+</div>
+
+
+<!-- STUDENT INFO -->
+
+<div class="student-info">
+
+
+<div class="info">
+
+<small>👤 Student Name</small>
+
+<strong id="studentName"></strong>
+
+</div>
+
+
+<div class="info">
+
+<small>🔢 Roll Number</small>
+
+<strong id="studentRoll"></strong>
+
+</div>
+
+
+<div class="info">
+
+<small>📚 Class</small>
+
+<strong id="studentClass"></strong>
+
+</div>
+
+
+<div class="info">
+
+<small>📝 Examination</small>
+
+<strong id="studentExam"></strong>
+
+</div>
+
+
+</div>
+
+
+<!-- MARKS -->
+
+<div class="table-area">
+
+<h3>📚 Subject-wise Marks</h3>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Subject</th>
+
+<th>Maximum</th>
+
+<th>Obtained</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="marksTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="summary">
+
+
+<div class="summary-box">
+
+<small>Total Marks</small>
+
+<strong id="totalMarks"></strong>
+
+</div>
+
+
+<div class="summary-box">
+
+<small>Percentage</small>
+
+<strong id="percentage"></strong>
+
+</div>
+
+
+<div class="summary-box">
+
+<small>Rank</small>
+
+<strong id="studentRank"></strong>
+
+</div>
+
+
+<div class="summary-box">
+
+<small>Result</small>
+
+<strong id="resultStatus"></strong>
+
+</div>
+
+
+</div>
+
+
+<!-- TOPPER -->
+
+<div class="topper">
+
+🏆 Class Topper:
+<span id="topperName"></span>
+
+</div>
+
+
+<!-- SIGNATURE -->
+
+<div class="signature">
+
+<div class="signature-box">
+
+<div class="line"></div>
+
+Class Teacher
+
+</div>
+
+
+<div class="signature-box">
+
+<div class="line"></div>
+
+Principal
+
+</div>
+
+</div>
+
+
+<!-- PRINT -->
+
+<div class="print-area">
 
 <button
-    class="print-btn"
-    id="printButton"
-    onclick="window.print()"
+class="print-btn"
+onclick="window.print()"
 >
-    🖨️ PRINT MARK SHEET
+
+🖨️ Print Result
+
 </button>
+
+</div>
+
+
+</div>
+
+
+<div class="back">
+
+<a href="index.html">
+← Back to Home
+</a>
+
+</div>
+
+
+</div>
 
 
 <script>
 
-/* ==================================================
-   STUDENT DATA
-   ================================================== */
+
+/* ============================
+   STUDENT RESULT DATA
+============================ */
+
 
 const students = {
 
-    "STD 2": [
+"1001":{
 
-        {
-            roll:1,
-            name:"Md Akram",
-            Hindi:95,
-            English:85,
-            Math:85,
-            Science:70,
-            SSI:90,
-            Computer:90,
-            GK:90,
-            Drawing:90
-        },
+name:"Rahul Kumar",
 
-        {
-            roll:2,
-            name:"Anika Khatun",
-            Hindi:92,
-            English:100,
-            Math:90,
-            Science:75,
-            SSI:93,
-            Computer:92,
-            GK:55,
-            Drawing:95
-        },
+className:"Class 8",
 
-        {
-            roll:3,
-            name:"Rahima Khatun",
-            Hindi:82,
-            English:40,
-            Math:75,
-            Science:50,
-            SSI:80,
-            Computer:78,
-            GK:50,
-            Drawing:80
-        },
+exam:"Annual Examination",
 
-        {
-            roll:4,
-            name:"Jarin Khatun",
-            Hindi:88,
-            English:50,
-            Math:75,
-            Science:80,
-            SSI:85,
-            Computer:80,
-            GK:65,
-            Drawing:85
-        },
+marks:{
 
-        {
-            roll:5,
-            name:"Chahat Khatun",
-            Hindi:85,
-            English:40,
-            Math:70,
-            Science:50,
-            SSI:82,
-            Computer:72,
-            GK:60,
-            Drawing:75
-        },
+Hindi:78,
 
-        {
-            roll:6,
-            name:"Sona Khatun",
-            Hindi:30,
-            English:50,
-            Math:80,
-            Science:62,
-            SSI:80,
-            Computer:70,
-            GK:40,
-            Drawing:80
-        },
+English:82,
 
-        {
-            roll:7,
-            name:"Md Altamash",
-            Hindi:98,
-            English:90,
-            Math:90,
-            Science:92,
-            SSI:95,
-            Computer:94,
-            GK:90,
-            Drawing:92
-        },
+Math:91,
 
-        {
-            roll:8,
-            name:"Md Safi Alam",
-            Hindi:85,
-            English:85,
-            Math:85,
-            Science:70,
-            SSI:90,
-            Computer:87,
-            GK:85,
-            Drawing:90
-        },
+Science:85,
 
-        {
-            roll:9,
-            name:"Md Ayan",
-            Hindi:88,
-            English:90,
-            Math:87,
-            Science:68,
-            SSI:85,
-            Computer:89,
-            GK:80,
-            Drawing:90
-        },
+SST:80
 
-        {
-            roll:10,
-            name:"Manju Kumari",
-            Hindi:90,
-            English:90,
-            Math:75,
-            Science:74,
-            SSI:75,
-            Computer:75,
-            GK:45,
-            Drawing:80
-        },
+}
 
-        {
-            roll:11,
-            name:"Md Adnan",
-            Hindi:95,
-            English:74,
-            Math:84,
-            Science:74,
-            SSI:89,
-            Computer:84,
-            GK:90,
-            Drawing:90
-        },
-
-        {
-            roll:12,
-            name:"Md Ahad",
-            Hindi:60,
-            English:40,
-            Math:70,
-            Science:70,
-            SSI:75,
-            Computer:70,
-            GK:35,
-            Drawing:75
-        },
-
-        {
-            roll:13,
-            name:"Md Abjal",
-            Hindi:80,
-            English:"ABS",
-            Math:"ABS",
-            Science:"ABS",
-            SSI:"ABS",
-            Computer:"ABS",
-            GK:"ABS",
-            Drawing:"ABS"
-        }
-
-    ]
+}
 
 };
 
 
-/* ==================================================
+/* ============================
    SEARCH RESULT
-   ================================================== */
+============================ */
+
 
 function searchResult(){
 
-    const className =
-        document.getElementById("className").value;
 
-    const rollNo =
-        Number(document.getElementById("rollNo").value);
+const roll =
+document
+.getElementById("rollInput")
+.value
+.trim();
 
-    const error =
-        document.getElementById("error");
 
-    const resultBox =
-        document.getElementById("resultBox");
+const student =
+students[roll];
 
-    const printButton =
-        document.getElementById("printButton");
 
-    const topperBadge =
-        document.getElementById("topperBadge");
+const card =
+document
+.getElementById("resultCard");
 
 
-    error.style.display = "none";
+const error =
+document
+.getElementById("error");
 
-    resultBox.classList.remove("show");
 
-    printButton.style.display = "none";
+if(!student){
 
-    topperBadge.style.display = "none";
+card.style.display="none";
 
+error.style.display="block";
 
-    /* CHECK CLASS */
-
-    if(!className){
-
-        error.innerText =
-        "⚠️ पहले अपनी Class चुनें।";
-
-        error.style.display = "block";
-
-        return;
-    }
-
-
-    /* CHECK ROLL */
-
-    if(!rollNo){
-
-        error.innerText =
-        "⚠️ अपना Roll Number डालें।";
-
-        error.style.display = "block";
-
-        return;
-    }
-
-
-    const list =
-        students[className];
-
-
-    if(!list){
-
-        error.innerText =
-        "⚠️ इस Class का Result अभी उपलब्ध नहीं है।";
-
-        error.style.display = "block";
-
-        return;
-    }
-
-
-    /* FIND STUDENT */
-
-    const student =
-        list.find(
-            item => item.roll === rollNo
-        );
-
-
-    if(!student){
-
-        error.innerText =
-        "❌ इस Roll Number का Result नहीं मिला।";
-
-        error.style.display = "block";
-
-        return;
-    }
-
-
-    /* ==================================================
-       CALCULATE TOTAL FOR EVERY STUDENT
-       ================================================== */
-
-    const rankedStudents =
-        list
-        .map(function(item){
-
-            const marks = [
-
-                item.Hindi,
-                item.English,
-                item.Math,
-                item.Science,
-                item.SSI,
-                item.Computer,
-                item.GK,
-                item.Drawing
-
-            ];
-
-
-            let total = 0;
-
-            let absent = false;
-
-
-            marks.forEach(function(mark){
-
-                if(mark === "ABS"){
-
-                    absent = true;
-
-                }else{
-
-                    total += Number(mark);
-
-                }
-
-            });
-
-
-            return {
-
-                student:item,
-                total:total,
-                absent:absent
-
-            };
-
-        })
-        .filter(function(item){
-
-            return !item.absent;
-
-        })
-        .sort(function(a,b){
-
-            return b.total - a.total;
-
-        });
-
-
-    /* ==================================================
-       FIND RANK
-       ================================================== */
-
-    const rankIndex =
-        rankedStudents.findIndex(
-            item =>
-            item.student.roll === student.roll
-        );
-
-
-    const rank =
-        rankIndex === -1
-        ? null
-        : rankIndex + 1;
-
-
-    /* ==================================================
-       TOPPER
-       ================================================== */
-
-    let topper = null;
-
-    if(rankedStudents.length > 0){
-
-        topper =
-        rankedStudents[0].student;
-
-    }
-
-
-    /* ==================================================
-       STUDENT DETAILS
-       ================================================== */
-
-    document.getElementById("studentName")
-    .innerText =
-    student.name;
-
-
-    document.getElementById("studentRoll")
-    .innerText =
-    student.roll;
-
-
-    document.getElementById("studentClass")
-    .innerText =
-    className;
-
-
-    document.getElementById("studentRank")
-    .innerText =
-    rank
-    ? "Rank " + rank
-    : "—";
-
-
-    document.getElementById("rankSummary")
-    .innerText =
-    rank
-    ? "#" + rank
-    : "—";
-
-
-    /* ==================================================
-       POSITION
-       ================================================== */
-
-    let position = "—";
-
-
-    if(rank === 1){
-
-        position = "🏆 TOPPER";
-
-    }else if(rank === 2){
-
-        position = "🥈 2nd";
-
-    }else if(rank === 3){
-
-        position = "🥉 3rd";
-
-    }else if(rank){
-
-        position =
-        rank + "th";
-
-    }
-
-
-    document.getElementById("studentPosition")
-    .innerText =
-    position;
-
-
-    /* ==================================================
-       TOPPER NAME
-       ================================================== */
-
-    if(topper){
-
-        document.getElementById("topperName")
-        .innerText =
-        topper.name +
-        " - " +
-        topper.total +
-        "/800";
-
-    }else{
-
-        document.getElementById("topperName")
-        .innerText =
-        "—";
-
-    }
-
-
-    /* TOPPER BADGE */
-
-    if(rank === 1){
-
-        topperBadge.style.display =
-        "block";
-
-    }
-
-
-    /* ==================================================
-       SUBJECTS
-       ================================================== */
-
-    const subjects = [
-
-        ["Hindi",student.Hindi],
-        ["English",student.English],
-        ["Math",student.Math],
-        ["Science",student.Science],
-        ["S.S.I",student.SSI],
-        ["Computer",student.Computer],
-        ["G.K",student.GK],
-        ["Drawing",student.Drawing]
-
-    ];
-
-
-    let tableHTML = "";
-
-    let total = 0;
-
-    let absent = false;
-
-
-    subjects.forEach(function(subject,index){
-
-        const mark =
-        subject[1];
-
-
-        tableHTML += `
-
-            <tr>
-
-                <td>
-                    ${index + 1}
-                </td>
-
-                <td>
-                    ${subject[0]}
-                </td>
-
-                <td>
-                    100
-                </td>
-
-                <td>
-                    ${mark}
-                </td>
-
-            </tr>
-
-        `;
-
-
-        if(mark === "ABS"){
-
-            absent = true;
-
-        }else{
-
-            total += Number(mark);
-
-        }
-
-    });
-
-
-    /* TOTAL ROW */
-
-    tableHTML += `
-
-        <tr class="total-row">
-
-            <td colspan="2">
-                GRAND TOTAL
-            </td>
-
-            <td>
-                800
-            </td>
-
-            <td>
-                ${total}
-            </td>
-
-        </tr>
-
-    `;
-
-
-    document.getElementById("marksTable")
-    .innerHTML =
-    tableHTML;
-
-
-    /* ==================================================
-       PERCENTAGE
-       ================================================== */
-
-    let percentage = 0;
-
-    let grade = "";
-
-    let resultText = "";
-
-
-    if(absent){
-
-        percentage = 0;
-
-        grade = "—";
-
-        resultText = "ABSENT";
-
-        document.getElementById("finalResult")
-        .className =
-        "fail";
-
-    }else{
-
-        percentage =
-        (total / 800) * 100;
-
-
-        /* GRADE */
-
-        if(percentage >= 90){
-
-            grade = "A+";
-
-        }else if(percentage >= 80){
-
-            grade = "A";
-
-        }else if(percentage >= 70){
-
-            grade = "B+";
-
-        }else if(percentage >= 60){
-
-            grade = "B";
-
-        }else if(percentage >= 50){
-
-            grade = "C";
-
-        }else if(percentage >= 33){
-
-            grade = "D";
-
-        }else{
-
-            grade = "F";
-
-        }
-
-
-        /* RESULT */
-
-        resultText =
-        percentage >= 33
-        ? "PASS"
-        : "FAIL";
-
-
-        document.getElementById("finalResult")
-        .className =
-        resultText === "PASS"
-        ? "pass"
-        : "fail";
-
-    }
-
-
-    document.getElementById("totalMarks")
-    .innerText =
-    total + " / 800";
-
-
-    document.getElementById("percentage")
-    .innerText =
-    absent
-    ? "—"
-    : percentage.toFixed(2) + "%";
-
-
-    document.getElementById("grade")
-    .innerText =
-    grade;
-
-
-    document.getElementById("finalResult")
-    .innerText =
-    resultText;
-
-
-    /* ==================================================
-       TEACHER REMARK
-       ================================================== */
-
-    let remark = "";
-
-
-    if(resultText === "ABSENT"){
-
-        remark =
-        "Student was absent in one or more subjects.";
-
-    }else if(rank === 1){
-
-        remark =
-        "Outstanding performance! Congratulations on securing First Rank.";
-
-    }else if(rank === 2){
-
-        remark =
-        "Excellent performance! Keep working hard.";
-
-    }else if(rank === 3){
-
-        remark =
-        "Very good performance. Keep improving.";
-
-    }else if(percentage >= 80){
-
-        remark =
-        "Excellent performance. Keep up the good work!";
-
-    }else if(percentage >= 60){
-
-        remark =
-        "Very good performance. Keep improving.";
-
-    }else if(percentage >= 33){
-
-        remark =
-        "Good effort. More practice is recommended.";
-
-    }else{
-
-        remark =
-        "Needs improvement and regular practice.";
-
-    }
-
-
-    document.getElementById("remark")
-    .innerText =
-    remark;
-
-
-    /* ==================================================
-       SHOW MARKSHEET
-       ================================================== */
-
-    resultBox.classList.add("show");
-
-    printButton.style.display =
-    "block";
-
-
-    resultBox.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
+return;
 
 }
 
 
-/* ==================================================
-   ENTER KEY
-   ================================================== */
+error.style.display="none";
 
-document.getElementById("rollNo")
-.addEventListener(
-    "keypress",
-    function(event){
 
-        if(event.key === "Enter"){
 
-            searchResult();
+/* STUDENT INFO */
 
-        }
 
-    }
+document
+.getElementById("studentName")
+.textContent =
+student.name;
+
+
+document
+.getElementById("studentRoll")
+.textContent =
+roll;
+
+
+document
+.getElementById("studentClass")
+.textContent =
+student.className;
+
+
+document
+.getElementById("studentExam")
+.textContent =
+student.exam;
+
+
+
+/* MARKS TABLE */
+
+
+const table =
+document.getElementById("marksTable");
+
+
+table.innerHTML="";
+
+
+let total=0;
+
+let maximum=0;
+
+
+Object.entries(student.marks)
+.forEach(([subject,marks])=>{
+
+
+const maxMarks=100;
+
+total += marks;
+
+maximum += maxMarks;
+
+
+const row =
+document.createElement("tr");
+
+
+row.innerHTML=`
+
+<td>${subject}</td>
+
+<td>${maxMarks}</td>
+
+<td><strong>${marks}</strong></td>
+
+<td class="pass">
+${marks >= 33 ? "PASS" : "FAIL"}
+</td>
+
+`;
+
+
+table.appendChild(row);
+
+
+});
+
+
+
+/* TOTAL */
+
+
+const percentage =
+((total / maximum) * 100)
+.toFixed(2);
+
+
+document
+.getElementById("totalMarks")
+.textContent =
+total + " / " + maximum;
+
+
+document
+.getElementById("percentage")
+.textContent =
+percentage + "%";
+
+
+document
+.getElementById("resultStatus")
+.textContent =
+percentage >= 33 ? "PASS" : "FAIL";
+
+
+
+/* RANK */
+
+
+const allStudents =
+Object.entries(students)
+.map(([rollNo,data])=>{
+
+let marks=0;
+
+Object.values(data.marks)
+.forEach(m=>marks+=m);
+
+return {
+
+roll:rollNo,
+name:data.name,
+total:marks
+
+};
+
+});
+
+
+allStudents.sort(
+(a,b)=>b.total-a.total
 );
+
+
+const rank =
+allStudents.findIndex(
+(s)=>s.roll===roll
+) + 1;
+
+
+document
+.getElementById("studentRank")
+.textContent =
+rank;
+
+
+
+/* TOPPER */
+
+
+if(allStudents.length>0){
+
+document
+.getElementById("topperName")
+.textContent =
+allStudents[0].name;
+
+}
+
+
+
+card.style.display="block";
+
+
+card.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
 
 </script>
 
+
 </body>
 </html>
+```
