@@ -27,7 +27,7 @@ body{
     margin:auto;
 }
 
-/* SEARCH */
+/* SEARCH BOX */
 
 .search{
     background:#29150d;
@@ -40,6 +40,7 @@ body{
 .search h2{
     color:#e5aa2e;
     margin-bottom:15px;
+    font-size:24px;
 }
 
 .search input{
@@ -49,6 +50,7 @@ body{
     border:0;
     border-radius:7px;
     font-size:16px;
+    outline:none;
 }
 
 .search button{
@@ -59,6 +61,7 @@ body{
     color:#29150d;
     font-weight:bold;
     cursor:pointer;
+    margin-left:5px;
 }
 
 .search button:hover{
@@ -102,21 +105,21 @@ body{
 }
 
 .logo{
-    width:75px;
-    height:75px;
+    width:80px;
+    height:80px;
     object-fit:contain;
     margin-bottom:7px;
 }
 
 .school{
-    font-family:Georgia,serif;
+    font-family:Georgia, "Times New Roman", serif;
     font-size:31px;
     font-weight:bold;
     text-transform:uppercase;
 }
 
 .address{
-    margin-top:5px;
+    margin-top:6px;
     font-size:14px;
 }
 
@@ -129,7 +132,7 @@ body{
 .exam-title{
     display:inline-block;
     margin-top:15px;
-    padding:9px 30px;
+    padding:9px 32px;
     background:#29150d;
     color:white;
     font-size:19px;
@@ -143,7 +146,7 @@ body{
 .session{
     text-align:center;
     background:#fff4d6;
-    padding:9px;
+    padding:10px;
     font-weight:bold;
     border-bottom:1px solid #d6bb7d;
 }
@@ -161,12 +164,12 @@ body{
 .details{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:16px;
+    gap:18px;
 }
 
 .detail{
     border-bottom:1px solid #cbb58d;
-    padding-bottom:7px;
+    padding-bottom:8px;
 }
 
 .detail label{
@@ -182,7 +185,7 @@ body{
 }
 
 
-/* PHOTO */
+/* PHOTO BOX */
 
 .photo{
     height:175px;
@@ -197,10 +200,11 @@ body{
 
 .photo span{
     font-size:13px;
+    line-height:1.5;
 }
 
 
-/* INFO BAR */
+/* EXAM INFO */
 
 .info-bar{
     margin:0 25px 20px;
@@ -226,7 +230,7 @@ body{
 }
 
 .info-box strong{
-    font-size:16px;
+    font-size:15px;
 }
 
 
@@ -289,7 +293,7 @@ body{
 }
 
 
-/* PRINT */
+/* PRINT BUTTON */
 
 .print{
     text-align:center;
@@ -305,6 +309,10 @@ body{
     border-radius:8px;
     font-weight:bold;
     cursor:pointer;
+}
+
+.print button:hover{
+    background:#f5ca58;
 }
 
 
@@ -351,10 +359,15 @@ body{
         padding-top:30px;
     }
 
+    .search button{
+        margin-top:10px;
+        margin-left:0;
+    }
+
 }
 
 
-/* PRINT PAGE */
+/* PRINT */
 
 @media print{
 
@@ -421,13 +434,14 @@ body{
     <div class="card-inner">
 
 
-        <!-- HEADER -->
+        <!-- SCHOOL HEADER -->
 
         <div class="header">
 
             <img
                 src="school-logo.png"
                 class="logo"
+                alt="School Logo"
             >
 
             <div class="school">
@@ -457,18 +471,20 @@ body{
 
 
 
-        <!-- STUDENT -->
+        <!-- STUDENT DETAILS -->
 
         <div class="student-area">
 
 
             <div class="details">
 
+
                 <div class="detail">
 
                     <label>Student Name</label>
 
                     <strong id="studentName">
+                        -
                     </strong>
 
                 </div>
@@ -479,6 +495,7 @@ body{
                     <label>Roll Number</label>
 
                     <strong id="rollNumber">
+                        -
                     </strong>
 
                 </div>
@@ -489,6 +506,7 @@ body{
                     <label>Class</label>
 
                     <strong id="className">
+                        -
                     </strong>
 
                 </div>
@@ -499,12 +517,16 @@ body{
                     <label>Examination</label>
 
                     <strong id="examName">
+                        -
                     </strong>
 
                 </div>
 
+
             </div>
 
+
+            <!-- PHOTO -->
 
             <div class="photo">
 
@@ -515,6 +537,7 @@ body{
 
             </div>
 
+
         </div>
 
 
@@ -523,12 +546,13 @@ body{
 
         <div class="info-bar">
 
+
             <div class="info-box">
 
                 <small>Exam Date</small>
 
                 <strong id="examDate">
-                    15 March 2027
+                    -
                 </strong>
 
             </div>
@@ -539,7 +563,7 @@ body{
                 <small>Reporting Time</small>
 
                 <strong id="examTime">
-                    09:30 AM
+                    -
                 </strong>
 
             </div>
@@ -554,6 +578,7 @@ body{
                 </strong>
 
             </div>
+
 
         </div>
 
@@ -599,20 +624,39 @@ body{
 
         <div class="signatures">
 
+
             <div class="sign">
+
                 Class Teacher
-                <small>Signature</small>
+
+                <small>
+                    Signature
+                </small>
+
             </div>
 
+
             <div class="sign">
+
                 Principal
-                <small>Md Imtiyaz (Monu)</small>
+
+                <small>
+                    Md Imtiyaz (Monu)
+                </small>
+
             </div>
 
+
             <div class="sign">
+
                 School Seal
-                <small>Official Stamp</small>
+
+                <small>
+                    Official Stamp
+                </small>
+
             </div>
+
 
         </div>
 
@@ -622,5 +666,232 @@ body{
 
         <div class="footer">
 
-            <b>Kids Academy Public
+            <b>
+                Kids Academy Public School
+            </b>
+
+            <br>
+
+            Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- PRINT BUTTON -->
+
+<div class="print" id="printArea">
+
+    <button onclick="window.print()">
+        🖨️ Print Admit Card
+    </button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================================
+   SAMPLE STUDENT DATA
+   ========================================= */
+
+const students = {
+
+
+    "1001":{
+
+        name:"Rahul Kumar",
+
+        className:"Class 8",
+
+        exam:"Annual Examination",
+
+        date:"15 March 2027",
+
+        time:"09:30 AM"
+
+    },
+
+
+    "1002":{
+
+        name:"Aman Kumar",
+
+        className:"Class 8",
+
+        exam:"Annual Examination",
+
+        date:"15 March 2027",
+
+        time:"09:30 AM"
+
+    }
+
+
+};
+
+
+
+/* =========================================
+   SHOW ADMIT CARD
+   ========================================= */
+
+function showAdmitCard(){
+
+
+    const roll =
+        document
+        .getElementById("rollInput")
+        .value
+        .trim();
+
+
+    const error =
+        document
+        .getElementById("error");
+
+
+    const card =
+        document
+        .getElementById("admitCard");
+
+
+    const print =
+        document
+        .getElementById("printArea");
+
+
+    /* RESET */
+
+    error.innerText = "";
+
+    card.style.display = "none";
+
+    print.style.display = "none";
+
+
+    /* EMPTY ROLL NUMBER */
+
+    if(roll === ""){
+
+        error.innerText =
+        "Please enter Roll Number.";
+
+        return;
+
+    }
+
+
+    /* FIND STUDENT */
+
+    const student =
+        students[roll];
+
+
+    /* NOT FOUND */
+
+    if(!student){
+
+        error.innerText =
+        "❌ Admit Card not found. Please check Roll Number.";
+
+        return;
+
+    }
+
+
+    /* PUT DATA ON CARD */
+
+    document
+    .getElementById("studentName")
+    .innerText =
+        student.name;
+
+
+    document
+    .getElementById("rollNumber")
+    .innerText =
+        roll;
+
+
+    document
+    .getElementById("className")
+    .innerText =
+        student.className;
+
+
+    document
+    .getElementById("examName")
+    .innerText =
+        student.exam;
+
+
+    document
+    .getElementById("examDate")
+    .innerText =
+        student.date;
+
+
+    document
+    .getElementById("examTime")
+    .innerText =
+        student.time;
+
+
+    /* SHOW CARD */
+
+    card.style.display = "block";
+
+    print.style.display = "block";
+
+
+    /* SCROLL TO CARD */
+
+    setTimeout(function(){
+
+        card.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },100);
+
+}
+
+
+
+/* =========================================
+   ENTER KEY SUPPORT
+   ========================================= */
+
+document
+.getElementById("rollInput")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            showAdmitCard();
+
+        }
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>
 ```
