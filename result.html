@@ -1,15 +1,12 @@
 ```html
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Result | Kids Academy Public School</title>
+<title>Result - Kids Academy Public School</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -17,334 +14,281 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#fff8e9;
+    font-family:Georgia, "Times New Roman", serif;
+    background:#eee7dc;
     color:#29150d;
+    padding:30px 15px;
 }
-
-/* MAIN CONTAINER */
 
 .container{
     max-width:900px;
-    margin:30px auto;
-    padding:15px;
+    margin:auto;
 }
-
-/* PAGE TITLE */
-
-.page-title{
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.page-title h1{
-    font-size:32px;
-    color:#29150d;
-}
-
-.page-title h1 span{
-    color:#e5aa2e;
-}
-
-.page-title p{
-    margin-top:7px;
-    color:#777;
-}
-
-/* SEARCH */
 
 .search-box{
-    background:white;
+    background:#29150d;
     padding:25px;
-    border-radius:18px;
+    border-radius:15px;
     text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.10);
-    border-top:5px solid #e5aa2e;
     margin-bottom:25px;
 }
 
-.search-box h3{
+.search-box h2{
+    color:#e5aa2e;
     margin-bottom:15px;
 }
 
 .search-box input{
-    width:60%;
-    padding:14px;
-    border:2px solid #eadfce;
-    border-radius:10px;
+    width:70%;
+    max-width:400px;
+    padding:13px;
+    border:none;
+    border-radius:8px;
     font-size:16px;
     outline:none;
 }
 
-.search-box input:focus{
-    border-color:#e5aa2e;
-}
-
-.search-box button{
-    padding:14px 25px;
+button{
+    padding:13px 22px;
     margin-left:7px;
-    border:0;
-    border-radius:10px;
-    background:#29150d;
-    color:white;
+    border:none;
+    border-radius:8px;
+    background:#e5aa2e;
+    color:#29150d;
     font-weight:bold;
     cursor:pointer;
 }
 
-.search-box button:hover{
-    background:#4b2918;
+button:hover{
+    background:#f3c653;
 }
 
-#error{
+.marksheet{
     display:none;
-    color:#b00020;
-    margin-top:12px;
-    font-weight:bold;
+    background:#fffdf7;
+    padding:12px;
+    border:8px double #29150d;
+    box-shadow:0 10px 35px rgba(0,0,0,.18);
 }
 
-/* RESULT */
-
-#resultCard{
-    display:none;
-    background:white;
-    border:3px solid #29150d;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 12px 35px rgba(0,0,0,.15);
+.inner{
+    border:2px solid #e5aa2e;
+    padding:30px;
     position:relative;
 }
 
-#resultCard::before{
-    content:"";
+.inner:before{
+    content:"KIDS ACADEMY";
     position:absolute;
-    inset:8px;
-    border:1px solid #e5aa2e;
-    border-radius:12px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-25deg);
+    font-size:55px;
+    font-weight:bold;
+    color:rgba(41,21,13,.045);
+    white-space:nowrap;
     pointer-events:none;
 }
 
-/* SCHOOL HEADER */
-
-.school-header{
-    background:#29150d;
-    color:white;
+.header{
     text-align:center;
-    padding:25px 15px;
+    border-bottom:3px solid #29150d;
+    padding-bottom:18px;
+    position:relative;
+    z-index:1;
 }
 
 .logo{
-    width:80px;
-    height:80px;
+    width:85px;
+    height:85px;
     object-fit:contain;
-    background:white;
-    border-radius:50%;
-    padding:5px;
-    border:3px solid #e5aa2e;
+    margin-bottom:8px;
 }
 
-.school-header h2{
-    color:#e5aa2e;
-    margin-top:10px;
-    font-size:27px;
+.school-name{
+    font-size:34px;
+    font-weight:bold;
+    color:#29150d;
+    text-transform:uppercase;
 }
 
-.school-header p{
-    margin-top:6px;
-    font-size:14px;
+.school-address{
+    font-size:15px;
+    margin-top:5px;
 }
 
-/* RESULT TITLE */
-
-.result-title{
-    text-align:center;
-    background:#fff3d2;
-    padding:18px;
-    border-bottom:2px solid #e5aa2e;
+.recognized{
+    margin-top:8px;
+    font-size:13px;
+    color:#76532c;
 }
 
-.result-title h3{
-    font-size:22px;
-    letter-spacing:1px;
+.title{
+    display:inline-block;
+    margin-top:18px;
+    padding:8px 28px;
+    border:2px solid #e5aa2e;
+    background:#29150d;
+    color:#fff;
+    font-size:20px;
+    letter-spacing:2px;
 }
-
-.result-title p{
-    color:#777;
-    margin-top:6px;
-}
-
-/* STUDENT INFO */
 
 .student-info{
-    padding:25px;
+    margin-top:25px;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:14px;
+    gap:12px 30px;
+    position:relative;
+    z-index:1;
 }
 
 .info{
-    padding:14px;
-    border:1px solid #eadfce;
-    background:#fffdf8;
-    border-radius:11px;
-}
-
-.info small{
-    display:block;
-    color:#9b6a16;
-    font-weight:bold;
-    margin-bottom:6px;
-}
-
-.info strong{
+    border-bottom:1px solid #b99b6b;
+    padding:7px;
     font-size:16px;
 }
 
-/* MARKS TABLE */
-
-.table-area{
-    padding:0 25px 25px;
-}
-
-.table-area h3{
-    margin-bottom:12px;
+.info strong{
+    display:inline-block;
+    min-width:115px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    overflow:hidden;
-    border-radius:10px;
+    margin-top:25px;
+    position:relative;
+    z-index:1;
 }
 
 th{
     background:#29150d;
     color:white;
-    padding:13px;
-    text-align:left;
+    padding:12px;
+    border:1px solid #29150d;
 }
 
 td{
-    padding:13px;
-    border-bottom:1px solid #eadfce;
+    padding:11px;
+    border:1px solid #9b876e;
+    text-align:center;
 }
 
 tr:nth-child(even){
-    background:#fff8e9;
+    background:#fff6df;
 }
-
-.pass{
-    font-weight:bold;
-}
-
-/* SUMMARY */
 
 .summary{
-    padding:0 25px 25px;
+    margin-top:20px;
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:12px;
+    gap:10px;
+    position:relative;
+    z-index:1;
 }
 
 .summary-box{
     text-align:center;
-    padding:17px 10px;
-    background:#fff3d2;
-    border:1px solid #e5aa2e;
-    border-radius:12px;
+    border:2px solid #e5aa2e;
+    padding:12px 5px;
+    background:#fff8e9;
 }
 
-.summary-box small{
+.summary-box span{
     display:block;
-    color:#777;
-    margin-bottom:7px;
+    font-size:13px;
+    color:#76532c;
 }
 
 .summary-box strong{
-    font-size:20px;
-    color:#29150d;
+    display:block;
+    margin-top:5px;
+    font-size:19px;
 }
 
-/* TOPPER */
-
-.topper{
-    margin:0 25px 25px;
-    background:#29150d;
-    color:white;
-    padding:18px;
+.result-status{
     text-align:center;
-    border-radius:12px;
-}
-
-.topper span{
-    color:#e5aa2e;
+    margin-top:22px;
+    font-size:22px;
     font-weight:bold;
+    color:#286b35;
+    position:relative;
+    z-index:1;
 }
 
-/* SIGNATURE */
+.signatures{
+    margin-top:65px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+    text-align:center;
+    position:relative;
+    z-index:1;
+}
 
 .signature{
-    display:flex;
-    justify-content:space-between;
-    padding:30px 35px 20px;
-    text-align:center;
-    font-size:13px;
-}
-
-.signature-box{
-    width:180px;
-}
-
-.line{
     border-top:1px solid #29150d;
-    margin-bottom:7px;
+    padding-top:8px;
+    font-size:14px;
 }
 
-/* BUTTON */
-
-.print-area{
+.footer{
     text-align:center;
-    padding:10px 20px 30px;
+    margin-top:25px;
+    padding-top:12px;
+    border-top:1px solid #b99b6b;
+    font-size:12px;
+    color:#76532c;
+    position:relative;
+    z-index:1;
 }
 
 .print-btn{
-    background:#e5aa2e;
-    color:#29150d;
-    border:0;
-    padding:14px 30px;
-    border-radius:10px;
-    font-weight:bold;
-    font-size:15px;
-    cursor:pointer;
-}
-
-.print-btn:hover{
-    background:#d59b20;
-}
-
-/* BACK */
-
-.back{
+    display:none;
     text-align:center;
-    margin-top:20px;
+    margin:20px 0;
 }
 
-.back a{
-    color:#29150d;
-    text-decoration:none;
+.error{
+    color:#b00020;
+    margin-top:12px;
     font-weight:bold;
 }
-
-/* MOBILE */
 
 @media(max-width:650px){
 
-    .container{
-        margin:15px auto;
-        padding:10px;
+    body{
+        padding:15px 8px;
     }
 
-    .page-title h1{
-        font-size:27px;
+    .inner{
+        padding:18px;
+    }
+
+    .school-name{
+        font-size:23px;
+    }
+
+    .student-info{
+        grid-template-columns:1fr;
+    }
+
+    .summary{
+        grid-template-columns:1fr 1fr;
+    }
+
+    table{
+        font-size:13px;
+    }
+
+    th,td{
+        padding:7px 4px;
+    }
+
+    .signatures{
+        grid-template-columns:1fr;
+        margin-top:40px;
     }
 
     .search-box input{
@@ -352,603 +296,395 @@ tr:nth-child(even){
         margin-bottom:10px;
     }
 
-    .search-box button{
-        width:100%;
+    button{
         margin-left:0;
     }
-
-    .student-info{
-        grid-template-columns:1fr;
-        padding:20px;
-    }
-
-    .table-area{
-        padding:0 20px 20px;
-        overflow-x:auto;
-    }
-
-    table{
-        min-width:550px;
-    }
-
-    .summary{
-        grid-template-columns:1fr 1fr;
-        padding:0 20px 20px;
-    }
-
-    .topper{
-        margin:0 20px 20px;
-    }
-
-    .signature{
-        padding:30px 20px 15px;
-    }
-
-    .signature-box{
-        width:130px;
-    }
-
-    .school-header h2{
-        font-size:21px;
-    }
-
 }
-
-/* PRINT */
 
 @media print{
 
     body{
         background:white;
-    }
-
-    .page-title,
-    .search-box,
-    .back,
-    .print-area{
-        display:none !important;
-    }
-
-    .container{
-        max-width:100%;
-        margin:0;
         padding:0;
     }
 
-    #resultCard{
+    .search-box,
+    .print-btn{
+        display:none !important;
+    }
+
+    .marksheet{
         display:block !important;
         box-shadow:none;
-        border:3px solid #29150d;
+        border:8px double #29150d;
     }
 
-    .summary{
-        grid-template-columns:repeat(4,1fr);
+    @page{
+        size:A4;
+        margin:10mm;
     }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+    <div class="search-box">
+        <h2>📋 Student Result</h2>
 
-<!-- PAGE TITLE -->
+        <input
+            type="number"
+            id="rollInput"
+            placeholder="Enter Roll Number"
+        >
 
-<div class="page-title">
+        <button onclick="showResult()">View Result</button>
 
-<h1>📊 <span>Student Result</span></h1>
+        <div id="error" class="error"></div>
+    </div>
 
-<p>Kids Academy Public School</p>
 
-</div>
+    <div id="marksheet" class="marksheet">
 
+        <div class="inner">
 
-<!-- SEARCH -->
+            <div class="header">
 
-<div class="search-box">
+                <img src="school-logo.png" class="logo">
 
-<h3>🔍 Enter Student Roll Number</h3>
+                <div class="school-name">
+                    Kids Academy Public School
+                </div>
 
-<input
-type="text"
-id="rollInput"
-placeholder="Example: 1001"
->
+                <div class="school-address">
+                    Manikpur, Pirpainti Bazar, Bhagalpur, Bihar
+                </div>
 
-<button onclick="searchResult()">
-Search Result
-</button>
+                <div class="recognized">
+                    Excellence in Education • Established 2021
+                </div>
 
-<div id="error">
-❌ Roll Number नहीं मिला।
-</div>
+                <div class="title">
+                    ANNUAL EXAMINATION RESULT
+                </div>
 
-</div>
+            </div>
 
 
-<!-- RESULT CARD -->
+            <div class="student-info">
 
-<div id="resultCard">
+                <div class="info">
+                    <strong>Student Name:</strong>
+                    <span id="studentName"></span>
+                </div>
 
+                <div class="info">
+                    <strong>Roll Number:</strong>
+                    <span id="rollNumber"></span>
+                </div>
 
-<!-- SCHOOL -->
+                <div class="info">
+                    <strong>Class:</strong>
+                    <span id="className"></span>
+                </div>
 
-<div class="school-header">
+                <div class="info">
+                    <strong>Examination:</strong>
+                    <span id="examName"></span>
+                </div>
 
-<img
-src="school-logo.png"
-class="logo"
-alt="School Logo"
->
+            </div>
 
-<h2>Kid's Academy Public School</h2>
 
-<p>📍 Manikpur, Pirpainti Bazar</p>
+            <table>
 
-</div>
+                <thead>
+                    <tr>
+                        <th>Sl. No.</th>
+                        <th>Subject</th>
+                        <th>Maximum Marks</th>
+                        <th>Obtained Marks</th>
+                    </tr>
+                </thead>
 
+                <tbody id="marksTable"></tbody>
 
-<!-- RESULT TITLE -->
+            </table>
 
-<div class="result-title">
 
-<h3>ANNUAL EXAMINATION RESULT</h3>
+            <div class="summary">
 
-<p>Academic Session 2026–27</p>
+                <div class="summary-box">
+                    <span>Total Marks</span>
+                    <strong id="totalMarks"></strong>
+                </div>
 
-</div>
+                <div class="summary-box">
+                    <span>Percentage</span>
+                    <strong id="percentage"></strong>
+                </div>
 
+                <div class="summary-box">
+                    <span>Rank</span>
+                    <strong id="rank"></strong>
+                </div>
 
-<!-- STUDENT INFO -->
+                <div class="summary-box">
+                    <span>Grade</span>
+                    <strong id="grade"></strong>
+                </div>
 
-<div class="student-info">
+            </div>
 
 
-<div class="info">
+            <div class="result-status" id="resultStatus">
+                PASS
+            </div>
 
-<small>👤 Student Name</small>
 
-<strong id="studentName"></strong>
+            <div class="signatures">
 
-</div>
+                <div class="signature">
+                    Class Teacher
+                </div>
 
+                <div class="signature">
+                    Principal
+                </div>
 
-<div class="info">
+                <div class="signature">
+                    School Seal
+                </div>
 
-<small>🔢 Roll Number</small>
+            </div>
 
-<strong id="studentRoll"></strong>
 
-</div>
+            <div class="footer">
+                This is a computer generated marksheet.
+                <br>
+                Kids Academy Public School
+            </div>
 
+        </div>
 
-<div class="info">
+    </div>
 
-<small>📚 Class</small>
 
-<strong id="studentClass"></strong>
-
-</div>
-
-
-<div class="info">
-
-<small>📝 Examination</small>
-
-<strong id="studentExam"></strong>
-
-</div>
-
-
-</div>
-
-
-<!-- MARKS -->
-
-<div class="table-area">
-
-<h3>📚 Subject-wise Marks</h3>
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>Subject</th>
-
-<th>Maximum</th>
-
-<th>Obtained</th>
-
-<th>Status</th>
-
-</tr>
-
-</thead>
-
-
-<tbody id="marksTable">
-
-</tbody>
-
-</table>
-
-</div>
-
-
-<!-- SUMMARY -->
-
-<div class="summary">
-
-
-<div class="summary-box">
-
-<small>Total Marks</small>
-
-<strong id="totalMarks"></strong>
-
-</div>
-
-
-<div class="summary-box">
-
-<small>Percentage</small>
-
-<strong id="percentage"></strong>
-
-</div>
-
-
-<div class="summary-box">
-
-<small>Rank</small>
-
-<strong id="studentRank"></strong>
-
-</div>
-
-
-<div class="summary-box">
-
-<small>Result</small>
-
-<strong id="resultStatus"></strong>
-
-</div>
-
-
-</div>
-
-
-<!-- TOPPER -->
-
-<div class="topper">
-
-🏆 Class Topper:
-<span id="topperName"></span>
-
-</div>
-
-
-<!-- SIGNATURE -->
-
-<div class="signature">
-
-<div class="signature-box">
-
-<div class="line"></div>
-
-Class Teacher
-
-</div>
-
-
-<div class="signature-box">
-
-<div class="line"></div>
-
-Principal
-
-</div>
-
-</div>
-
-
-<!-- PRINT -->
-
-<div class="print-area">
-
-<button
-class="print-btn"
-onclick="window.print()"
->
-
-🖨️ Print Result
-
-</button>
-
-</div>
-
-
-</div>
-
-
-<div class="back">
-
-<a href="index.html">
-← Back to Home
-</a>
-
-</div>
-
+    <div class="print-btn" id="printArea">
+        <button onclick="window.print()">
+            🖨️ Print Marksheet
+        </button>
+    </div>
 
 </div>
 
 
 <script>
 
-
-/* ============================
-   STUDENT RESULT DATA
-============================ */
-
+/* SAMPLE RESULT DATA */
 
 const students = {
 
-"1001":{
+    "1001":{
+        name:"Rahul Kumar",
+        className:"Class 8",
+        exam:"Annual Examination",
+        marks:{
+            Hindi:78,
+            English:82,
+            Mathematics:91,
+            Science:85,
+            "Social Science":80
+        }
+    },
 
-name:"Rahul Kumar",
-
-className:"Class 8",
-
-exam:"Annual Examination",
-
-marks:{
-
-Hindi:78,
-
-English:82,
-
-Math:91,
-
-Science:85,
-
-SST:80
-
-}
-
-}
+    "1002":{
+        name:"Aman Kumar",
+        className:"Class 8",
+        exam:"Annual Examination",
+        marks:{
+            Hindi:85,
+            English:88,
+            Mathematics:95,
+            Science:90,
+            "Social Science":87
+        }
+    }
 
 };
 
 
-/* ============================
-   SEARCH RESULT
-============================ */
+function showResult(){
+
+    const roll =
+        document.getElementById("rollInput").value.trim();
+
+    const error =
+        document.getElementById("error");
+
+    const marksheet =
+        document.getElementById("marksheet");
+
+    const printArea =
+        document.getElementById("printArea");
 
 
-function searchResult(){
+    error.innerText = "";
+    marksheet.style.display = "none";
+    printArea.style.display = "none";
 
 
-const roll =
-document
-.getElementById("rollInput")
-.value
-.trim();
+    if(roll === ""){
+
+        error.innerText =
+        "Please enter Roll Number.";
+
+        return;
+    }
 
 
-const student =
-students[roll];
+    const student = students[roll];
 
 
-const card =
-document
-.getElementById("resultCard");
+    if(!student){
+
+        error.innerText =
+        "❌ Result not found. Please check Roll Number.";
+
+        return;
+    }
 
 
-const error =
-document
-.getElementById("error");
+    document.getElementById("studentName").innerText =
+        student.name;
+
+    document.getElementById("rollNumber").innerText =
+        roll;
+
+    document.getElementById("className").innerText =
+        student.className;
+
+    document.getElementById("examName").innerText =
+        student.exam;
 
 
-if(!student){
+    const subjects =
+        Object.entries(student.marks);
 
-card.style.display="none";
 
-error.style.display="block";
+    let total = 0;
 
-return;
+    let tableHTML = "";
+
+
+    subjects.forEach(([subject,marks],index)=>{
+
+        total += Number(marks);
+
+        tableHTML += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${subject}</td>
+                <td>100</td>
+                <td><strong>${marks}</strong></td>
+            </tr>
+        `;
+
+    });
+
+
+    document.getElementById("marksTable").innerHTML =
+        tableHTML;
+
+
+    const maxMarks =
+        subjects.length * 100;
+
+    const percentage =
+        (total / maxMarks) * 100;
+
+
+    let grade;
+
+    if(percentage >= 90){
+        grade = "A+";
+    }
+    else if(percentage >= 80){
+        grade = "A";
+    }
+    else if(percentage >= 70){
+        grade = "B+";
+    }
+    else if(percentage >= 60){
+        grade = "B";
+    }
+    else if(percentage >= 50){
+        grade = "C";
+    }
+    else if(percentage >= 33){
+        grade = "D";
+    }
+    else{
+        grade = "F";
+    }
+
+
+    document.getElementById("totalMarks").innerText =
+        total + " / " + maxMarks;
+
+    document.getElementById("percentage").innerText =
+        percentage.toFixed(2) + "%";
+
+    document.getElementById("grade").innerText =
+        grade;
+
+
+    /* RANK */
+
+    const allStudents =
+        Object.values(students);
+
+    const rankings =
+        allStudents
+        .map(s =>
+            Object.values(s.marks)
+            .reduce((a,b)=>a + Number(b),0)
+        )
+        .sort((a,b)=>b-a);
+
+
+    const rank =
+        rankings.indexOf(total) + 1;
+
+
+    document.getElementById("rank").innerText =
+        rank;
+
+
+    document.getElementById("resultStatus").innerText =
+        percentage >= 33 ? "PASS" : "FAIL";
+
+
+    marksheet.style.display = "block";
+    printArea.style.display = "block";
 
 }
 
 
-error.style.display="none";
+/* ENTER KEY */
 
+document.getElementById("rollInput")
+.addEventListener("keydown",function(event){
 
-
-/* STUDENT INFO */
-
-
-document
-.getElementById("studentName")
-.textContent =
-student.name;
-
-
-document
-.getElementById("studentRoll")
-.textContent =
-roll;
-
-
-document
-.getElementById("studentClass")
-.textContent =
-student.className;
-
-
-document
-.getElementById("studentExam")
-.textContent =
-student.exam;
-
-
-
-/* MARKS TABLE */
-
-
-const table =
-document.getElementById("marksTable");
-
-
-table.innerHTML="";
-
-
-let total=0;
-
-let maximum=0;
-
-
-Object.entries(student.marks)
-.forEach(([subject,marks])=>{
-
-
-const maxMarks=100;
-
-total += marks;
-
-maximum += maxMarks;
-
-
-const row =
-document.createElement("tr");
-
-
-row.innerHTML=`
-
-<td>${subject}</td>
-
-<td>${maxMarks}</td>
-
-<td><strong>${marks}</strong></td>
-
-<td class="pass">
-${marks >= 33 ? "PASS" : "FAIL"}
-</td>
-
-`;
-
-
-table.appendChild(row);
-
+    if(event.key === "Enter"){
+        showResult();
+    }
 
 });
-
-
-
-/* TOTAL */
-
-
-const percentage =
-((total / maximum) * 100)
-.toFixed(2);
-
-
-document
-.getElementById("totalMarks")
-.textContent =
-total + " / " + maximum;
-
-
-document
-.getElementById("percentage")
-.textContent =
-percentage + "%";
-
-
-document
-.getElementById("resultStatus")
-.textContent =
-percentage >= 33 ? "PASS" : "FAIL";
-
-
-
-/* RANK */
-
-
-const allStudents =
-Object.entries(students)
-.map(([rollNo,data])=>{
-
-let marks=0;
-
-Object.values(data.marks)
-.forEach(m=>marks+=m);
-
-return {
-
-roll:rollNo,
-name:data.name,
-total:marks
-
-};
-
-});
-
-
-allStudents.sort(
-(a,b)=>b.total-a.total
-);
-
-
-const rank =
-allStudents.findIndex(
-(s)=>s.roll===roll
-) + 1;
-
-
-document
-.getElementById("studentRank")
-.textContent =
-rank;
-
-
-
-/* TOPPER */
-
-
-if(allStudents.length>0){
-
-document
-.getElementById("topperName")
-.textContent =
-allStudents[0].name;
-
-}
-
-
-
-card.style.display="block";
-
-
-card.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-}
 
 </script>
-
 
 </body>
 </html>
